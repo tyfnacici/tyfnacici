@@ -1,0 +1,32 @@
+baseURL = 'https://tyfnacici.github.io/'
+languageCode = 'en-us'
+title = 'Tayfun Açıcı'
+theme = 'paper'
+
+# disqusShortname = 'YOUR_DISQUS_SHORTNAME'    use disqus comments
+
+[params]
+  # color style
+  color = 'linen'                           # linen, wheat, gray, light
+
+  # header social icons
+  twitter = 'tyfnacici'               # twitter.com/YOUR_TWITTER_ID
+  github = 'tyfnacici'                 # github.com/YOUR_GITHUB_ID
+  instagram = 'tyfnacici'           # instagram.com/YOUR_INSTAGRAM_ID
+  linkedin = 'tyfnacici'             # linkedin.com/in/YOUR_LINKEDIN_ID
+  # mastodon = 'YOUR_MASTODON_LINK'            e.g. 'https://mastodon.instance/@xxx'
+  rss = true                                # show rss icon
+
+  # home page profile
+  avatar = 'https://pbs.twimg.com/profile_images/1692858004964605952/xOrU-1So_400x400.jpg'                 # gravatar email or image url
+  name = 'Tayfun Açıcı'
+  bio = 'youtube üniversitesi | jr webci | open source'
+
+
+  # misc
+  disableHLJS = true                        # disable highlight.js
+  disablePostNavigation = true              # disable post navigation
+  monoDarkIcon = true                       # show monochrome dark mode icon
+  gravatarCdn = 'GRAVATAR_CDN_LINK'         # e.g. 'https://cdn.v2ex.com/gravatar/'
+  graphCommentId = "YOUR_GRAPH_COMMENT_ID"  # use graph comment (disqus alternative)
+  math = true                               # enable KaTeX math typesetting globally
