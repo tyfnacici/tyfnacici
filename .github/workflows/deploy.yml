@@ -40,3 +40,4 @@ jobs:
           git config user.email 'tyfnacici@gmail.com'
           git commit -m 'Updated site'
           git push
+
