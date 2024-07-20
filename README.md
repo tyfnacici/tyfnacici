@@ -4,7 +4,7 @@
 <p align="left"> <a href="https://twitter.com/tyfnacici" target="blank"><img src="https://img.shields.io/twitter/follow/tyfnacici?logo=twitter&style=for-the-badge" alt="tyfnacici" /></a> </p>
 
 - 📫 You can reach me at **tyfnacici@gmail.com**
-- 🌐 Check my personal website! **tyfnacici.xyz**
+- 🌐 Check my personal website! **https://tyfnacici.xyz**
 
 <h3 align="left">Connect with me at:</h3>
 <p align="left">
