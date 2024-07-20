@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Code on Tayfun Açıcı</title>
-    <link>https://tyfnacici.github.io/tags/code/</link>
+    <link>https://tyfnacici.github.io/tyfnacici/tags/code/</link>
     <description>Recent content in Code on Tayfun Açıcı</description>
     <image>
       <title>Tayfun Açıcı</title>
-      <url>https://tyfnacici.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://tyfnacici.github.io/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://tyfnacici.github.io/tyfnacici/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://tyfnacici.github.io/tyfnacici/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- 0.129.0</generator>
     <language>en</language>
     <lastBuildDate>Sun, 10 Mar 2019 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://tyfnacici.github.io/tags/code/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://tyfnacici.github.io/tyfnacici/tags/code/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Code Syntax Guide</title>
-      <link>https://tyfnacici.github.io/posts/code_syntax/</link>
+      <link>https://tyfnacici.github.io/tyfnacici/posts/code_syntax/</link>
       <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://tyfnacici.github.io/posts/code_syntax/</guid>
+      <guid>https://tyfnacici.github.io/tyfnacici/posts/code_syntax/</guid>
       <description>Sample article showcasing basic code syntax and formatting for HTML elements.</description>
     </item>
   </channel>
