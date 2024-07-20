@@ -15,7 +15,7 @@ minify:
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: Tayfun Açıcı
-  description: "Tayfun Açıcı website"
+  description: "Tayfun Açıcı websitee"
   keywords: [Blog, Portfolio, PaperMod, Tayfun Açıcı, tyfnacici, Tayfun, Açıcı, Acici, tyfn]
   author: Me
   # author: ["Me", "You"] # multiple authors
