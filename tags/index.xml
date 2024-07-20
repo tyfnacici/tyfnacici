@@ -2,85 +2,85 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on Tayfun Açıcı</title>
-    <link>https://tyfnacici.github.io/tyfnacici/tags/</link>
+    <link>https://tyfnacici.xyz/tags/</link>
     <description>Recent content in Tags on Tayfun Açıcı</description>
     <image>
       <title>Tayfun Açıcı</title>
-      <url>https://tyfnacici.github.io/tyfnacici/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>https://tyfnacici.github.io/tyfnacici/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://tyfnacici.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>https://tyfnacici.xyz/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
     </image>
     <generator>Hugo -- 0.129.0</generator>
     <language>en</language>
     <lastBuildDate>Mon, 11 Mar 2019 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://tyfnacici.github.io/tyfnacici/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://tyfnacici.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Css</title>
-      <link>https://tyfnacici.github.io/tyfnacici/tags/css/</link>
+      <link>https://tyfnacici.xyz/tags/css/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://tyfnacici.github.io/tyfnacici/tags/css/</guid>
+      <guid>https://tyfnacici.xyz/tags/css/</guid>
       <description></description>
     </item>
     <item>
       <title>Html</title>
-      <link>https://tyfnacici.github.io/tyfnacici/tags/html/</link>
+      <link>https://tyfnacici.xyz/tags/html/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://tyfnacici.github.io/tyfnacici/tags/html/</guid>
+      <guid>https://tyfnacici.xyz/tags/html/</guid>
       <description></description>
     </item>
     <item>
       <title>Markdown</title>
-      <link>https://tyfnacici.github.io/tyfnacici/tags/markdown/</link>
+      <link>https://tyfnacici.xyz/tags/markdown/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://tyfnacici.github.io/tyfnacici/tags/markdown/</guid>
+      <guid>https://tyfnacici.xyz/tags/markdown/</guid>
       <description></description>
     </item>
     <item>
       <title>Themes</title>
-      <link>https://tyfnacici.github.io/tyfnacici/tags/themes/</link>
+      <link>https://tyfnacici.xyz/tags/themes/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://tyfnacici.github.io/tyfnacici/tags/themes/</guid>
+      <guid>https://tyfnacici.xyz/tags/themes/</guid>
       <description></description>
     </item>
     <item>
       <title>Code</title>
-      <link>https://tyfnacici.github.io/tyfnacici/tags/code/</link>
+      <link>https://tyfnacici.xyz/tags/code/</link>
       <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://tyfnacici.github.io/tyfnacici/tags/code/</guid>
+      <guid>https://tyfnacici.xyz/tags/code/</guid>
       <description></description>
     </item>
     <item>
       <title>Gist</title>
-      <link>https://tyfnacici.github.io/tyfnacici/tags/gist/</link>
+      <link>https://tyfnacici.xyz/tags/gist/</link>
       <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://tyfnacici.github.io/tyfnacici/tags/gist/</guid>
+      <guid>https://tyfnacici.xyz/tags/gist/</guid>
       <description></description>
     </item>
     <item>
       <title>Privacy</title>
-      <link>https://tyfnacici.github.io/tyfnacici/tags/privacy/</link>
+      <link>https://tyfnacici.xyz/tags/privacy/</link>
       <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://tyfnacici.github.io/tyfnacici/tags/privacy/</guid>
+      <guid>https://tyfnacici.xyz/tags/privacy/</guid>
       <description></description>
     </item>
     <item>
       <title>Shortcodes</title>
-      <link>https://tyfnacici.github.io/tyfnacici/tags/shortcodes/</link>
+      <link>https://tyfnacici.xyz/tags/shortcodes/</link>
       <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://tyfnacici.github.io/tyfnacici/tags/shortcodes/</guid>
+      <guid>https://tyfnacici.xyz/tags/shortcodes/</guid>
       <description></description>
     </item>
     <item>
       <title>Syntax</title>
-      <link>https://tyfnacici.github.io/tyfnacici/tags/syntax/</link>
+      <link>https://tyfnacici.xyz/tags/syntax/</link>
       <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://tyfnacici.github.io/tyfnacici/tags/syntax/</guid>
+      <guid>https://tyfnacici.xyz/tags/syntax/</guid>
       <description></description>
     </item>
     <item>
       <title>Emoji</title>
-      <link>https://tyfnacici.github.io/tyfnacici/tags/emoji/</link>
+      <link>https://tyfnacici.xyz/tags/emoji/</link>
       <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
-      <guid>https://tyfnacici.github.io/tyfnacici/tags/emoji/</guid>
+      <guid>https://tyfnacici.xyz/tags/emoji/</guid>
       <description></description>
     </item>
   </channel>
