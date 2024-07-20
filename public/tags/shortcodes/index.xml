@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Shortcodes on Tayfun Açıcı</title>
     <link>http://localhost:1313/tags/shortcodes/</link>
     <description>Recent content in Shortcodes on Tayfun Açıcı</description>
-    <generator>Hugo</generator>
+    <image>
+      <title>Tayfun Açıcı</title>
+      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
+      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+    </image>
+    <generator>Hugo -- 0.129.0</generator>
     <language>en</language>
     <lastBuildDate>Sun, 10 Mar 2019 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/tags/shortcodes/index.xml" rel="self" type="application/rss+xml" />
@@ -13,7 +18,7 @@
       <link>http://localhost:1313/posts/rich-content/</link>
       <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/posts/rich-content/</guid>
-      <description>&lt;p&gt;Hugo ships with several &lt;a href=&#34;https://gohugo.io/content-management/shortcodes/#use-hugos-built-in-shortcodes&#34;&gt;Built-in Shortcodes&lt;/a&gt; for rich content, along with a &lt;a href=&#34;https://gohugo.io/about/hugo-and-gdpr/&#34;&gt;Privacy Config&lt;/a&gt; and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.&lt;/p&gt;</description>
+      <description>A brief description of Hugo Shortcodes</description>
     </item>
   </channel>
 </rss>

@@ -12,17 +12,23 @@ minify:
   disableXML: true
   minifyOutput: true
 
+outputs:
+  home:
+    - html
+    - rss
+    - json
+
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  title: Tayfun Açıcı
-  description: "Tayfun Açıcı website"
-  keywords: [Blog, Portfolio, PaperMod, Tayfun Açıcı, tyfnacici, Tayfun, Açıcı, Acici, tyfn]
+  title: Tayfun Açıcıd
+  description: "Tayfun Açıcı - Software Engineer, Blogger, and Tech Enthusiast"
+  keywords: [Blog, Portfolio, Software Engineer, Blogger, Tech, Tayfun Açıcı, tyfnacici, Tayfun, Açıcı, Acici, tyfn]
   author: Me
   # author: ["Me", "You"] # multiple authors
   images: ["<link or path of image for opengraph, twitter-cards>"]
-  DateFormat: "January 2, 2006"
+  DateFormat: "2 Jan 2006"
   defaultTheme: auto # dark, light
-  disableThemeToggle: false
+  disableThemeToggle: true
 
   ShowReadingTime: true
   ShowShareButtons: true
@@ -43,31 +49,31 @@ params:
   assets:
     # disableHLJS: true # to disable highlight.js
     # disableFingerprinting: true
-    favicon: "<link / abs url>"
-    favicon16x16: "<link / abs url>"
-    favicon32x32: "<link / abs url>"
-    apple_touch_icon: "<link / abs url>"
-    safari_pinned_tab: "<link / abs url>"
+    favicon: "/assets/favicon.ico"
+    favicon16x16: "/assets/16x16.ico"
+    favicon32x32: "/assets/32x32.ico"
+    apple_touch_icon: "/assets/favicon.ico"
+    safari_pinned_tab: "/assets/favicon.ico"
 
   label:
-    text: "🏠 Home"
-    icon: /apple-touch-icon.png
+    text: "ayfun Açıcı"
+    icon: /favicon.png
     iconHeight: 35
 
   # profile-mode
   profileMode:
-    enabled: false # needs to be explicitly set
-    title: ExampleSite
-    subtitle: "This is subtitle"
-    imageUrl: "<img location>"
-    imageWidth: 120
-    imageHeight: 120
+    enabled: true # needs to be explicitly set
+    title: Welcome, outlander!
+    subtitle: "I am Tayfun Açıcı; a Web Developer, Linux lover and sometimes gamer. Passionate about coding, tech trends, and exploring new places. Let's connect!"
+    imageUrl: "/assets/tyfnacici.jpeg"
+    imageWidth: 300
+    imageHeight: 300
     imageTitle: my image
     buttons:
       - name: Posts
         url: posts
-      - name: Tags
-        url: tags
+      - name: Archive
+        url: archives
 
   # home-info mode
   homeInfoParams:
@@ -88,7 +94,7 @@ params:
 
   analytics:
     google:
-      SiteVerificationTag: "XYZabc"
+      SiteVerificationTag: "G-KJM2DXRP6H"
     bing:
       SiteVerificationTag: "XYZabc"
     yandex:
@@ -100,7 +106,7 @@ params:
     hiddenInSingle: true # hide on single page
 
   editPost:
-    URL: "https://github.com/tyfnacici/tyfnacici/home/content"
+    URL: "https://github.com/tyfnacici/tyfnacici/tree/main/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 
@@ -108,6 +114,8 @@ params:
   # https://fusejs.io/api/options.html
   fuseOpts:
     isCaseSensitive: false
+    includeMatches: true
+    findAllMatches: true
     shouldSort: true
     location: 0
     distance: 1000
@@ -117,17 +125,17 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
-    - identifier: categories
-      name: categories
-      url: /categories/
-      weight: 10
+    - identifier: search
+      name: search
+      url: /search/
+      weight: 20
+    - identifier: archive
+      name: archive
+      url: /archives/
+      weight: 20
     - identifier: tags
       name: tags
       url: /tags/
-      weight: 20
-    - identifier: example
-      name: example.org
-      url: https://example.org
       weight: 30
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
