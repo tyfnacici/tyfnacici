@@ -2,83 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://tyfnacici.xyz/posts/markdown-syntax.fr/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tyfnacici.xyz/posts/markdown-syntax.fa/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tyfnacici.xyz/</loc>
-    <lastmod>2024-07-20T16:00:39+03:00</lastmod>
-  </url><url>
-    <loc>https://tyfnacici.xyz/categories/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tyfnacici.xyz/tags/css/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tyfnacici.xyz/tags/html/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tyfnacici.xyz/tags/markdown/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tyfnacici.xyz/posts/markdown-syntax/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <loc>https://tyfnacici.xyz/posts/hello-world/</loc>
+    <lastmod>2024-07-20T19:31:10+03:00</lastmod>
   </url><url>
     <loc>https://tyfnacici.xyz/posts/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
+    <lastmod>2024-07-20T19:31:10+03:00</lastmod>
   </url><url>
-    <loc>https://tyfnacici.xyz/categories/syntax/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tyfnacici.xyz/tags/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tyfnacici.xyz/tags/themes/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tyfnacici.xyz/categories/themes/</loc>
-    <lastmod>2019-03-11T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tyfnacici.xyz/tags/code/</loc>
-    <lastmod>2019-03-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tyfnacici.xyz/posts/code_syntax/</loc>
-    <lastmod>2019-03-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tyfnacici.xyz/tags/gist/</loc>
-    <lastmod>2019-03-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tyfnacici.xyz/tags/privacy/</loc>
-    <lastmod>2019-03-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tyfnacici.xyz/posts/rich-content/</loc>
-    <lastmod>2019-03-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tyfnacici.xyz/tags/shortcodes/</loc>
-    <lastmod>2019-03-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tyfnacici.xyz/tags/syntax/</loc>
-    <lastmod>2019-03-10T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tyfnacici.xyz/posts/math-typesetting/</loc>
-    <lastmod>2019-03-08T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tyfnacici.xyz/tags/emoji/</loc>
-    <lastmod>2019-03-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tyfnacici.xyz/posts/emoji-support/</loc>
-    <lastmod>2019-03-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://tyfnacici.xyz/posts/deneme/</loc>
-  </url><url>
-    <loc>https://tyfnacici.xyz/archives.fr/</loc>
+    <loc>https://tyfnacici.xyz/</loc>
+    <lastmod>2024-07-20T19:31:10+03:00</lastmod>
   </url><url>
     <loc>https://tyfnacici.xyz/archives/</loc>
   </url><url>
+    <loc>https://tyfnacici.xyz/categories/</loc>
+  </url><url>
     <loc>https://tyfnacici.xyz/search/</loc>
   </url><url>
-    <loc>https://tyfnacici.xyz/search.fr/</loc>
+    <loc>https://tyfnacici.xyz/tags/</loc>
   </url>
 </urlset>
