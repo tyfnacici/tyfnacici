@@ -2,15 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Projects on Tayfun Açıcı</title>
-    <link>http://localhost:1313/projects/</link>
+    <link>https://tyfnacici.xyz/projects/</link>
     <description>Recent content in Projects on Tayfun Açıcı</description>
     <image>
       <title>Tayfun Açıcı</title>
-      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/assets/favicon.png</url>
+      <link>https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/assets/favicon.png</link>
     </image>
     <generator>Hugo -- 0.129.0</generator>
     <language>en-us</language>
-    <atom:link href="http://localhost:1313/projects/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 20 Jul 2024 19:31:10 +0300</lastBuildDate>
+    <atom:link href="https://tyfnacici.xyz/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Hello World</title>
+      <link>https://tyfnacici.xyz/projects/hello-world/</link>
+      <pubDate>Sat, 20 Jul 2024 19:31:10 +0300</pubDate>
+      <guid>https://tyfnacici.xyz/projects/hello-world/</guid>
+      <description>Example project This is a example project. </description>
+    </item>
   </channel>
 </rss>
