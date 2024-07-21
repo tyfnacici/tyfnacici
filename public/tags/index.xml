@@ -6,45 +6,31 @@
     <description>Recent content in Tags on Tayfun Açıcı</description>
     <image>
       <title>Tayfun Açıcı</title>
-      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/assets/favicon.png</url>
+      <link>https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/assets/favicon.png</link>
     </image>
     <generator>Hugo -- 0.129.0</generator>
     <language>en-us</language>
     <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>AI</title>
-      <link>http://localhost:1313/tags/ai/</link>
+      <title>.NET Framework</title>
+      <link>http://localhost:1313/tags/.net-framework/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ai/</guid>
+      <guid>http://localhost:1313/tags/.net-framework/</guid>
       <description></description>
     </item>
     <item>
-      <title>Arduino</title>
-      <link>http://localhost:1313/tags/arduino/</link>
+      <title>ASP.NET</title>
+      <link>http://localhost:1313/tags/asp.net/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/arduino/</guid>
+      <guid>http://localhost:1313/tags/asp.net/</guid>
       <description></description>
     </item>
     <item>
-      <title>Automation</title>
-      <link>http://localhost:1313/tags/automation/</link>
+      <title>Blockchain</title>
+      <link>http://localhost:1313/tags/blockchain/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/automation/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>AWS</title>
-      <link>http://localhost:1313/tags/aws/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/aws/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Bash</title>
-      <link>http://localhost:1313/tags/bash/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/bash/</guid>
+      <guid>http://localhost:1313/tags/blockchain/</guid>
       <description></description>
     </item>
     <item>
@@ -55,94 +41,31 @@
       <description></description>
     </item>
     <item>
-      <title>C&#43;&#43;</title>
-      <link>http://localhost:1313/tags/c&#43;&#43;/</link>
+      <title>Cyber Security</title>
+      <link>http://localhost:1313/tags/cyber-security/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/c&#43;&#43;/</guid>
+      <guid>http://localhost:1313/tags/cyber-security/</guid>
       <description></description>
     </item>
     <item>
-      <title>CNN</title>
-      <link>http://localhost:1313/tags/cnn/</link>
+      <title>Freelance</title>
+      <link>http://localhost:1313/tags/freelance/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/cnn/</guid>
+      <guid>http://localhost:1313/tags/freelance/</guid>
       <description></description>
     </item>
     <item>
-      <title>Computer Vision</title>
-      <link>http://localhost:1313/tags/computer-vision/</link>
+      <title>IIS</title>
+      <link>http://localhost:1313/tags/iis/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/computer-vision/</guid>
+      <guid>http://localhost:1313/tags/iis/</guid>
       <description></description>
     </item>
     <item>
-      <title>CRNN</title>
-      <link>http://localhost:1313/tags/crnn/</link>
+      <title>Internship</title>
+      <link>http://localhost:1313/tags/internship/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/crnn/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>CSS</title>
-      <link>http://localhost:1313/tags/css/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/css/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>DL</title>
-      <link>http://localhost:1313/tags/dl/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/dl/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Docker</title>
-      <link>http://localhost:1313/tags/docker/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/docker/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Drone</title>
-      <link>http://localhost:1313/tags/drone/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/drone/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Express</title>
-      <link>http://localhost:1313/tags/express/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/express/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Frontend Development</title>
-      <link>http://localhost:1313/tags/frontend-development/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/frontend-development/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>GitHub Action</title>
-      <link>http://localhost:1313/tags/github-action/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/github-action/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>GitHub Actions</title>
-      <link>http://localhost:1313/tags/github-actions/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/github-actions/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>HTML</title>
-      <link>http://localhost:1313/tags/html/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/html/</guid>
+      <guid>http://localhost:1313/tags/internship/</guid>
       <description></description>
     </item>
     <item>
@@ -153,129 +76,66 @@
       <description></description>
     </item>
     <item>
-      <title>Kocaeli University</title>
-      <link>http://localhost:1313/tags/kocaeli-university/</link>
+      <title>Kocaeli</title>
+      <link>http://localhost:1313/tags/kocaeli/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/kocaeli-university/</guid>
+      <guid>http://localhost:1313/tags/kocaeli/</guid>
       <description></description>
     </item>
     <item>
-      <title>Lab Assistant</title>
-      <link>http://localhost:1313/tags/lab-assistant/</link>
+      <title>Linux</title>
+      <link>http://localhost:1313/tags/linux/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/lab-assistant/</guid>
+      <guid>http://localhost:1313/tags/linux/</guid>
       <description></description>
     </item>
     <item>
-      <title>LSTM</title>
-      <link>http://localhost:1313/tags/lstm/</link>
+      <title>Microsoft SQL Server</title>
+      <link>http://localhost:1313/tags/microsoft-sql-server/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/lstm/</guid>
+      <guid>http://localhost:1313/tags/microsoft-sql-server/</guid>
       <description></description>
     </item>
     <item>
-      <title>MkDocs</title>
-      <link>http://localhost:1313/tags/mkdocs/</link>
+      <title>Mobile Development</title>
+      <link>http://localhost:1313/tags/mobile-development/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/mkdocs/</guid>
+      <guid>http://localhost:1313/tags/mobile-development/</guid>
       <description></description>
     </item>
     <item>
-      <title>MongoDB</title>
-      <link>http://localhost:1313/tags/mongodb/</link>
+      <title>MVC</title>
+      <link>http://localhost:1313/tags/mvc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/mongodb/</guid>
+      <guid>http://localhost:1313/tags/mvc/</guid>
       <description></description>
     </item>
     <item>
-      <title>Node.JS</title>
-      <link>http://localhost:1313/tags/node.js/</link>
+      <title>ReactJS</title>
+      <link>http://localhost:1313/tags/reactjs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/node.js/</guid>
+      <guid>http://localhost:1313/tags/reactjs/</guid>
       <description></description>
     </item>
     <item>
-      <title>NodeJS</title>
-      <link>http://localhost:1313/tags/nodejs/</link>
+      <title>Remote</title>
+      <link>http://localhost:1313/tags/remote/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/nodejs/</guid>
+      <guid>http://localhost:1313/tags/remote/</guid>
       <description></description>
     </item>
     <item>
-      <title>OAuth2.0</title>
-      <link>http://localhost:1313/tags/oauth2.0/</link>
+      <title>Smart Contracts</title>
+      <link>http://localhost:1313/tags/smart-contracts/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/oauth2.0/</guid>
+      <guid>http://localhost:1313/tags/smart-contracts/</guid>
       <description></description>
     </item>
     <item>
-      <title>Python</title>
-      <link>http://localhost:1313/tags/python/</link>
+      <title>Solidity</title>
+      <link>http://localhost:1313/tags/solidity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/python/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>PyTorch</title>
-      <link>http://localhost:1313/tags/pytorch/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/pytorch/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Raspberry Pi</title>
-      <link>http://localhost:1313/tags/raspberry-pi/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/raspberry-pi/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>React</title>
-      <link>http://localhost:1313/tags/react/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/react/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>RegEx</title>
-      <link>http://localhost:1313/tags/regex/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/regex/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Robotics</title>
-      <link>http://localhost:1313/tags/robotics/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/robotics/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Ruby</title>
-      <link>http://localhost:1313/tags/ruby/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ruby/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Ruby on Rails</title>
-      <link>http://localhost:1313/tags/ruby-on-rails/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/ruby-on-rails/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Software Development</title>
-      <link>http://localhost:1313/tags/software-development/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/software-development/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Student Support</title>
-      <link>http://localhost:1313/tags/student-support/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/student-support/</guid>
+      <guid>http://localhost:1313/tags/solidity/</guid>
       <description></description>
     </item>
     <item>
@@ -286,10 +146,10 @@
       <description></description>
     </item>
     <item>
-      <title>TypeScript</title>
-      <link>http://localhost:1313/tags/typescript/</link>
+      <title>Volunteer Work</title>
+      <link>http://localhost:1313/tags/volunteer-work/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/tags/typescript/</guid>
+      <guid>http://localhost:1313/tags/volunteer-work/</guid>
       <description></description>
     </item>
     <item>
@@ -297,6 +157,13 @@
       <link>http://localhost:1313/tags/web-development/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>http://localhost:1313/tags/web-development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Zonguldak</title>
+      <link>http://localhost:1313/tags/zonguldak/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/tags/zonguldak/</guid>
       <description></description>
     </item>
   </channel>

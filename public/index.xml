@@ -6,8 +6,8 @@
     <description>Recent content on Tayfun Açıcı</description>
     <image>
       <title>Tayfun Açıcı</title>
-      <url>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</url>
-      <link>http://localhost:1313/%3Clink%20or%20path%20of%20image%20for%20opengraph,%20twitter-cards%3E</link>
+      <url>https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/assets/favicon.png</url>
+      <link>https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/assets/favicon.png</link>
     </image>
     <generator>Hugo -- 0.129.0</generator>
     <language>en-us</language>
@@ -70,67 +70,18 @@
       <description>Başiskele Municipality Children&amp;#39;s University | Başiskele, Turkey</description>
     </item>
     <item>
-      <title>Obsidian Publish using GitHub Action</title>
-      <link>http://localhost:1313/projects/obsidian-publish-github-action/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/obsidian-publish-github-action/</guid>
-      <description>A custom GitHub Action to publish Obsidian notes as a website</description>
-    </item>
-    <item>
-      <title>Kindle to Notion</title>
-      <link>http://localhost:1313/projects/kindle-to-notion/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/kindle-to-notion/</guid>
-      <description>A way to seamlessly transfer your Kindle highlights to Notion Database!</description>
-    </item>
-    <item>
-      <title>Todo List App</title>
-      <link>http://localhost:1313/projects/todo-list-app/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/todo-list-app/</guid>
-      <description>A Todo list web application built using React</description>
-    </item>
-    <item>
-      <title>Face Landmarks Detection using CNN</title>
-      <link>http://localhost:1313/projects/face-landmarks-detection/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/face-landmarks-detection/</guid>
-      <description>Can computers really understand the human face?</description>
-    </item>
-    <item>
-      <title>Gaze-tracking Goggles</title>
-      <link>http://localhost:1313/projects/gaze-tracking-goggles/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/gaze-tracking-goggles/</guid>
-      <description>Smart Goggles for Gaze Analysis</description>
-    </item>
-    <item>
-      <title>OpenQuad</title>
-      <link>http://localhost:1313/projects/openquad/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/openquad/</guid>
-      <description>Open-souce platform for drone automation</description>
-    </item>
-    <item>
-      <title>Search and Reconnaissance Robot</title>
-      <link>http://localhost:1313/projects/search-and-reconnaissance-robot/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/search-and-reconnaissance-robot/</guid>
-      <description>An all-terrain robot for disaster management!</description>
-    </item>
-    <item>
-      <title>SEBART-Pro</title>
-      <link>http://localhost:1313/projects/sebart-pro/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>http://localhost:1313/projects/sebart-pro/</guid>
-      <description>A smart self-balancing robot!</description>
-    </item>
-    <item>
       <title>Hello World</title>
       <link>http://localhost:1313/blog/hello-world/</link>
       <pubDate>Sat, 20 Jul 2024 19:31:10 +0300</pubDate>
       <guid>http://localhost:1313/blog/hello-world/</guid>
       <description>Merhaba Dünya! Selam, ben Tayfun. </description>
+    </item>
+    <item>
+      <title>Hello World</title>
+      <link>http://localhost:1313/projects/hello-world/</link>
+      <pubDate>Sat, 20 Jul 2024 19:31:10 +0300</pubDate>
+      <guid>http://localhost:1313/projects/hello-world/</guid>
+      <description>Example project This is a example project. </description>
     </item>
   </channel>
 </rss>

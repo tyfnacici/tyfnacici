@@ -6,7 +6,7 @@
 {{- end }}
 
 {{- if (.Param "ShowReadingTime") -}}
-{{- $scratch.Add "meta" (slice (i18n " read_time" .ReadingTime | default (printf " · %d min" .ReadingTime))) }}
+{{- $scratch.Add "meta" (slice (i18n " read_time" .ReadingTime | default (printf " %d min" .ReadingTime))) }}
 {{- end }}
 
 {{- if (.Param "ShowWordCount") -}}

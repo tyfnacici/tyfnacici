@@ -21,12 +21,12 @@ outputs:
 
 params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
-  title: Tayfun Açıcıd
+  title: Tayfun Açıcı
   description: "Tayfun Açıcı - Software Engineer, Blogger, and Tech Enthusiast"
   keywords: [Blog, Portfolio, Software Engineer, Blogger, Tech, Tayfun Açıcı, tyfnacici, Tayfun, Açıcı, Acici, tyfn]
-  # author: Tayfun Açıcı
+  # author: Me
   # author: ["Me", "You"] # multiple authors
-  images: ["<link or path of image for opengraph, twitter-cards>"]
+  images: [https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/assets/favicon.png]
   DateFormat: "2 Jan 2006"
   defaultTheme: auto # dark, light
   disableThemeToggle: true
@@ -70,11 +70,6 @@ params:
     imageWidth: 300
     imageHeight: 300
     imageTitle: my image
-    buttons:
-      - name: Blog
-        url: blog
-      - name: Archive
-        url: archives
 
   # home-info mode
   homeInfoParams:
