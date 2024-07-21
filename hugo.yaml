@@ -1,4 +1,5 @@
 baseURL: "https://tyfnacici.xyz/"
+languageCode: en-us
 title: Tayfun Açıcı
 paginate: 5
 theme: PaperMod
@@ -23,7 +24,7 @@ params:
   title: Tayfun Açıcıd
   description: "Tayfun Açıcı - Software Engineer, Blogger, and Tech Enthusiast"
   keywords: [Blog, Portfolio, Software Engineer, Blogger, Tech, Tayfun Açıcı, tyfnacici, Tayfun, Açıcı, Acici, tyfn]
-  author: Me
+  # author: Tayfun Açıcı
   # author: ["Me", "You"] # multiple authors
   images: ["<link or path of image for opengraph, twitter-cards>"]
   DateFormat: "2 Jan 2006"
@@ -56,9 +57,9 @@ params:
     safari_pinned_tab: "/assets/favicon.ico"
 
   label:
-    text: "ayfun Açıcı"
-    icon: /favicon.png
-    iconHeight: 35
+    text: " "
+    icon: /assets/favicon.ico
+    iconHeight: 40
 
   # profile-mode
   profileMode:
@@ -70,8 +71,8 @@ params:
     imageHeight: 300
     imageTitle: my image
     buttons:
-      - name: Posts
-        url: posts
+      - name: Blog
+        url: blog
       - name: Archive
         url: archives
 
@@ -91,6 +92,8 @@ params:
       url: "https://dev.to/tyfnacici"
     - name: medium
       url: "https://medium.com/@tyfnacici"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/tyfnacici/"
 
   analytics:
     google:
@@ -125,18 +128,23 @@ params:
     keys: ["title", "permalink", "summary", "content"]
 menu:
   main:
+    - identifier: blog
+      name: blog
+      url: /blog
+      weight: 10
+    - identifier: projects
+      name: projects
+      url: /projects
+      weight: 20
+    - identifier: experience
+      name: experience
+      url: /experience
+      weight: 30
     - identifier: search
       name: search
-      url: /search/
-      weight: 20
-    - identifier: archive
-      name: archive
-      url: /archives/
-      weight: 20
-    - identifier: tags
-      name: tags
-      url: /tags/
-      weight: 30
+      url: /search
+      weight: 40
+
 # Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
 pygmentsUseClasses: true
 markup:
