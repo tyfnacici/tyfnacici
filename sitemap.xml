@@ -2,21 +2,81 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://tyfnacici.xyz/posts/hello-world/</loc>
+    <loc>https://tyfnacici.xyz/experience/freelance/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/experience/web-developer/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/experience/devops-intern/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/experience/cuberium/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/experience/sibervatan/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/experience/computer-lab-assistant/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/experience/cyberus/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/experience/cyber-security-instructor/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/blog/</loc>
     <lastmod>2024-07-20T19:31:10+03:00</lastmod>
   </url><url>
-    <loc>https://tyfnacici.xyz/posts/</loc>
+    <loc>https://tyfnacici.xyz/blog/hello-world/</loc>
     <lastmod>2024-07-20T19:31:10+03:00</lastmod>
   </url><url>
     <loc>https://tyfnacici.xyz/</loc>
     <lastmod>2024-07-20T19:31:10+03:00</lastmod>
   </url><url>
-    <loc>https://tyfnacici.xyz/archives/</loc>
+    <loc>https://tyfnacici.xyz/tags/.net-framework/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/asp.net/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/blockchain/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/c%23/</loc>
   </url><url>
     <loc>https://tyfnacici.xyz/categories/</loc>
   </url><url>
+    <loc>https://tyfnacici.xyz/tags/cyber-security/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/experience/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/freelance/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/iis/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/internship/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/javascript/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/kocaeli/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/linux/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/microsoft-sql-server/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/mobile-development/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/mvc/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/reactjs/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/remote/</loc>
+  </url><url>
     <loc>https://tyfnacici.xyz/search/</loc>
   </url><url>
+    <loc>https://tyfnacici.xyz/tags/smart-contracts/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/solidity/</loc>
+  </url><url>
     <loc>https://tyfnacici.xyz/tags/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/teaching/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/volunteer-work/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/web-development/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/zonguldak/</loc>
   </url>
 </urlset>
