@@ -6,7 +6,7 @@ tags: ["Javascript", "Freelance", "NextJS", "ReactJS"]
 showToc: false
 weight: 203
 cover:
-    image: "projects/nakilport.webp"
+    image: "projects/nakilport/nakilport.webp"
 ---
 
 ### 🔗 [Github](https://github.com/tyfnacici/transportation-website)
@@ -65,3 +65,11 @@ Key aspects of the development process included:
 - Cost Savings: The competitive bidding system helps shippers find the best rates, while carriers can maximize their earnings by finding profitable loads.
 - Enhanced Collaboration: The messaging system and responsive design foster better communication and collaboration between carriers and shippers.
 - Scalability: Built with Next.js and Firebase, NakilPort can scale to accommodate growing user bases and increasing data volumes.
+
+![](https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/projects/nakilport/1.png)
+![](https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/projects/nakilport/2.png)
+![](https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/projects/nakilport/3.png)
+![](https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/projects/nakilport/4.png)
+![](https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/projects/nakilport/5.png)
+![](https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/projects/nakilport/6.png)
+

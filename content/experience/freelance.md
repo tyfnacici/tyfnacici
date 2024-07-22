@@ -25,4 +25,6 @@ weight: 1
 - Employed technologies including Firebase, NextJS, and ESLint.
 - Successfully utilized Next.js to build fast-loading, server-rendered React applications, enhancing performance and user experience.
 
+![](https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/projects/nakilport/nakilport.webp)
+
 
