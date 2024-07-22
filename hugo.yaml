@@ -95,9 +95,9 @@ params:
     google:
       SiteVerificationTag: "G-KJM2DXRP6H"
     bing:
-      SiteVerificationTag: "XYZabc"
+      SiteVerificationTag: "0185e3c0d94b36a2"
     yandex:
-      SiteVerificationTag: "XYZabc"
+      SiteVerificationTag: "0185e3c0d94b36a2"
 
   cover:
     hidden: true # hide everywhere but not in structured data
