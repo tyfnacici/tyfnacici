@@ -70,18 +70,18 @@
       <description>Başiskele Municipality Children&amp;#39;s University | Başiskele, Turkey</description>
     </item>
     <item>
+      <title>nakilport.com</title>
+      <link>http://localhost:1313/projects/nakilport/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/projects/nakilport/</guid>
+      <description>Revolutionizing the Logistics Industry</description>
+    </item>
+    <item>
       <title>Hello World</title>
       <link>http://localhost:1313/blog/hello-world/</link>
       <pubDate>Sat, 20 Jul 2024 19:31:10 +0300</pubDate>
       <guid>http://localhost:1313/blog/hello-world/</guid>
       <description>Merhaba Dünya! Selam, ben Tayfun. </description>
-    </item>
-    <item>
-      <title>Hello World</title>
-      <link>http://localhost:1313/projects/hello-world/</link>
-      <pubDate>Sat, 20 Jul 2024 19:31:10 +0300</pubDate>
-      <guid>http://localhost:1313/projects/hello-world/</guid>
-      <description>Example project This is a example project. </description>
     </item>
   </channel>
 </rss>

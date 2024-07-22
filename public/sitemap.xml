@@ -18,16 +18,12 @@
   </url><url>
     <loc>http://localhost:1313/experience/cyber-security-instructor/</loc>
   </url><url>
+    <loc>http://localhost:1313/projects/nakilport/</loc>
+  </url><url>
     <loc>http://localhost:1313/blog/</loc>
     <lastmod>2024-07-20T19:31:10+03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/blog/hello-world/</loc>
-    <lastmod>2024-07-20T19:31:10+03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/projects/hello-world/</loc>
-    <lastmod>2024-07-20T19:31:10+03:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/projects/</loc>
     <lastmod>2024-07-20T19:31:10+03:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/</loc>
@@ -64,6 +60,10 @@
     <loc>http://localhost:1313/tags/mobile-development/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/mvc/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/nextjs/</loc>
+  </url><url>
+    <loc>http://localhost:1313/projects/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/reactjs/</loc>
   </url><url>
