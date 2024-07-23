@@ -11,7 +11,6 @@
     </image>
     <generator>Hugo -- 0.129.0</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 20 Jul 2024 19:31:10 +0300</lastBuildDate>
     <atom:link href="https://tyfnacici.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>MERN Stack Developer (Freelance)</title>
@@ -70,6 +69,20 @@
       <description>Başiskele Municipality Children&amp;#39;s University | Başiskele, Turkey</description>
     </item>
     <item>
+      <title>Hello World!</title>
+      <link>https://tyfnacici.xyz/blog/hello-world/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/blog/hello-world/</guid>
+      <description>Hi, I am Tayfun</description>
+    </item>
+    <item>
+      <title>How to</title>
+      <link>https://tyfnacici.xyz/blog/aws-dva-certification/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/blog/aws-dva-certification/</guid>
+      <description>How I passed the AWS Developer - Associate Certification Exam (DVA-C02)</description>
+    </item>
+    <item>
       <title>nakilport.com</title>
       <link>https://tyfnacici.xyz/projects/nakilport/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -82,13 +95,6 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tyfnacici.xyz/projects/tayfunmarket/</guid>
       <description>A New Standard in E-Commerce</description>
-    </item>
-    <item>
-      <title>Hello World</title>
-      <link>https://tyfnacici.xyz/blog/hello-world/</link>
-      <pubDate>Sat, 20 Jul 2024 19:31:10 +0300</pubDate>
-      <guid>https://tyfnacici.xyz/blog/hello-world/</guid>
-      <description>Merhaba Dünyaa! Selam, ben Tayfun. </description>
     </item>
   </channel>
 </rss>

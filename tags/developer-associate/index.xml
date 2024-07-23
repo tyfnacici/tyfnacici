@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>AWS on Tayfun Açıcı</title>
-    <link>https://tyfnacici.xyz/tags/aws/</link>
-    <description>Recent content in AWS on Tayfun Açıcı</description>
+    <title>Developer Associate on Tayfun Açıcı</title>
+    <link>https://tyfnacici.xyz/tags/developer-associate/</link>
+    <description>Recent content in Developer Associate on Tayfun Açıcı</description>
     <image>
       <title>Tayfun Açıcı</title>
       <url>https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/assets/favicon.png</url>
@@ -11,7 +11,7 @@
     </image>
     <generator>Hugo -- 0.129.0</generator>
     <language>en-us</language>
-    <atom:link href="https://tyfnacici.xyz/tags/aws/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://tyfnacici.xyz/tags/developer-associate/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to</title>
       <link>https://tyfnacici.xyz/blog/aws-dva-certification/</link>
