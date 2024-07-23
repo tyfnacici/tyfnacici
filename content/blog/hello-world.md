@@ -1,9 +1,14 @@
-+++
-title = 'Hello World'
-date = 2024-07-20T19:31:10+03:00
-draft = false
-+++
+---
+title: "Hello World!"
+description: "Hi, I am Tayfun"
+dateString: Jul 2024
+draft: false
+tags: [""]
+weight: 101
+cover:
+    image: "/blog/aws-dva-certification/cover.jpg"
+---
 
-# Merhaba Dünyaa!
+# Hello World!
 
-- Selam, ben Tayfun.
+- Hi, I am Tayfun.

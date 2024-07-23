@@ -90,6 +90,8 @@ params:
       url: "https://medium.com/@tyfnacici"
     - name: linkedin
       url: "https://www.linkedin.com/in/tyfnacici/"
+    - name: email
+      url: "mailto:tyfnacici@gmail.com"
 
   analytics:
     google:
