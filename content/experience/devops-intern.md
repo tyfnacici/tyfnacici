@@ -17,5 +17,3 @@ weight: 3
 - Automated routine tasks using Bash scripts.
 - Collaborated with senior team members to troubleshoot and resolve deployment issues, learning best practices and problem-solving techniques.
 - Adapted to remote work, effectively communicating and collaborating with team members across different locations.
-
-![](https://images.spiceworks.com/wp-content/uploads/2021/07/09134159/38-3-e1715636964776.png)

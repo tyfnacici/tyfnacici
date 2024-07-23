@@ -17,3 +17,6 @@ weight: 4
 - Built a Web3 NFT minting site using ReactJS and Solidity, allowing users to create and manage NFTs through a decentralized application.
 - Collaborated with team members to design and implement blockchain-based solutions, contributing to the development of innovative decentralized applications.
 - Continuously explored new trends and advancements in blockchain technology to stay up-to-date and improve my skills.
+
+### 🔗 [NFT Minting Site Prototype](https://x.com/tyfnacici/status/1556018858280075264)
+### 🔗 [REDro NFT Collection Minting website](https://x.com/tyfnacici/status/1558504916947279882)

@@ -19,12 +19,10 @@ weight: 1
 - Collaborated with a team of approximately eight people to develop a comprehensive language learning application.
 - Contributed to the development of the mobile application, web application, admin panel, and data entry components.
 - Utilized a range of technologies including JavaScript, ReactJS, MongoDB, ExpressJS, Axios, Capacitor, Ionic, Framer Motion, and TailwindCSS.
-### nakilport.com:
+### 🔗 [nakilport.com](https://www.tyfnacici.xyz/projects/nakilport/)
 - Worked on a project for a company that connects truck drivers with loads and each other, designing the web application from scratch.
 - Added features such as messaging, posting ads, and bidding, working with a team of six people.
 - Employed technologies including Firebase, NextJS, and ESLint.
 - Successfully utilized Next.js to build fast-loading, server-rendered React applications, enhancing performance and user experience.
-
-![](https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/projects/nakilport/nakilport.webp)
 
 
