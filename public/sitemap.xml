@@ -18,9 +18,11 @@
   </url><url>
     <loc>http://localhost:1313/experience/cyber-security-instructor/</loc>
   </url><url>
+    <loc>http://localhost:1313/blog/create-kvm-virtual-machine/</loc>
+  </url><url>
     <loc>http://localhost:1313/blog/hello-world/</loc>
   </url><url>
-    <loc>http://localhost:1313/blog/aws-dva-certification/</loc>
+    <loc>http://localhost:1313/blog/whati-is-ssl/</loc>
   </url><url>
     <loc>http://localhost:1313/projects/nakilport/</loc>
   </url><url>
@@ -30,8 +32,6 @@
   </url><url>
     <loc>http://localhost:1313/tags/asp.net/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/aws/</loc>
-  </url><url>
     <loc>http://localhost:1313/tags/blockchain/</loc>
   </url><url>
     <loc>http://localhost:1313/blog/</loc>
@@ -40,15 +40,11 @@
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/certification/</loc>
+    <loc>http://localhost:1313/tags/cloud/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/cyber-security/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/developer/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/developer-associate/</loc>
-  </url><url>
-    <loc>http://localhost:1313/tags/dva/</loc>
+    <loc>http://localhost:1313/tags/devops/</loc>
   </url><url>
     <loc>http://localhost:1313/experience/</loc>
   </url><url>
