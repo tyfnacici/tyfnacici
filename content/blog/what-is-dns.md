@@ -3,7 +3,7 @@ title: "What is DNS"
 description: "Domain Name Server Explained"
 dateString: Apr 2024
 draft: false
-tags: [""]
+tags: ["Web Development, Cloud"]
 weight: 2
 ---
 

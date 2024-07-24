@@ -3,7 +3,7 @@ title: "What is SSL"
 description: "Secure Socket Layer Explained"
 dateString: Apr 2024
 draft: false
-tags: [""]
+tags: ["Web Development, Networking"]
 weight: 3
 ---
 

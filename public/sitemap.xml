@@ -92,6 +92,10 @@
   </url><url>
     <loc>http://localhost:1313/tags/web-development/</loc>
   </url><url>
+    <loc>http://localhost:1313/tags/web-development-cloud/</loc>
+  </url><url>
+    <loc>http://localhost:1313/tags/web-development-networking/</loc>
+  </url><url>
     <loc>http://localhost:1313/tags/zonguldak/</loc>
   </url>
 </urlset>
