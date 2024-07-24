@@ -4,7 +4,7 @@ description: "Hi, I am Tayfun"
 dateString: Jul 2024
 draft: false
 tags: [""]
-weight: 101
+weight: 1000
 cover:
     image: "/blog/aws-dva-certification/cover.jpg"
 ---

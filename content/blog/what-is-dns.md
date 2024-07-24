@@ -2,9 +2,9 @@
 title: "What is DNS"
 description: "Domain Name Server Explained"
 dateString: Apr 2024
-draft: true
+draft: false
 tags: [""]
-weight: 300
+weight: 2
 ---
 
 # What is DNS (Domain Name Server)?

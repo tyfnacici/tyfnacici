@@ -4,7 +4,7 @@ description: "Secure Socket Layer Explained"
 dateString: Apr 2024
 draft: false
 tags: [""]
-weight: 101
+weight: 3
 ---
 
 # What is SSL (Secure Socket Layer)?

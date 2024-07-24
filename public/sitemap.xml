@@ -2,11 +2,17 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>http://localhost:1313/blog/create-kvm-virtual-machine/</loc>
+  </url><url>
     <loc>http://localhost:1313/experience/freelance/</loc>
   </url><url>
     <loc>http://localhost:1313/experience/web-developer/</loc>
   </url><url>
+    <loc>http://localhost:1313/blog/what-is-dns/</loc>
+  </url><url>
     <loc>http://localhost:1313/experience/devops-intern/</loc>
+  </url><url>
+    <loc>http://localhost:1313/blog/whati-is-ssl/</loc>
   </url><url>
     <loc>http://localhost:1313/experience/cuberium/</loc>
   </url><url>
@@ -18,15 +24,11 @@
   </url><url>
     <loc>http://localhost:1313/experience/cyber-security-instructor/</loc>
   </url><url>
-    <loc>http://localhost:1313/blog/create-kvm-virtual-machine/</loc>
-  </url><url>
-    <loc>http://localhost:1313/blog/hello-world/</loc>
-  </url><url>
-    <loc>http://localhost:1313/blog/whati-is-ssl/</loc>
-  </url><url>
     <loc>http://localhost:1313/projects/nakilport/</loc>
   </url><url>
     <loc>http://localhost:1313/projects/tayfunmarket/</loc>
+  </url><url>
+    <loc>http://localhost:1313/blog/hello-world/</loc>
   </url><url>
     <loc>http://localhost:1313/tags/.net-framework/</loc>
   </url><url>
