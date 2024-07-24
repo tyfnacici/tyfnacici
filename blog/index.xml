@@ -20,11 +20,11 @@
       <description>Kernel-Based Virtual Machine Explained</description>
     </item>
     <item>
-      <title>Hello World!</title>
-      <link>https://tyfnacici.xyz/blog/hello-world/</link>
+      <title>What is DNS</title>
+      <link>https://tyfnacici.xyz/blog/what-is-dns/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://tyfnacici.xyz/blog/hello-world/</guid>
-      <description>Hi, I am Tayfun</description>
+      <guid>https://tyfnacici.xyz/blog/what-is-dns/</guid>
+      <description>Domain Name Server Explained</description>
     </item>
     <item>
       <title>What is SSL</title>
@@ -32,6 +32,13 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tyfnacici.xyz/blog/whati-is-ssl/</guid>
       <description>Secure Socket Layer Explained</description>
+    </item>
+    <item>
+      <title>Hello World!</title>
+      <link>https://tyfnacici.xyz/blog/hello-world/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/blog/hello-world/</guid>
+      <description>Hi, I am Tayfun</description>
     </item>
   </channel>
 </rss>
