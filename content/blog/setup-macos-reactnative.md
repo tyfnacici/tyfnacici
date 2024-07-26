@@ -53,3 +53,27 @@ sudo gem install cocoapods
 If you encounter any error in this step visit this url "https://guides.cocoapods.org/using/troubleshooting#installing-cocoapods"
 
 ## Android Part
+
+### Java Development Kit installation
+
+Install JDK by pasting this to your terminal emulator.
+
+```
+brew install --cask zulu@17
+```
+
+After the JDK installation, you need to add or update your JAVA_HOME environment variable in ~/.zshrc (or in ~/.bash_profile).
+
+```
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+```
+
+### Install Android Studio
+
+[Download Android Studio by going to this link](https://developer.android.com/studio?hl=tr). While on Android Studio installation wizard, make sure the boxes next to all of the following items are 
+- Android SDK
+- Android SDK Platform
+- Android Virtual Device
+
+Then, click "Next" to install all of these components.
+
