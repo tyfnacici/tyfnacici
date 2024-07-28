@@ -1,7 +1,7 @@
 ---
 title: "How to Set Up React Native Enviroment"
-description: "How to set up react native enviroment for Macos"
-dateString: Jul 2024
+description: "How to set up react native enviroment for MacOS"
+dateString: Aug 2024
 draft: true
 tags: ["Javascript", "React Native"]
 weight: 101
