@@ -31,14 +31,17 @@ jobs:
       - name: Build
         run: hugo
 
+      - name: List Public Directory Contents
+        run: ls -la public
+
       - name: Deploy
         if: github.ref == 'refs/heads/main'
         run: |
           cp -Rf public/* ${GITHUB_WORKSPACE}/built-site/
           cd ${GITHUB_WORKSPACE}/built-site
+          touch .nojekyll  # Add this line to ensure there's always a change
           git add .
           git config user.name 'tyfnacici'
           git config user.email 'tyfnacici@gmail.com'
-          git commit -m 'Updated site'
+          git commit -m 'Updated site' || echo "No changes to commit"
           git push
-
