@@ -11,6 +11,7 @@
 !content/
 !*.toml
 !static/
+!public/
 
 #OS
 .DS_Store

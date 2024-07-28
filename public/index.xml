@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Tayfun Açıcı</title>
+    <link>https://tyfnacici.xyz/</link>
+    <description>Recent content on Tayfun Açıcı</description>
+    <image>
+      <title>Tayfun Açıcı</title>
+      <url>https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/assets/favicon.png</url>
+      <link>https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/assets/favicon.png</link>
+    </image>
+    <generator>Hugo -- 0.129.0</generator>
+    <language>en-us</language>
+    <atom:link href="https://tyfnacici.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creating a Linux Virtual Machine with KVM</title>
+      <link>https://tyfnacici.xyz/blog/create-kvm-virtual-machine/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/blog/create-kvm-virtual-machine/</guid>
+      <description>Kernel-Based Virtual Machine Explained</description>
+    </item>
+    <item>
+      <title>MERN Stack Developer (Freelance)</title>
+      <link>https://tyfnacici.xyz/experience/freelance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/experience/freelance/</guid>
+      <description>Freelance | Remote</description>
+    </item>
+    <item>
+      <title>Web Developer</title>
+      <link>https://tyfnacici.xyz/experience/web-developer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/experience/web-developer/</guid>
+      <description>Luckyeye | Hybrid</description>
+    </item>
+    <item>
+      <title>What is DNS</title>
+      <link>https://tyfnacici.xyz/blog/what-is-dns/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/blog/what-is-dns/</guid>
+      <description>Domain Name Server Explained</description>
+    </item>
+    <item>
+      <title>DevOps Engineering Intern</title>
+      <link>https://tyfnacici.xyz/experience/devops-intern/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/experience/devops-intern/</guid>
+      <description>Dijitohum | Remote</description>
+    </item>
+    <item>
+      <title>What is SSL</title>
+      <link>https://tyfnacici.xyz/blog/what-is-ssl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/blog/what-is-ssl/</guid>
+      <description>Secure Socket Layer Explained</description>
+    </item>
+    <item>
+      <title>Decentralized Application Developer</title>
+      <link>https://tyfnacici.xyz/experience/cuberium/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/experience/cuberium/</guid>
+      <description>Cuberium | Remote</description>
+    </item>
+    <item>
+      <title>Student</title>
+      <link>https://tyfnacici.xyz/experience/sibervatan/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/experience/sibervatan/</guid>
+      <description>Siber Vatan | Zonguldak, Turkey</description>
+    </item>
+    <item>
+      <title>Computer Lab Assistant</title>
+      <link>https://tyfnacici.xyz/experience/computer-lab-assistant/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/experience/computer-lab-assistant/</guid>
+      <description>Kocaeli University | İzmit, Kocaeli, Turkey</description>
+    </item>
+    <item>
+      <title>Founding Member and Captain - Cyberus Cyber Security Team</title>
+      <link>https://tyfnacici.xyz/experience/cyberus/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/experience/cyberus/</guid>
+      <description>Kocaeli University | İzmit, Kocaeli, Turkey</description>
+    </item>
+    <item>
+      <title>Cyber Security Instructor</title>
+      <link>https://tyfnacici.xyz/experience/cyber-security-instructor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/experience/cyber-security-instructor/</guid>
+      <description>Başiskele Municipality Children&amp;#39;s University | Başiskele, Turkey</description>
+    </item>
+    <item>
+      <title>nakilport.com</title>
+      <link>https://tyfnacici.xyz/projects/nakilport/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/projects/nakilport/</guid>
+      <description>Revolutionizing the Logistics Industry</description>
+    </item>
+    <item>
+      <title>Tayfun Market</title>
+      <link>https://tyfnacici.xyz/projects/tayfunmarket/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/projects/tayfunmarket/</guid>
+      <description>A New Standard in E-Commerce</description>
+    </item>
+  </channel>
+</rss>
