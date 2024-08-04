@@ -2,17 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://tyfnacici.xyz/blog/create-kvm-virtual-machine/</loc>
-  </url><url>
     <loc>https://tyfnacici.xyz/experience/freelance/</loc>
   </url><url>
     <loc>https://tyfnacici.xyz/experience/web-developer/</loc>
   </url><url>
-    <loc>https://tyfnacici.xyz/blog/what-is-dns/</loc>
-  </url><url>
     <loc>https://tyfnacici.xyz/experience/devops-intern/</loc>
-  </url><url>
-    <loc>https://tyfnacici.xyz/blog/what-is-ssl/</loc>
   </url><url>
     <loc>https://tyfnacici.xyz/experience/cuberium/</loc>
   </url><url>
@@ -23,6 +17,14 @@
     <loc>https://tyfnacici.xyz/experience/cyberus/</loc>
   </url><url>
     <loc>https://tyfnacici.xyz/experience/cyber-security-instructor/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/blog/setup-homebrew/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/blog/create-kvm-virtual-machine/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/blog/what-is-dns/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/blog/what-is-ssl/</loc>
   </url><url>
     <loc>https://tyfnacici.xyz/projects/nakilport/</loc>
   </url><url>
@@ -59,6 +61,8 @@
     <loc>https://tyfnacici.xyz/tags/kocaeli/</loc>
   </url><url>
     <loc>https://tyfnacici.xyz/tags/linux/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/macos/</loc>
   </url><url>
     <loc>https://tyfnacici.xyz/tags/microsoft-sql-server/</loc>
   </url><url>

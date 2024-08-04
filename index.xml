@@ -13,13 +13,6 @@
     <language>en-us</language>
     <atom:link href="https://tyfnacici.xyz/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Creating a Linux Virtual Machine with KVM</title>
-      <link>https://tyfnacici.xyz/blog/create-kvm-virtual-machine/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://tyfnacici.xyz/blog/create-kvm-virtual-machine/</guid>
-      <description>Kernel-Based Virtual Machine Explained</description>
-    </item>
-    <item>
       <title>MERN Stack Developer (Freelance)</title>
       <link>https://tyfnacici.xyz/experience/freelance/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -34,25 +27,11 @@
       <description>Luckyeye | Hybrid</description>
     </item>
     <item>
-      <title>What is DNS</title>
-      <link>https://tyfnacici.xyz/blog/what-is-dns/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://tyfnacici.xyz/blog/what-is-dns/</guid>
-      <description>Domain Name Server Explained</description>
-    </item>
-    <item>
       <title>DevOps Engineering Intern</title>
       <link>https://tyfnacici.xyz/experience/devops-intern/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tyfnacici.xyz/experience/devops-intern/</guid>
       <description>Dijitohum | Remote</description>
-    </item>
-    <item>
-      <title>What is SSL</title>
-      <link>https://tyfnacici.xyz/blog/what-is-ssl/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://tyfnacici.xyz/blog/what-is-ssl/</guid>
-      <description>Secure Socket Layer Explained</description>
     </item>
     <item>
       <title>Decentralized Application Developer</title>
@@ -88,6 +67,34 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tyfnacici.xyz/experience/cyber-security-instructor/</guid>
       <description>Başiskele Municipality Children&amp;#39;s University | Başiskele, Turkey</description>
+    </item>
+    <item>
+      <title>How to install and use Homebrew</title>
+      <link>https://tyfnacici.xyz/blog/setup-homebrew/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/blog/setup-homebrew/</guid>
+      <description>Homebrew installation and usage explained</description>
+    </item>
+    <item>
+      <title>Creating a Linux Virtual Machine with KVM</title>
+      <link>https://tyfnacici.xyz/blog/create-kvm-virtual-machine/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/blog/create-kvm-virtual-machine/</guid>
+      <description>Kernel-Based Virtual Machine Explained</description>
+    </item>
+    <item>
+      <title>What is DNS</title>
+      <link>https://tyfnacici.xyz/blog/what-is-dns/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/blog/what-is-dns/</guid>
+      <description>Domain Name Server Explained</description>
+    </item>
+    <item>
+      <title>What is SSL</title>
+      <link>https://tyfnacici.xyz/blog/what-is-ssl/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/blog/what-is-ssl/</guid>
+      <description>Secure Socket Layer Explained</description>
     </item>
     <item>
       <title>nakilport.com</title>
