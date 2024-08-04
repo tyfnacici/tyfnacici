@@ -4,7 +4,7 @@ description: "Kernel-Based Virtual Machine Explained"
 dateString: Apr 2024
 draft: false
 tags: ["Linux", "DevOps", "Cloud"]
-weight: 1
+weight: 100
 ---
 
 # Creating a Linux Virtual Machine with KVM

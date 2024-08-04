@@ -4,7 +4,7 @@ description: "Domain Name Server Explained"
 dateString: Apr 2024
 draft: false
 tags: ["Web Development, Cloud"]
-weight: 2
+weight: 102
 ---
 
 # What is DNS (Domain Name Server)?

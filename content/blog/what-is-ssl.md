@@ -4,7 +4,7 @@ description: "Secure Socket Layer Explained"
 dateString: Apr 2024
 draft: false
 tags: ["Web Development, Networking"]
-weight: 3
+weight: 103
 ---
 
 # What is SSL (Secure Socket Layer)?
