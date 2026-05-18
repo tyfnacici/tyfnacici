@@ -5,7 +5,7 @@ dateString: Sep 2022 - May 2024
 draft: false
 tags: ["Cyber Security","Linux", "Kocaeli", "Volunteer Work"]
 showToc: false
-weight: 7
+weight: 8
 --- 
 
 

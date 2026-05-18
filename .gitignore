@@ -11,17 +11,33 @@
 !content/
 !*.toml
 !static/
-!public/
 
-#OS
+# Hugo output directory - generated build outputs should never be committed
+public/
+hugo_stats.json
+site-stats.json
+
+# OS files
 .DS_Store
+Thumbs.db
+Desktop.ini
 
-# Ignore everything in the "content" directory,
-# and "themes" directories.
-content/*
-themes/*
-# uncomment below if you dont want to load static img resources
-# !static/img
+# Editor & IDE configs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
 
-# uncomment below if you are migrating from WordPress
-# static/wp-content/*
+# Cache and temp directories
+.cache/
+.temp/
+.tmp/
+*.log
+npm-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Hugo-specific (if you have any)
+*.css.map
+*.js.map

@@ -5,7 +5,7 @@ dateString: 2022 - Present
 draft: false
 tags: ["Remote", "Freelance", "JavaScript", "ReactJS", "Web Development", "Mobile Development"]
 showToc: false
-weight: 1
+weight: 3
 --- 
 
 ## Description
@@ -24,5 +24,3 @@ weight: 1
 - Added features such as messaging, posting ads, and bidding, working with a team of six people.
 - Employed technologies including Firebase, NextJS, and ESLint.
 - Successfully utilized Next.js to build fast-loading, server-rendered React applications, enhancing performance and user experience.
-
-

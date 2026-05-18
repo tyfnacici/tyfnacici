@@ -5,7 +5,7 @@ dateString: Dec 2022 - Mar 2023
 draft: false
 tags: ["Cyber Security", "Teaching", "Volunteer Work", "Kocaeli"]
 showToc: false
-weight: 8
+weight: 7
 --- 
 
 ## Description

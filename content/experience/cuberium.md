@@ -5,7 +5,7 @@ dateString: Jun 2022 - Feb 2023
 draft: false
 tags: ["Remote","Blockchain","Javascript","Solidity", "Smart Contracts", "ReactJS"]
 showToc: false
-weight: 4
+weight: 6
 --- 
 ## Description
 

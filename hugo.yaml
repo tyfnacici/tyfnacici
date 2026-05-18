@@ -1,5 +1,5 @@
 baseURL: "https://tyfnacici.xyz/"
-languageCode: en-us
+locale: en-us
 title: Tayfun Açıcı
 paginate: 5
 theme: PaperMod
@@ -23,10 +23,26 @@ params:
   env: production # to enable google analytics, opengraph, twitter-cards and schema.
   title: Tayfun Açıcı
   description: "Tayfun Açıcı - Software Engineer, Blogger, and Tech Enthusiast"
-  keywords: [Blog, Portfolio, Software Engineer, Blogger, Tech, Tayfun Açıcı, tyfnacici, Tayfun, Açıcı, Acici, tyfn]
+  keywords:
+    [
+      Blog,
+      Portfolio,
+      Software Engineer,
+      Blogger,
+      Tech,
+      Tayfun Açıcı,
+      tyfnacici,
+      Tayfun,
+      Açıcı,
+      Acici,
+      tyfn,
+    ]
   # author: Me
   # author: ["Me", "You"] # multiple authors
-  images: [https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/assets/favicon.png]
+  images:
+    [
+      https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/assets/favicon.png,
+    ]
   DateFormat: "2 Jan 2006"
   defaultTheme: auto # dark, light
   disableThemeToggle: true
