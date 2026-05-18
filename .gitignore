@@ -12,6 +12,9 @@
 !*.toml
 !static/
 !layouts/
+!.github/
+!hugo.yaml
+!themes/
 
 # Hugo output directory - generated build outputs should never be committed
 public/

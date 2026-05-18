@@ -1,4 +1,4 @@
-baseURL: "https://tyfnacici.xyz/"
+baseURL: "https://tyfnacici.github.io/"
 locale: en-us
 title: Tayfun Açıcı
 paginate: 5
@@ -6,6 +6,7 @@ theme: PaperMod
 
 ignoreLogs:
   - warning-partial-superfluous-prefix
+  - warning-deprecated
 
 enableRobotsTXT: true
 buildDrafts: false

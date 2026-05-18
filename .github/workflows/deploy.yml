@@ -1,4 +1,4 @@
-name: Publish to GH Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -6,42 +6,47 @@ on:
       - main
   pull_request:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout source
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
           submodules: true
-
-      - name: Checkout destination
-        uses: actions/checkout@v3
-        if: github.ref == 'refs/heads/main'
-        with:
-          ref: gh-pages
-          path: built-site
+          fetch-depth: 0
 
       - name: Setup Hugo
-        run: |
-          curl -L -o /tmp/hugo.tar.gz 'https://github.com/gohugoio/hugo/releases/download/v0.161.1/hugo_0.161.1_linux-amd64.tar.gz'
-          tar -zxvf /tmp/hugo.tar.gz -C ${RUNNER_TEMP}
-          mv ${RUNNER_TEMP}/hugo /usr/local/bin/hugo
+        uses: peaceiris/actions-hugo@v3
+        with:
+          hugo-version: "0.161.1"
+          extended: true
 
       - name: Build
-        run: hugo
+        run: hugo --minify
 
-      - name: List Public Directory Contents
-        run: ls -la public
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
 
-      - name: Deploy
-        if: github.ref == 'refs/heads/main'
-        run: |
-          cp -Rf public/* ${GITHUB_WORKSPACE}/built-site/
-          cd ${GITHUB_WORKSPACE}/built-site
-          touch .nojekyll  # Add this line to ensure there's always a change
-          git add .
-          git config user.name 'tyfnacici'
-          git config user.email 'tyfnacici@gmail.com'
-          git commit -m 'Updated site' || echo "No changes to commit"
-          git push
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
