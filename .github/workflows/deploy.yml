@@ -24,7 +24,7 @@ jobs:
 
       - name: Setup Hugo
         run: |
-          curl -L -o /tmp/hugo.tar.gz 'https://github.com/gohugoio/hugo/releases/download/v0.129.0/hugo_0.129.0_linux-amd64.tar.gz'
+          curl -L -o /tmp/hugo.tar.gz 'https://github.com/gohugoio/hugo/releases/download/v0.161.1/hugo_0.161.1_linux-amd64.tar.gz'
           tar -zxvf /tmp/hugo.tar.gz -C ${RUNNER_TEMP}
           mv ${RUNNER_TEMP}/hugo /usr/local/bin/hugo
 
