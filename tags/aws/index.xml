@@ -10,14 +10,21 @@
       <link>https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/assets/favicon.png</link>
     </image>
     <generator>Hugo -- 0.129.0</generator>
-    <language>en-us</language>
+    <language>en</language>
     <atom:link href="https://tyfnacici.xyz/tags/aws/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>How to</title>
-      <link>https://tyfnacici.xyz/blog/aws-dva-certification/</link>
+      <title>Full Stack Developer</title>
+      <link>https://tyfnacici.xyz/experience/full-stack-developer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://tyfnacici.xyz/blog/aws-dva-certification/</guid>
-      <description>How I passed the AWS Developer - Associate Certification Exam (DVA-C02)</description>
+      <guid>https://tyfnacici.xyz/experience/full-stack-developer/</guid>
+      <description>Bee2 AI | On-site</description>
+    </item>
+    <item>
+      <title>Long Term Internship</title>
+      <link>https://tyfnacici.xyz/experience/long-term-intern/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/experience/long-term-intern/</guid>
+      <description>Kocaeli Üniversitesi Teknopark A.Ş | On-site</description>
     </item>
   </channel>
 </rss>

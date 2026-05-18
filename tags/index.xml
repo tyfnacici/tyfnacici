@@ -10,7 +10,7 @@
       <link>https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/assets/favicon.png</link>
     </image>
     <generator>Hugo -- 0.129.0</generator>
-    <language>en-us</language>
+    <language>en</language>
     <atom:link href="https://tyfnacici.xyz/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>.NET Framework</title>
@@ -20,10 +20,45 @@
       <description></description>
     </item>
     <item>
+      <title>Agentic Systems</title>
+      <link>https://tyfnacici.xyz/tags/agentic-systems/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/tags/agentic-systems/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AI/ML</title>
+      <link>https://tyfnacici.xyz/tags/ai/ml/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/tags/ai/ml/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>ASP.NET</title>
       <link>https://tyfnacici.xyz/tags/asp.net/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tyfnacici.xyz/tags/asp.net/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AWS</title>
+      <link>https://tyfnacici.xyz/tags/aws/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/tags/aws/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Azure</title>
+      <link>https://tyfnacici.xyz/tags/azure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/tags/azure/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Bash</title>
+      <link>https://tyfnacici.xyz/tags/bash/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/tags/bash/</guid>
       <description></description>
     </item>
     <item>
@@ -41,10 +76,31 @@
       <description></description>
     </item>
     <item>
+      <title>ChatGPT API</title>
+      <link>https://tyfnacici.xyz/tags/chatgpt-api/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/tags/chatgpt-api/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Cloud</title>
       <link>https://tyfnacici.xyz/tags/cloud/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tyfnacici.xyz/tags/cloud/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cloud Infrastructure</title>
+      <link>https://tyfnacici.xyz/tags/cloud-infrastructure/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/tags/cloud-infrastructure/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>CSS3</title>
+      <link>https://tyfnacici.xyz/tags/css3/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/tags/css3/</guid>
       <description></description>
     </item>
     <item>
@@ -62,10 +118,38 @@
       <description></description>
     </item>
     <item>
+      <title>Electron.js</title>
+      <link>https://tyfnacici.xyz/tags/electron.js/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/tags/electron.js/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Freelance</title>
       <link>https://tyfnacici.xyz/tags/freelance/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tyfnacici.xyz/tags/freelance/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Full Stack Development</title>
+      <link>https://tyfnacici.xyz/tags/full-stack-development/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/tags/full-stack-development/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>HTML5</title>
+      <link>https://tyfnacici.xyz/tags/html5/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/tags/html5/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>IBM Watson</title>
+      <link>https://tyfnacici.xyz/tags/ibm-watson/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/tags/ibm-watson/</guid>
       <description></description>
     </item>
     <item>
@@ -87,6 +171,13 @@
       <link>https://tyfnacici.xyz/tags/javascript/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tyfnacici.xyz/tags/javascript/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>JWT</title>
+      <link>https://tyfnacici.xyz/tags/jwt/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/tags/jwt/</guid>
       <description></description>
     </item>
     <item>
@@ -125,6 +216,13 @@
       <description></description>
     </item>
     <item>
+      <title>MSSQL</title>
+      <link>https://tyfnacici.xyz/tags/mssql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/tags/mssql/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>MVC</title>
       <link>https://tyfnacici.xyz/tags/mvc/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -132,10 +230,38 @@
       <description></description>
     </item>
     <item>
+      <title>Networking</title>
+      <link>https://tyfnacici.xyz/tags/networking/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/tags/networking/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Next.js</title>
+      <link>https://tyfnacici.xyz/tags/next.js/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/tags/next.js/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>NextJS</title>
       <link>https://tyfnacici.xyz/tags/nextjs/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tyfnacici.xyz/tags/nextjs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>OAuth</title>
+      <link>https://tyfnacici.xyz/tags/oauth/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/tags/oauth/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Razor Pages</title>
+      <link>https://tyfnacici.xyz/tags/razor-pages/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/tags/razor-pages/</guid>
       <description></description>
     </item>
     <item>
@@ -160,6 +286,13 @@
       <description></description>
     </item>
     <item>
+      <title>Software Development</title>
+      <link>https://tyfnacici.xyz/tags/software-development/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/tags/software-development/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Solidity</title>
       <link>https://tyfnacici.xyz/tags/solidity/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -167,10 +300,24 @@
       <description></description>
     </item>
     <item>
+      <title>TailwindCSS</title>
+      <link>https://tyfnacici.xyz/tags/tailwindcss/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/tags/tailwindcss/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Teaching</title>
       <link>https://tyfnacici.xyz/tags/teaching/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tyfnacici.xyz/tags/teaching/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>TypeScript</title>
+      <link>https://tyfnacici.xyz/tags/typescript/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/tags/typescript/</guid>
       <description></description>
     </item>
     <item>

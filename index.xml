@@ -10,8 +10,29 @@
       <link>https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/assets/favicon.png</link>
     </image>
     <generator>Hugo -- 0.129.0</generator>
-    <language>en-us</language>
+    <language>en</language>
     <atom:link href="https://tyfnacici.xyz/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Full Stack Developer</title>
+      <link>https://tyfnacici.xyz/experience/full-stack-developer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/experience/full-stack-developer/</guid>
+      <description>Bee2 AI | On-site</description>
+    </item>
+    <item>
+      <title>Software Specialist</title>
+      <link>https://tyfnacici.xyz/experience/software-specialist/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/experience/software-specialist/</guid>
+      <description>SonTech Bilişim | Self Employed</description>
+    </item>
+    <item>
+      <title>Long Term Internship</title>
+      <link>https://tyfnacici.xyz/experience/long-term-intern/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/experience/long-term-intern/</guid>
+      <description>Kocaeli Üniversitesi Teknopark A.Ş | On-site</description>
+    </item>
     <item>
       <title>MERN Stack Developer (Freelance)</title>
       <link>https://tyfnacici.xyz/experience/freelance/</link>
@@ -24,7 +45,7 @@
       <link>https://tyfnacici.xyz/experience/web-developer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tyfnacici.xyz/experience/web-developer/</guid>
-      <description>Luckyeye | Hybrid</description>
+      <description>LuckyEye | Hybrid</description>
     </item>
     <item>
       <title>DevOps Engineering Intern</title>
@@ -34,13 +55,6 @@
       <description>Dijitohum | Remote</description>
     </item>
     <item>
-      <title>Decentralized Application Developer</title>
-      <link>https://tyfnacici.xyz/experience/cuberium/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://tyfnacici.xyz/experience/cuberium/</guid>
-      <description>Cuberium | Remote</description>
-    </item>
-    <item>
       <title>Student</title>
       <link>https://tyfnacici.xyz/experience/sibervatan/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -48,11 +62,18 @@
       <description>Siber Vatan | Zonguldak, Turkey</description>
     </item>
     <item>
-      <title>Computer Lab Assistant</title>
-      <link>https://tyfnacici.xyz/experience/computer-lab-assistant/</link>
+      <title>Decentralized Application Developer</title>
+      <link>https://tyfnacici.xyz/experience/cuberium/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://tyfnacici.xyz/experience/computer-lab-assistant/</guid>
-      <description>Kocaeli University | İzmit, Kocaeli, Turkey</description>
+      <guid>https://tyfnacici.xyz/experience/cuberium/</guid>
+      <description>Cuberium | Remote</description>
+    </item>
+    <item>
+      <title>Cyber Security Instructor</title>
+      <link>https://tyfnacici.xyz/experience/cyber-security-instructor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/experience/cyber-security-instructor/</guid>
+      <description>Başiskele Municipality Children&amp;#39;s University | Başiskele, Turkey</description>
     </item>
     <item>
       <title>Founding Member and Captain - Cyberus Cyber Security Team</title>
@@ -62,11 +83,11 @@
       <description>Kocaeli University | İzmit, Kocaeli, Turkey</description>
     </item>
     <item>
-      <title>Cyber Security Instructor</title>
-      <link>https://tyfnacici.xyz/experience/cyber-security-instructor/</link>
+      <title>Computer Lab Assistant</title>
+      <link>https://tyfnacici.xyz/experience/computer-lab-assistant/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://tyfnacici.xyz/experience/cyber-security-instructor/</guid>
-      <description>Başiskele Municipality Children&amp;#39;s University | Başiskele, Turkey</description>
+      <guid>https://tyfnacici.xyz/experience/computer-lab-assistant/</guid>
+      <description>Kocaeli University | İzmit, Kocaeli, Turkey</description>
     </item>
     <item>
       <title>How to install and use Homebrew</title>

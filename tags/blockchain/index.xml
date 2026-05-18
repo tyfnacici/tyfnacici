@@ -10,21 +10,21 @@
       <link>https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/assets/favicon.png</link>
     </image>
     <generator>Hugo -- 0.129.0</generator>
-    <language>en-us</language>
+    <language>en</language>
     <atom:link href="https://tyfnacici.xyz/tags/blockchain/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Decentralized Application Developer</title>
-      <link>https://tyfnacici.xyz/experience/cuberium/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://tyfnacici.xyz/experience/cuberium/</guid>
-      <description>Cuberium | Remote</description>
-    </item>
     <item>
       <title>Student</title>
       <link>https://tyfnacici.xyz/experience/sibervatan/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://tyfnacici.xyz/experience/sibervatan/</guid>
       <description>Siber Vatan | Zonguldak, Turkey</description>
+    </item>
+    <item>
+      <title>Decentralized Application Developer</title>
+      <link>https://tyfnacici.xyz/experience/cuberium/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://tyfnacici.xyz/experience/cuberium/</guid>
+      <description>Cuberium | Remote</description>
     </item>
   </channel>
 </rss>

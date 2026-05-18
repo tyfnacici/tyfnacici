@@ -2,21 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://tyfnacici.xyz/experience/full-stack-developer/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/experience/software-specialist/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/experience/long-term-intern/</loc>
+  </url><url>
     <loc>https://tyfnacici.xyz/experience/freelance/</loc>
   </url><url>
     <loc>https://tyfnacici.xyz/experience/web-developer/</loc>
   </url><url>
     <loc>https://tyfnacici.xyz/experience/devops-intern/</loc>
   </url><url>
-    <loc>https://tyfnacici.xyz/experience/cuberium/</loc>
-  </url><url>
     <loc>https://tyfnacici.xyz/experience/sibervatan/</loc>
   </url><url>
-    <loc>https://tyfnacici.xyz/experience/computer-lab-assistant/</loc>
+    <loc>https://tyfnacici.xyz/experience/cuberium/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/experience/cyber-security-instructor/</loc>
   </url><url>
     <loc>https://tyfnacici.xyz/experience/cyberus/</loc>
   </url><url>
-    <loc>https://tyfnacici.xyz/experience/cyber-security-instructor/</loc>
+    <loc>https://tyfnacici.xyz/experience/computer-lab-assistant/</loc>
   </url><url>
     <loc>https://tyfnacici.xyz/blog/setup-homebrew/</loc>
   </url><url>
@@ -32,7 +38,17 @@
   </url><url>
     <loc>https://tyfnacici.xyz/tags/.net-framework/</loc>
   </url><url>
+    <loc>https://tyfnacici.xyz/tags/agentic-systems/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/ai/ml/</loc>
+  </url><url>
     <loc>https://tyfnacici.xyz/tags/asp.net/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/aws/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/azure/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/bash/</loc>
   </url><url>
     <loc>https://tyfnacici.xyz/tags/blockchain/</loc>
   </url><url>
@@ -42,21 +58,37 @@
   </url><url>
     <loc>https://tyfnacici.xyz/categories/</loc>
   </url><url>
+    <loc>https://tyfnacici.xyz/tags/chatgpt-api/</loc>
+  </url><url>
     <loc>https://tyfnacici.xyz/tags/cloud/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/cloud-infrastructure/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/css3/</loc>
   </url><url>
     <loc>https://tyfnacici.xyz/tags/cyber-security/</loc>
   </url><url>
     <loc>https://tyfnacici.xyz/tags/devops/</loc>
   </url><url>
+    <loc>https://tyfnacici.xyz/tags/electron.js/</loc>
+  </url><url>
     <loc>https://tyfnacici.xyz/experience/</loc>
   </url><url>
     <loc>https://tyfnacici.xyz/tags/freelance/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/full-stack-development/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/html5/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/ibm-watson/</loc>
   </url><url>
     <loc>https://tyfnacici.xyz/tags/iis/</loc>
   </url><url>
     <loc>https://tyfnacici.xyz/tags/internship/</loc>
   </url><url>
     <loc>https://tyfnacici.xyz/tags/javascript/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/jwt/</loc>
   </url><url>
     <loc>https://tyfnacici.xyz/tags/kocaeli/</loc>
   </url><url>
@@ -68,11 +100,21 @@
   </url><url>
     <loc>https://tyfnacici.xyz/tags/mobile-development/</loc>
   </url><url>
+    <loc>https://tyfnacici.xyz/tags/mssql/</loc>
+  </url><url>
     <loc>https://tyfnacici.xyz/tags/mvc/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/networking/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/next.js/</loc>
   </url><url>
     <loc>https://tyfnacici.xyz/tags/nextjs/</loc>
   </url><url>
+    <loc>https://tyfnacici.xyz/tags/oauth/</loc>
+  </url><url>
     <loc>https://tyfnacici.xyz/projects/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/razor-pages/</loc>
   </url><url>
     <loc>https://tyfnacici.xyz/tags/reactjs/</loc>
   </url><url>
@@ -82,13 +124,19 @@
   </url><url>
     <loc>https://tyfnacici.xyz/tags/smart-contracts/</loc>
   </url><url>
+    <loc>https://tyfnacici.xyz/tags/software-development/</loc>
+  </url><url>
     <loc>https://tyfnacici.xyz/tags/solidity/</loc>
   </url><url>
     <loc>https://tyfnacici.xyz/tags/</loc>
   </url><url>
+    <loc>https://tyfnacici.xyz/tags/tailwindcss/</loc>
+  </url><url>
     <loc>https://tyfnacici.xyz/</loc>
   </url><url>
     <loc>https://tyfnacici.xyz/tags/teaching/</loc>
+  </url><url>
+    <loc>https://tyfnacici.xyz/tags/typescript/</loc>
   </url><url>
     <loc>https://tyfnacici.xyz/tags/volunteer-work/</loc>
   </url><url>
