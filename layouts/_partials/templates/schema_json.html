@@ -6,16 +6,17 @@
   "name": {{ site.Title }},
   "url": {{ site.Home.Permalink }},
   "description": {{ site.Params.description | plainify | truncate 180 | safeHTML }},
+  {{- $favicon := printf "/tyfnacici%s" (site.Params.assets.favicon | default "/assets/favicon.ico") -}}
   {{- if (eq site.Params.schema.publisherType "Person") }}
-  "image": {{ site.Params.assets.favicon | default "favicon.ico" | relURL }},
+  "image": {{ $favicon }},
   {{- else }}
-  "logo": {{ site.Params.assets.favicon | default "favicon.ico" | relURL }},
+  "logo": {{ $favicon }},
   {{- end }}
   "sameAs": [
     {{- if site.Params.schema.sameAs }}
       {{ range $i, $e := site.Params.schema.sameAs }}{{ if $i }}, {{ end }}{{ trim $e " " }}{{ end }}
     {{- else}}
-      {{ range $i, $e := site.Params.SocialIcons }}{{ if $i }}, {{ end }}{{ trim $e.url " " | safeURL }}{{ end }}
+      {{ range $i, $e := site.Params.socialIcons }}{{ if $i }}, {{ end }}{{ trim .url " " | safeURL }}{{ end }}
     {{- end}}
   ]
 }
@@ -80,19 +81,19 @@
   {{ if .Params.cover.image -}}
   "image":
     {{- if (ne .Params.cover.relative true) -}}
-    {{ .Params.cover.image | relURL }},
+    {{ .Params.cover.image | absURL }},
     {{- else -}}
-    {{ (path.Join .RelPermalink .Params.cover.image ) | relURL }},
+    {{ (path.Join .RelPermalink .Params.cover.image ) | absURL }},
     {{- end}}
   {{- else }}
-    {{- $images := partial "templates/_funcs/get-page-images" . -}}
+    {{- $images := partial "_funcs/get-page-images" . -}}
     {{- with index $images 0 -}}
   "image": {{ .Permalink }},
     {{- end }}
   {{- end -}}
   "datePublished": {{ .PublishDate }},
   "dateModified": {{ .Lastmod }},
-  {{- with (.Params.author | default site.Params.author) }}
+  {{ with (.Params.author | default site.Params.author) }}
   "author":
     {{- if (or (eq (printf "%T" .) "[]string") (eq (printf "%T" .) "[]interface {}")) -}}
   [{{- range $i, $v := . -}}
@@ -107,7 +108,7 @@
     "@type": "Person",
     "name": {{ . }}
   },
-    {{- end -}}
+  {{- end -}}
   {{- end }}
   "mainEntityOfPage": {
     "@type": "WebPage",
@@ -118,7 +119,7 @@
     "name": {{ site.Title }},
     "logo": {
       "@type": "ImageObject",
-      "url": {{ site.Params.assets.favicon | default "favicon.ico" | relURL }}
+      "url": {{ printf "/tyfnacici%s" (site.Params.assets.favicon | default "/assets/favicon.ico") }}
     }
   }
 }
