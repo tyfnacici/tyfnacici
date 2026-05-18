@@ -1,0 +1,171 @@
+baseURL: "https://tyfnacici.xyz/"
+locale: en-us
+title: Tayfun Açıcı
+paginate: 5
+theme: PaperMod
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+outputs:
+  home:
+    - html
+    - rss
+    - json
+
+params:
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  title: Tayfun Açıcı
+  description: "Tayfun Açıcı - Software Engineer, Blogger, and Tech Enthusiast"
+  keywords:
+    [
+      Blog,
+      Portfolio,
+      Software Engineer,
+      Blogger,
+      Tech,
+      Tayfun Açıcı,
+      tyfnacici,
+      Tayfun,
+      Açıcı,
+      Acici,
+      tyfn,
+    ]
+  # author: Me
+  # author: ["Me", "You"] # multiple authors
+  images:
+    [
+      https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/assets/favicon.png,
+    ]
+  DateFormat: "2 Jan 2006"
+  defaultTheme: auto # dark, light
+  disableThemeToggle: true
+
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: false
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  comments: true
+  hidemeta: false
+  hideSummary: false
+  showtoc: true
+  tocopen: true
+  hideDescriptionInList: false
+
+  assets:
+    # disableHLJS: true # to disable highlight.js
+    # disableFingerprinting: true
+    favicon: "/assets/favicon.ico"
+    favicon16x16: "/assets/16x16.ico"
+    favicon32x32: "/assets/32x32.ico"
+    apple_touch_icon: "/assets/favicon.ico"
+    safari_pinned_tab: "/assets/favicon.ico"
+
+  label:
+    text: " "
+    icon: /assets/favicon.ico
+    iconHeight: 40
+
+  # profile-mode
+  profileMode:
+    enabled: true # needs to be explicitly set
+    title: Welcome, outlander!
+    subtitle: "I am Tayfun Açıcı; a Web Developer, Linux lover and sometimes gamer. Passionate about coding, tech trends, and exploring new places. Let's connect!"
+    imageUrl: "/assets/tyfnacici.jpeg"
+    imageWidth: 300
+    imageHeight: 300
+    imageTitle: my image
+
+  # home-info mode
+  homeInfoParams:
+    Title: "Hi, I am Tayfun \U0001F44B"
+    Content: Welcome to my website!
+
+  socialIcons:
+    - name: x
+      url: "https://x.com/tyfnacici"
+    - name: instagram
+      url: "https://instagram.com/tyfnacici"
+    - name: github
+      url: "https://github.com/tyfnacici"
+    - name: dev
+      url: "https://dev.to/tyfnacici"
+    - name: medium
+      url: "https://medium.com/@tyfnacici"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/tyfnacici/"
+    - name: email
+      url: "mailto:tyfnacici@gmail.com"
+
+  analytics:
+    google:
+      SiteVerificationTag: "G-KJM2DXRP6H"
+    bing:
+      SiteVerificationTag: "4E5EA5E2553E2B9CF668990E7B46B66C"
+    yandex:
+      SiteVerificationTag: "0185e3c0d94b36a2"
+
+  cover:
+    hidden: true # hide everywhere but not in structured data
+    hiddenInList: false # hide on list pages and home
+    hiddenInSingle: false # hide on single page
+
+  editPost:
+    URL: "https://github.com/tyfnacici/tyfnacici/tree/main/content"
+    Text: "Suggest Changes" # edit text
+    appendFilePath: true # to append file path to Edit link
+
+  # for search
+  # https://fusejs.io/api/options.html
+  fuseOpts:
+    isCaseSensitive: false
+    includeMatches: true
+    findAllMatches: true
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+    keys: ["title", "permalink", "summary", "content"]
+menu:
+  main:
+    - identifier: blog
+      name: blog
+      url: /blog
+      weight: 10
+    - identifier: projects
+      name: projects
+      url: /projects
+      weight: 20
+    - identifier: experience
+      name: experience
+      url: /experience
+      weight: 30
+    - identifier: search
+      name: search
+      url: /search
+      weight: 40
+
+# Read: https://github.com/adityatelange/hugo-PaperMod/wiki/FAQs#using-hugos-syntax-highlighter-chroma
+pygmentsUseClasses: true
+markup:
+  highlight:
+    noClasses: false
+    # anchorLineNos: true
+    # codeFences: true
+    # guessSyntax: true
+    # lineNos: true
+    # style: monokai
