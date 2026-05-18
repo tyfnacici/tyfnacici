@@ -1,0 +1,11 @@
+{{- $images := slice -}}
+{{- if .Resources -}}
+  {{- range .Resources.Match "*.{png,jpg,jpeg,gif,webp}" -}}
+    {{- $images = append $images . -}}
+  {{- end -}}
+{{- else if and .File -}}
+  {{- with resources.Get (printf "images/*.{png,jpg,jpeg,gif,webp}") -}}
+    {{- $images = append $images . -}}
+  {{- end -}}
+{{- end -}}
+{{ return $images }}

@@ -4,6 +4,9 @@ title: Tayfun Açıcı
 paginate: 5
 theme: PaperMod
 
+ignoreLogs:
+  - warning-partial-superfluous-prefix
+
 enableRobotsTXT: true
 buildDrafts: false
 buildFuture: false
