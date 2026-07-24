@@ -15,3 +15,21 @@ iframe {
 .entry-cover img {
     border: 1px solid var(--border);
 }
+
+/* Smooth theme transition */
+html {
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Scroll-to-top: sit at bottom-right corner of viewport */
+.top-link {
+    bottom: 0 !important;
+    right: 0 !important;
+}
+
+/* Override mobile upward translation that pushes button too high */
+@media screen and (max-width: 900px) {
+    .list .top-link {
+        transform: none !important;
+    }
+}
