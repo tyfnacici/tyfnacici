@@ -1,2 +1,30 @@
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
+<meta name="theme-color" id="theme-color-meta" content="#2e2e33">
+<meta name="msapplication-TileColor" id="ms-tilecolor-meta" content="#2e2e33">
+
+<script>
+    // Live listener for system color scheme changes
+    (function() {
+        const darkModeMedia = window.matchMedia('(prefers-color-scheme: dark)');
+
+        function updateTheme(e) {
+            const isDark = e.matches;
+            document.querySelector('html').dataset.theme = isDark ? 'dark' : 'light';
+
+            // Also update theme-color meta tag dynamically
+            const themeColorMeta = document.getElementById('theme-color-meta');
+            if (themeColorMeta) {
+                themeColorMeta.content = isDark ? '#1d1e20' : '#ffffff';
+            }
+            const msTileColorMeta = document.getElementById('ms-tilecolor-meta');
+            if (msTileColorMeta) {
+                msTileColorMeta.content = isDark ? '#1d1e20' : '#ffffff';
+            }
+        }
+
+        // Run on load (syncs theme-color meta on first paint)
+        updateTheme(darkModeMedia);
+
+        // Listen for changes — this is the key addition
+        darkModeMedia.addEventListener('change', updateTheme);
+    })();
+</script>

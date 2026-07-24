@@ -21,6 +21,10 @@ public/
 hugo_stats.json
 site-stats.json
 
+# AI project artifacts
+.ai-docs/
+.pi/
+
 # OS files
 .DS_Store
 Thumbs.db
