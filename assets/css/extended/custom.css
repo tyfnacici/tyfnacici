@@ -23,8 +23,8 @@ html {
 
 /* Scroll-to-top: sit at bottom-right corner of viewport */
 .top-link {
-    bottom: 0 !important;
-    right: 0 !important;
+    bottom: 2rem !important;
+    right: 1.5rem !important;
 }
 
 /* Override mobile upward translation that pushes button too high */
