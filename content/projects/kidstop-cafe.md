@@ -28,5 +28,5 @@ A modern website for KidStop Cafe, a family-friendly cafe in Karamürsel built a
 
 Built as a responsive web application with modern frontend technologies, deployed to kidstopcafe.com.
 
-![](/tyfnacici/projects/kidstop-cafe/screenshot-01.png)
-![](/tyfnacici/projects/kidstop-cafe/screenshot-02.png)
+![](/projects/kidstop-cafe/screenshot-01.png)
+![](/projects/kidstop-cafe/screenshot-02.png)

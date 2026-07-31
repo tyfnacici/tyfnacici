@@ -56,5 +56,5 @@ An enterprise-grade automation platform developed for SonTech Bilişim that brid
 - Provided real-time visibility into inventory levels across all sales channels
 - Streamlined software license management for SonTech's product portfolio
 
-![](/tyfnacici/projects/sontechbot/screenshot-01.png)
-![](/tyfnacici/projects/sontechbot/screenshot-02.png)
+![](/projects/sontechbot/screenshot-01.png)
+![](/projects/sontechbot/screenshot-02.png)

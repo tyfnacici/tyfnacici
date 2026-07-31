@@ -6,7 +6,7 @@
   "name": {{ site.Title }},
   "url": {{ site.Home.Permalink }},
   "description": {{ site.Params.description | plainify | truncate 180 | safeHTML }},
-  {{- $favicon := printf "/tyfnacici/%s" (site.Params.assets.favicon | default "assets/favicon.ico") -}}
+  {{- $favicon := site.Params.assets.favicon | default "assets/favicon.ico" | absURL -}}
   {{- if (eq site.Params.schema.publisherType "Person") }}
   "image": {{ $favicon }},
   {{- else }}
@@ -119,7 +119,7 @@
     "name": {{ site.Title }},
     "logo": {
       "@type": "ImageObject",
-      "url": {{ printf "/tyfnacici/%s" (site.Params.assets.favicon | default "assets/favicon.ico") }}
+      "url": {{ site.Params.assets.favicon | default "assets/favicon.ico" | absURL }}
     }
   }
 }
