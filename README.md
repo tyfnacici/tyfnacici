@@ -2,7 +2,7 @@
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=tyfnacici&label=Profile%20views&color=0e75b6&style=flat" alt="tyfnacici" /> </p>
 
 - 📫 You can reach me at **tyfnacici@gmail.com**
-- 🌐 Check my personal website! **https://tyfnacici.xyz**
+- 🌐 Check my personal website! **https://tyfnacici.com**
 
 <h3 align="left">Connect with me at:</h3>
 <p align="left">
