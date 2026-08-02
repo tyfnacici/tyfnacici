@@ -2,6 +2,8 @@
 title: "English Learning App for Kids"
 description: "Fun English learning app for kids -- scalable AWS cloud infrastructure supporting 500K+ users"
 draft: false
+aliases:
+  - "/projects/tofygo/"
 tags: ["TypeScript", "AWS", "Cloud Architecture", "AI/ML", "Mobile App", "Full Stack"]
 showToc: false
 weight: 201

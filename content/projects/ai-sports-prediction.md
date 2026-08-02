@@ -2,6 +2,8 @@
 title: "AI Sports Match Prediction Platform"
 description: "AI-powered sports match prediction platform built with Java Spring Boot microservices architecture"
 draft: false
+aliases:
+  - "/projects/bilyoner-ai-prediction/"
 tags: ["Java", "Spring Boot", "Microservices", "AI/ML", "Sports Analytics", "REST API"]
 showToc: false
 weight: 202
