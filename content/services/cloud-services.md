@@ -11,7 +11,7 @@ weight: 40
 
 I design, build, and manage cloud infrastructure on AWS - from single-page applications to systems serving 500K+ concurrent users. I focus on cost-effective architectures that scale with your business, not expensive over-provisioned setups. Every deployment includes monitoring, alerting, and disaster recovery planning.
 
-I built TOFY Go!'s entire AWS infrastructure from scratch: ECS with auto-scaling, Lambda for AI inference, SQS for async processing, CloudFront CDN, and comprehensive CloudWatch monitoring - all within budget constraints.
+I built an English learning app's entire AWS infrastructure from scratch: ECS with auto-scaling, Lambda for AI inference, SQS for async processing, CloudFront CDN, and comprehensive CloudWatch monitoring - all within budget constraints.
 
 ## What I Can Do For You
 

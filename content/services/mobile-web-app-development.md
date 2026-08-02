@@ -9,7 +9,7 @@ weight: 10
 
 ## Overview
 
-I build production-grade mobile and web applications that people actually use. From cross-platform mobile apps in Flutter and React Native to full-stack web platforms in TypeScript, I deliver clean, maintainable code with a focus on performance and user experience. My work on TOFY Go! - an English learning app handling 500K+ concurrent users - demonstrates this at scale.
+I build production-grade mobile and web applications that people actually use. From cross-platform mobile apps in Flutter and React Native to full-stack web platforms in TypeScript, I deliver clean, maintainable code with a focus on performance and user experience. My work on an English learning app handling 500K+ concurrent users demonstrates this at scale.
 
 ## What I Can Do For You
 
@@ -17,7 +17,7 @@ I build production-grade mobile and web applications that people actually use. F
 - **Cross-platform apps** with Flutter (Dart) or React Native (TypeScript): one codebase, native performance on iOS and Android
 - **Native integrations**: Camera, GPS, push notifications, biometrics, speech recognition, and offline storage
 - **App lifecycle**: From App Store / Play Store submission to ongoing maintenance and feature updates
-- **Real-world example**: TOFY Go! - gamified English learning app, built with TypeScript, serving 500K+ users on AWS
+- **Real-world example**: Gamified English learning app, built with TypeScript, serving 500K+ users on AWS
 
 ### Web Applications
 - **SPA and SSR**: React / Next.js for dynamic single-page apps, Hugo for blazing-fast static sites

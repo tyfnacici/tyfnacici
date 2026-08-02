@@ -1,5 +1,5 @@
 ---
-title: "TOFY Go!"
+title: "English Learning App for Kids"
 description: "Fun English learning app for kids -- scalable AWS cloud infrastructure supporting 500K+ users"
 draft: false
 tags: ["TypeScript", "AWS", "Cloud Architecture", "AI/ML", "Mobile App", "Full Stack"]
@@ -7,13 +7,11 @@ showToc: false
 weight: 201
 ---
 
-### 🔗 [Live App](https://tofygo.com/)
-
-# TOFY Go!: English Learning at Scale
+# English Learning App at Scale
 
 ## Introduction
 
-TOFY Go! is a fun and engaging English learning app designed for learners aged 8 and above. Whether preparing for the TOEFL Young Students Series or simply improving English skills, TOFY Go! makes learning feel like play -- with interactive city exploration, badge earning, gamified lessons, and real skill-building aligned to standardized test curricula.
+A fun and engaging English learning app designed for learners aged 8 and above. Whether preparing for the TOEFL Young Students Series or simply improving English skills, the app makes learning feel like play -- with interactive city exploration, badge earning, gamified lessons, and real skill-building aligned to standardized test curricula.
 
 As the lead Full Stack Developer, I designed and built the entire cloud infrastructure from scratch, managed end-to-end CI/CD pipelines, led a 3-member engineering team, and developed both frontend and backend features alongside AI-powered content delivery systems.
 

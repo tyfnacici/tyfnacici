@@ -22,7 +22,7 @@ I design and deploy practical AI solutions that automate real business workflows
 ### Retrieval-Augmented Generation (RAG)
 - **Knowledge base QA**: Question-answering over your company documentation, policies, product catalogs, and technical manuals
 - **Vector search**: Embedding pipelines with vector databases for semantic search over large document collections
-- **Real-world example**: TOFY Go! - custom RAG pipelines for TOEFL-specific educational content delivery
+- **Real-world example**: Custom RAG pipelines for TOEFL-specific educational content delivery in an English learning app
 
 ### Agentic Systems
 - **Multi-agent orchestration**: Hierarchies of specialized AI agents - one retrieves data, another analyzes, another formats output
