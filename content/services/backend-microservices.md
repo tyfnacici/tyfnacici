@@ -23,7 +23,7 @@ I design and build backend systems that scale. From Spring Boot microservices ar
 - **Inter-service communication**: REST, gRPC, or event-driven via message queues
 - **Distributed tracing**: End-to-end request tracing across service boundaries for debugging and performance analysis
 - **Event-driven architecture**: SQS, RabbitMQ, or Kafka for asynchronous, decoupled workflows
-- **Real-world example**: Bilyoner AI Sports Prediction - Spring Boot microservices handling multiple sports leagues, 60+ feature ML models, and real-time prediction updates
+- **Real-world example**: AI Sports Match Prediction - Spring Boot microservices handling multiple sports leagues, 60+ feature ML models, and real-time prediction updates
 
 ### Backend Development
 - **RESTful and GraphQL APIs** in Java, TypeScript, or Python

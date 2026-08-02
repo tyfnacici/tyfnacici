@@ -1,5 +1,5 @@
 ---
-title: "Bilyoner AI Match Prediction"
+title: "AI Sports Match Prediction Platform"
 description: "AI-powered sports match prediction platform built with Java Spring Boot microservices architecture"
 draft: false
 tags: ["Java", "Spring Boot", "Microservices", "AI/ML", "Sports Analytics", "REST API"]
@@ -7,13 +7,11 @@ showToc: false
 weight: 202
 ---
 
-### 🔗 [Bilyoner](https://www.bilyoner.com/)
-
-# Bilyoner AI Match Prediction Platform
+# AI Sports Match Prediction Platform
 
 ## Introduction
 
-An AI-powered sports match prediction platform developed for Bilyoner, one of Turkey's leading sports analytics and betting information platforms. The system leverages machine learning models and microservices architecture to deliver data-driven match predictions, statistical analysis, and real-time insights across multiple sports leagues.
+An AI-powered sports match prediction platform developed for a leading Turkish sports analytics company. The system leverages machine learning models and microservices architecture to deliver data-driven match predictions, statistical analysis, and real-time insights across multiple sports leagues.
 
 ## Architecture: Microservices with Spring Boot
 

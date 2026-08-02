@@ -17,7 +17,7 @@ I build production-grade mobile and web applications that people actually use. F
 - **Cross-platform apps** with Flutter (Dart) or React Native (TypeScript): one codebase, native performance on iOS and Android
 - **Native integrations**: Camera, GPS, push notifications, biometrics, speech recognition, and offline storage
 - **App lifecycle**: From App Store / Play Store submission to ongoing maintenance and feature updates
-- **Real-world example**: TOFY Go! - gamified English learning app for Bee2 AI, built with TypeScript, serving 500K+ users on AWS
+- **Real-world example**: TOFY Go! - gamified English learning app, built with TypeScript, serving 500K+ users on AWS
 
 ### Web Applications
 - **SPA and SSR**: React / Next.js for dynamic single-page apps, Hugo for blazing-fast static sites
