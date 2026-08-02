@@ -11,10 +11,6 @@ cover:
 
 ### 🔗 [SonTech Bilişim](https://sontechbilisim.com/)
 
-# SonTechBot: Enterprise E-Commerce Automation Platform
-
-## Introduction
-
 An enterprise-grade automation platform developed for SonTech Bilişim that bridges Trendyol Fast Market (Türkiye's leading e-commerce marketplace) with internal ERP systems, the company website, and a software license management system. The application streamlines product listing, order processing, inventory synchronization, and business operations across multiple platforms from a single unified interface.
 
 ## Architecture Overview

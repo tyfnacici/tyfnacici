@@ -9,10 +9,6 @@ showToc: false
 weight: 202
 ---
 
-# AI Sports Match Prediction Platform
-
-## Introduction
-
 An AI-powered sports match prediction platform developed for a leading Turkish sports analytics company. The system leverages machine learning models and microservices architecture to deliver data-driven match predictions, statistical analysis, and real-time insights across multiple sports leagues.
 
 ## Architecture: Microservices with Spring Boot

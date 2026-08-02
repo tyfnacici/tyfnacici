@@ -11,10 +11,6 @@ cover:
 
 ### 🔗 [KidStop Cafe](https://kidstopcafe.com/)
 
-# KidStop Cafe: Family Dining Website
-
-## Introduction
-
 A modern website for KidStop Cafe, a family-friendly cafe in Karamürsel built around the concept "You Coffee, They Play." The cafe offers parents a peaceful coffee experience while children enjoy a dedicated play area. The website provides an online menu, contact information, and ordering capabilities -- bringing the cafe's warm atmosphere to the digital space.
 
 ## Key Features

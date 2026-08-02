@@ -11,9 +11,6 @@ cover:
 
 ### 🔗 [Github](https://github.com/tyfnacici/transportation-website)
 
-# NakilPort: Revolutionizing the Logistics Industry
-## Introduction
-
 NakilPort is an innovative platform designed to connect carriers and shippers, streamlining the logistics process for both parties. By leveraging modern web technologies, NakilPort offers a seamless experience for users, allowing carriers to find loads and shippers to find carriers efficiently. This article delves into the features, technologies, and benefits of NakilPort.
 
 ## Overview

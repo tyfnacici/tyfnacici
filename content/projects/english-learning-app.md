@@ -9,10 +9,6 @@ showToc: false
 weight: 201
 ---
 
-# English Learning App at Scale
-
-## Introduction
-
 A fun and engaging English learning app designed for learners aged 8 and above. Whether preparing for the TOEFL Young Students Series or simply improving English skills, the app makes learning feel like play -- with interactive city exploration, badge earning, gamified lessons, and real skill-building aligned to standardized test curricula.
 
 As the lead Full Stack Developer, I designed and built the entire cloud infrastructure from scratch, managed end-to-end CI/CD pipelines, led a 3-member engineering team, and developed both frontend and backend features alongside AI-powered content delivery systems.
