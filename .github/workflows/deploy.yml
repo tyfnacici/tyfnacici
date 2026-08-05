@@ -34,6 +34,14 @@ jobs:
       - name: Build
         run: hugo --minify
 
+      - name: Verify no email in build output
+        run: |
+          if grep -rIF "tyfnacici@gmail.com" public/; then
+            echo "::error::Email address found in build output — email obfuscation failed"
+            exit 1
+          fi
+          echo "Email obfuscation verified: no email address in build output."
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
