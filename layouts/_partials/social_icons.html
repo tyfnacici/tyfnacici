@@ -1,0 +1,46 @@
+{{- /* Project override of themes/PaperMod/layouts/_partials/social_icons.html.
+   Obfuscates mailto: entries so the full email address never appears in the
+   static HTML: the <a> carries split data-* parts and an inline script
+   reassembles "mailto:user@domain" on click. Non-email icons are unchanged. */ -}}
+<div class="social-icons" {{ with .align}}align="{{.}}" {{- end }}>
+    {{- range site.Params.socialIcons }}
+    {{- if hasPrefix (trim .url " ") "mailto:" }}
+    {{- /* Drop the "mailto:" scheme, split on "@" → [user, domain]. The full
+         address is never written to the document. */ -}}
+    {{- $parts := split (strings.TrimPrefix "mailto:" (trim .url " ")) "@" }}
+    <a tabindex="0" data-email-user="{{ index $parts 0 }}" data-email-domain="{{ index $parts 1 }}"
+        title="{{ (.title | default .name) | title }}" style="cursor: pointer">
+        {{ partial "svg.html" . }}
+    </a>
+    {{- else }}
+    <a href="{{ trim .url " " | safeURL }}" target="_blank" rel="noopener noreferrer me"
+        title="{{ (.title | default .name) | title }}">
+        {{ partial "svg.html" . }}
+    </a>
+    {{- end }}
+    {{- end }}
+</div>
+<script>
+    // Reassemble mailto: from split data-* parts on click. The full address
+    // never exists in the static HTML source.
+    (function () {
+        document.querySelectorAll('a[data-email-user]').forEach(function (link) {
+            var open = function () {
+                window.location.href = 'mailto:' + link.dataset.emailUser + '@' + link.dataset.emailDomain;
+            };
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                open();
+            });
+            // Keyboard accessibility: an <a> without href is not focusable by
+            // default, so tabindex="0" restores focus and this keydown handler
+            // lets Enter / Space open the mailto the way a real link would.
+            link.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    open();
+                }
+            });
+        });
+    })();
+</script>

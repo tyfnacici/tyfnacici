@@ -16,7 +16,16 @@
     {{- if site.Params.schema.sameAs }}
       {{ range $i, $e := site.Params.schema.sameAs }}{{ if $i }}, {{ end }}{{ trim $e " " }}{{ end }}
     {{- else}}
-      {{ range $i, $e := site.Params.socialIcons }}{{ if $i }}, {{ end }}{{ trim .url " " | safeURL }}{{ end }}
+      {{- /* Exclude mailto: entries — a mailto URL is semantically invalid for
+           Schema.org sameAs (which expects profile-page URLs) and would leak
+           the email address into production JSON-LD. */ -}}
+      {{- $sameAs := slice -}}
+      {{- range site.Params.socialIcons -}}
+        {{- if not (hasPrefix (trim .url " ") "mailto:") -}}
+          {{- $sameAs = $sameAs | append (trim .url " ") -}}
+        {{- end -}}
+      {{- end -}}
+      {{ range $i, $e := $sameAs }}{{ if $i }}, {{ end }}{{ trim $e " " | safeURL }}{{ end }}
     {{- end}}
   ]
 }
