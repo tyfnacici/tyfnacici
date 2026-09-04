@@ -342,6 +342,10 @@ em, .serif {
 
 .nav-right { display: flex; align-items: center; gap: 0.75rem; }
 
+/* Scroll-to-top: hidden until scrolled; the theme toggles visibility via JS
+   on scroll, but starts visible until the first event — force it down. */
+.top-link { visibility: hidden; opacity: 0; }
+
 .nav-toggle {
   display: none;
   width: 40px;
@@ -356,6 +360,14 @@ em, .serif {
 }
 
 @media (max-width: 900px) {
+  /* backdrop-filter makes .site-nav the containing block for position:fixed
+     descendants — the fullscreen mobile menu would be trapped inside the
+     60px header. Drop the filter on mobile; use a solid bar instead. */
+  .site-nav {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: var(--tb-bg);
+  }
   .nav-links {
     display: none;
     position: fixed;
@@ -958,3 +970,297 @@ a.card:hover, .card.is-hoverable:hover {
 @media screen and (max-width: 900px) {
   .list .top-link { transform: none !important; }
 }
+
+/* ==========================================================================
+   Single page (blog/project/service/experience detail) — full design language
+   ========================================================================== */
+
+/* --- Post header --- */
+.post-single .post-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--tb-border);
+}
+
+.post-single .post-title {
+  font-size: var(--tb-text-h1);
+  letter-spacing: var(--tb-tracking-tighter);
+  line-height: 1.06;
+  margin-bottom: 0.75rem;
+}
+
+.post-single .post-description {
+  color: var(--tb-muted);
+  font-size: var(--tb-text-lg);
+  max-width: 52ch;
+  margin: 0 0 1rem;
+}
+
+.post-single .post-meta,
+.post-single .post-meta a,
+.post-single .post-meta .lastmod,
+.post-single .breadcrumbs,
+.post-single .breadcrumbs a {
+  color: var(--tb-muted-2);
+  font-family: var(--tb-font-display);
+  font-size: var(--tb-text-xs);
+  font-weight: 500;
+}
+.post-single .post-meta a:hover,
+.post-single .breadcrumbs a:hover { color: var(--tb-green); }
+.post-single .breadcrumbs { display: block; margin-bottom: 1rem; }
+
+/* --- Table of contents → design card --- */
+.toc {
+  background: var(--tb-surface);
+  border: 1px solid var(--tb-border);
+  border-radius: var(--tb-radius-lg);
+  box-shadow: var(--tb-shadow-rest);
+  margin: 2rem 0;
+}
+.toc details open summary, .toc summary { cursor: pointer; }
+.toc .inner {
+  margin: 0 !important;
+  padding: 1.25rem 1.5rem !important;
+  background: none !important;
+  border: none !important;
+}
+.toc summary {
+  font-family: var(--tb-font-display);
+  font-size: var(--tb-text-xs);
+  font-weight: 600;
+  letter-spacing: var(--tb-tracking-wider);
+  text-transform: uppercase;
+  color: var(--tb-green);
+  padding: 1.25rem 1.5rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.toc summary::-webkit-details-marker { display: none; }
+.toc summary::before {
+  content: '';
+  width: 18px;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--tb-yellow);
+  flex-shrink: 0;
+}
+.toc ul {
+  margin: 0 !important;
+  padding-inline-start: 1.5rem !important;
+  font-size: var(--tb-text-sm);
+  line-height: 1.9;
+  color: var(--tb-muted);
+  list-style: none;
+}
+.toc ul ul { padding-inline-start: 1.1rem !important; }
+.toc li::marker { color: var(--tb-border-strong); }
+.toc a { color: var(--tb-muted) !important; text-decoration: none; }
+.toc a:hover { color: var(--tb-green) !important; }
+
+/* --- Content typography --- */
+.post-content {
+  font-size: 1.02rem;
+  line-height: 1.75;
+  color: var(--tb-fg);
+}
+
+.post-content h1 { font-size: var(--tb-text-h2); margin-block: 2.2em 0.8em; }
+.post-content h2 {
+  font-size: var(--tb-text-h3);
+  margin-block: 2em 0.75em;
+  padding-bottom: 0.35em;
+  border-bottom: 1px solid var(--tb-border);
+}
+.post-content h3, .post-content h4, .post-content h5, .post-content h6 {
+  margin-block: 1.6em 0.6em;
+  color: var(--tb-green);
+}
+
+.post-content p { margin-block: 1em; }
+.post-content strong { color: var(--tb-green); font-weight: 600; }
+
+.post-content ul, .post-content ol {
+  margin-block: 1em;
+  padding-inline-start: 1.5rem;
+  list-style: disc;
+}
+.post-content ol { list-style: decimal; }
+.post-content li { margin-block: 0.35em; }
+.post-content li::marker { color: var(--tb-border-strong); }
+
+.post-content img { border-radius: var(--tb-radius-lg); }
+
+.post-content blockquote {
+  margin-block: 1.5em;
+  padding: 0.25em 1.5em;
+  border-inline-start: 3px solid var(--tb-yellow);
+  background: var(--tb-surface);
+  border-radius: 0 var(--tb-radius-md) var(--tb-radius-md) 0;
+  color: var(--tb-muted);
+  font-style: italic;
+}
+.post-content blockquote p { margin-block: 0.75em; }
+
+.post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--tb-text-sm);
+  margin-block: 1.5em;
+}
+.post-content th {
+  font-family: var(--tb-font-display);
+  font-size: var(--tb-text-xs);
+  font-weight: 600;
+  letter-spacing: var(--tb-tracking-wide);
+  text-transform: uppercase;
+  color: var(--tb-green);
+  text-align: left;
+}
+.post-content th, .post-content td {
+  padding: 0.6rem 0.9rem;
+  border-bottom: 1px solid var(--tb-border);
+}
+.post-content tr:last-child td { border-bottom: none; }
+.post-content tbody tr:nth-child(odd) { background: var(--tb-surface); }
+
+.post-content code {
+  background: var(--tb-bg-raised);
+  border: 1px solid var(--tb-border);
+  border-radius: var(--tb-radius-sm);
+  padding: 0.1em 0.4em;
+  font-size: 0.88em;
+  color: var(--tb-green-dark);
+}
+
+.post-content pre {
+  border-radius: var(--tb-radius-lg);
+  border: 1px solid var(--tb-border);
+}
+.post-content pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+}
+
+.post-content hr {
+  border: none;
+  height: 1px;
+  background: var(--tb-border);
+  margin-block: 2.5em;
+}
+
+/* --- Post footer: tags / paginav / share --- */
+.post-single .post-footer { margin-top: 3rem; }
+
+.post-single .post-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding: 0;
+  margin: 0 0 2rem;
+  list-style: none;
+}
+.post-single .post-tags li { margin: 0; }
+.post-single .post-tags a {
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding-inline: 0.75rem;
+  border-radius: var(--tb-radius-sm);
+  background: var(--tb-mint);
+  color: var(--tb-green);
+  border: 1px solid var(--tb-mint-border);
+  font-family: var(--tb-font-display);
+  font-size: var(--tb-text-xs);
+  font-weight: 500;
+  transition: color var(--tb-dur) var(--tb-ease), background var(--tb-dur) var(--tb-ease),
+    border-color var(--tb-dur) var(--tb-ease);
+}
+.post-single .post-tags a:hover {
+  color: var(--tb-surface-solid);
+  background: var(--tb-green);
+  border-color: var(--tb-green);
+}
+
+.paginav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  border-radius: var(--tb-radius-lg);
+}
+.paginav a {
+  background: var(--tb-surface);
+  border: 1px solid var(--tb-border);
+  border-radius: var(--tb-radius-lg);
+  padding: 1.25rem 1.5rem;
+  width: auto;
+  transition: border-color var(--tb-dur) var(--tb-ease), box-shadow var(--tb-dur) var(--tb-ease),
+    transform var(--tb-dur) var(--tb-ease);
+}
+.paginav a:hover {
+  border-color: var(--tb-border-strong);
+  box-shadow: var(--tb-shadow-hover);
+  transform: translateY(-3px);
+  background: var(--tb-surface);
+}
+.paginav .title {
+  font-family: var(--tb-font-display);
+  font-size: var(--tb-text-xs);
+  font-weight: 600;
+  letter-spacing: var(--tb-tracking-wide);
+  text-transform: uppercase;
+  color: var(--tb-muted-2);
+}
+.paginav span { color: inherit; }
+
+/* Share buttons → circular social buttons */
+.share-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding: 0 !important;
+  margin: 2rem 0 0;
+  justify-content: flex-start;
+  background: none !important;
+  border: none !important;
+}
+.share-buttons li {
+  background: none !important;
+  border: none !important;
+  list-style: none;
+}
+.share-buttons a {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--tb-radius-full);
+  border: 1px solid var(--tb-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--tb-muted) !important;
+  background: var(--tb-surface);
+  transition: color var(--tb-dur) var(--tb-ease), border-color var(--tb-dur) var(--tb-ease),
+    background var(--tb-dur) var(--tb-ease), transform var(--tb-dur) var(--tb-ease);
+}
+.share-buttons a:hover {
+  color: var(--tb-green) !important;
+  border-color: var(--tb-green);
+  background: var(--tb-mint);
+  transform: translateY(-2px);
+}
+.share-buttons svg { width: 17px; height: 17px; }
+
+/* "Suggest Changes" edit link → quiet pill */
+.post-single .post-meta a:first-child { color: var(--tb-muted-2); }
+.post-single .edit-post a {
+  color: var(--tb-muted);
+  border-bottom: 1px solid var(--tb-border-strong);
+}
+.post-single .edit-post a:hover { color: var(--tb-green); border-color: var(--tb-green); }
+
+/* Related / comments block spacing harmonization */
+.post-single .pagination__title { display: none; }
