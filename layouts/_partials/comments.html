@@ -1,10 +1,14 @@
 {{- /* Project override of themes/PaperMod/layouts/_partials/comments.html.
-       Giscus comments (restores the wiring lost when PaperMod moved to the
-       layouts/_partials structure). Theme: custom design-system CSS served
+       Giscus comments — BLOG SECTION ONLY (user request: no comments on
+       projects/services/experience). Theme: custom design-system CSS served
        from /giscus-theme.css — cream bg, forest-green accents. */ -}}
 {{- if (.Param "comments") }}
+{{- $isBlog := false }}
+{{- with .FirstSection }}{{ $isBlog = eq .Section "blog" }}{{ end }}
+{{- if $isBlog }}
 <div class="giscus-wrap">
     <span class="eyebrow giscus-label">Comments</span>
     {{ partial "giscus.html" . }}
 </div>
+{{- end }}
 {{- end }}

@@ -8,6 +8,13 @@
             <span class="brand__name">{{ site.Title }}</span>
         </a>
         <div class="nav-links" id="menu">
+            <button class="nav-close" id="nav-close" aria-label="Menüyü kapat">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" aria-hidden="true">
+                    <line x1="18" y1="6" x2="6" y2="18" />
+                    <line x1="6" y1="6" x2="18" y2="18" />
+                </svg>
+            </button>
             {{- $currentPage := . }}{{- range site.Menus.main }}
             {{- $menu_item_url := (cond (strings.HasSuffix .URL "/") .URL (printf "%s/" .URL)) | absLangURL }}
             {{- $page_url := $currentPage.Permalink | absLangURL }}
@@ -31,17 +38,21 @@
     (function () {
         var toggle = document.getElementById('nav-toggle');
         var links = document.getElementById('menu');
+        var closeBtn = document.getElementById('nav-close');
         if (!toggle || !links) return;
         var close = function () {
             links.classList.remove('is-open');
             toggle.setAttribute('aria-expanded', 'false');
+            document.documentElement.classList.remove('nav-open');
             document.body.style.overflow = '';
         };
         toggle.addEventListener('click', function () {
             var open = links.classList.toggle('is-open');
             toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+            document.documentElement.classList.toggle('nav-open', open);
             document.body.style.overflow = open ? 'hidden' : '';
         });
+        if (closeBtn) closeBtn.addEventListener('click', close);
         links.addEventListener('click', function (e) {
             if (e.target.closest('a')) close();
         });

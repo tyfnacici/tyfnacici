@@ -342,6 +342,29 @@ em, .serif {
 
 .nav-right { display: flex; align-items: center; gap: 0.75rem; }
 
+/* Fullscreen menu close button (mobile only, hidden on desktop) */
+.nav-close {
+  display: none;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--tb-radius-sm);
+  border: 1px solid var(--tb-border);
+  color: var(--tb-fg);
+  background: var(--tb-surface-solid);
+  cursor: pointer;
+}
+
+/* Mobile menu open: hard scroll lock (iOS-safe).
+   Lock both html and body: html alone is bypassed in some engines when body
+   itself is the scroller (iframe/embedded contexts). */
+html.nav-open, html.nav-open body {
+  overflow: hidden !important;
+  overscroll-behavior: none;
+  touch-action: none;
+}
+
 /* Scroll-to-top: hidden until scrolled; the theme toggles visibility via JS
    on scroll, but starts visible until the first event — force it down. */
 .top-link { visibility: hidden; opacity: 0; }
@@ -381,6 +404,7 @@ em, .serif {
     padding: 4rem;
   }
   .nav-links.is-open { display: flex; }
+  .nav-links.is-open .nav-close { display: flex; }
   .nav-links a { font-size: var(--tb-text-h2); color: var(--tb-fg); font-weight: 600; }
   .nav-links a.is-active::after { display: none; }
   .nav-toggle { display: flex; }
