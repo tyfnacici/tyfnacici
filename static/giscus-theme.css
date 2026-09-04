@@ -1,42 +1,105 @@
-/* Giscus custom theme — matches the tyfnacici.com design system
-   (cream bg, forest-green accents, DM Sans). Served from /giscus-theme.css. */
+/*! Giscus custom theme based on giscus "light" (MIT, GitHub Primer).
+   Recolored to the tyfnacici.com design system: cream canvas, forest-green
+   accent, mint buttons. The full variable set is defined so every component
+   (incl. the "Sign in with GitHub" primary button) renders correctly. */
 
 main {
-  color-scheme: light;
-  --color-canvas-default: #fafcf8;
-  --color-canvas-overlay: #ffffff;
-  --color-canvas-inset: #eef2eb;
-  --color-border-default: #dfe8dd;
-  --color-border-muted: #dfe8dd;
+  --color-prettylights-syntax-comment: #657a6c;
+  --color-prettylights-syntax-constant: #224a32;
+  --color-prettylights-syntax-entity: #173b2a;
+  --color-prettylights-syntax-storage-modifier-import: #183024;
+  --color-prettylights-syntax-entity-tag: #2d8a54;
+  --color-prettylights-syntax-keyword: #8a4b12;
+  --color-prettylights-syntax-string: #0e281a;
+  --color-prettylights-syntax-variable: #6b4a12;
+  --color-prettylights-syntax-brackethighlighter-unmatched: #82071e;
+  --color-prettylights-syntax-invalid-illegal-text: #fafcf8;
+  --color-prettylights-syntax-invalid-illegal-bg: #82071e;
+  --color-prettylights-syntax-carriage-return-text: #fafcf8;
+  --color-prettylights-syntax-carriage-return-bg: #82071e;
+  --color-prettylights-syntax-string-regexp: #2d8a54;
+  --color-prettylights-syntax-markup-list: #3b2300;
+  --color-prettylights-syntax-markup-heading: #173b2a;
+  --color-prettylights-syntax-markup-italic: #183024;
+  --color-prettylights-syntax-markup-bold: #183024;
+  --color-prettylights-syntax-markup-deleted-text: #82071e;
+  --color-prettylights-syntax-markup-deleted-bg: #ffebe9;
+  --color-prettylights-syntax-markup-inserted-text: #2d8a54;
+  --color-prettylights-syntax-markup-inserted-bg: #e4efe5;
+  --color-prettylights-syntax-markup-changed-text: #6b4a12;
+  --color-prettylights-syntax-markup-changed-bg: #f4e8d0;
+  --color-prettylights-syntax-markup-ignored-text: #dfe8dd;
+  --color-prettylights-syntax-markup-ignored-bg: #173b2a;
+  --color-prettylights-syntax-meta-diff-range: #224a32;
+  --color-prettylights-syntax-brackethighlighter-angle: #657a6c;
+  --color-prettylights-syntax-sublimelinter-gutter-mark: #82938a;
+  --color-prettylights-syntax-constant-other-reference-link: #224a32;
+
+  /* Buttons — mint regular, forest-green primary ("Sign in with GitHub") */
+  --color-btn-text: #183024;
+  --color-btn-bg: #e4efe5;
+  --color-btn-border: #ccdbce;
+  --color-btn-shadow: 0 1px 0 rgb(35 61 42 / 4%);
+  --color-btn-inset-shadow: inset 0 1px 0 rgb(255 255 255 / 25%);
+  --color-btn-hover-bg: #d8e8d9;
+  --color-btn-hover-border: #224a32;
+  --color-btn-active-bg: #ccdbce;
+  --color-btn-active-border: #224a32;
+  --color-btn-selected-bg: #e4efe5;
+  --color-btn-primary-text: #fafcf8;
+  --color-btn-primary-bg: #173b2a;
+  --color-btn-primary-border: #173b2a;
+  --color-btn-primary-shadow: 0 1px 0 rgb(14 40 26 / 10%);
+  --color-btn-primary-inset-shadow: inset 0 1px 0 rgb(255 255 255 / 6%);
+  --color-btn-primary-hover-bg: #224a32;
+  --color-btn-primary-hover-border: #224a32;
+  --color-btn-primary-selected-bg: #0e281a;
+  --color-btn-primary-selected-shadow: inset 0 1px 0 rgb(0 0 0 / 20%);
+  --color-btn-primary-disabled-text: rgb(250 252 248 / 80%);
+  --color-btn-primary-disabled-bg: #657a6c;
+  --color-btn-primary-disabled-border: #657a6c;
+
+  --color-action-list-item-default-hover-bg: rgb(228 239 229 / 60%);
+  --color-segmented-control-bg: #eef2eb;
+  --color-segmented-control-button-bg: #fafcf8;
+  --color-segmented-control-button-selected-border: #c8d4c0;
+
+  /* Text + canvas */
   --color-fg-default: #183024;
   --color-fg-muted: #657a6c;
   --color-fg-subtle: #82938a;
+  --color-canvas-default: #fafcf8;
+  --color-canvas-overlay: #fafcf8;
+  --color-canvas-inset: #eef2eb;
+  --color-canvas-subtle: #eef2eb;
+  --color-border-default: #dfe8dd;
+  --color-border-muted: #dfe8dd;
+  --color-neutral-muted: rgb(23 59 42 / 8%);
   --color-accent-fg: #173b2a;
   --color-accent-emphasis: #173b2a;
-  --color-accent-muted: rgba(23,59,42,.08);
-  --color-btn-bg: #e4efe5;
-  --color-btn-hover-bg: #d8e8d9;
-  --color-btn-border: #ccdbce;
-  --color-btn-primary-bg: #173b2a;
-  --color-btn-primary-hover-bg: #224a32;
-  --color-btn-primary-border: #173b2a;
-  --color-btn-primary-fg: #fafcf8;
-  --color-neutral-muted: rgba(23,59,42,.08);
+  --color-accent-muted: rgb(23 59 42 / 25%);
+  --color-accent-subtle: #e4efe5;
+  --color-success-fg: #2d8a54;
+  --color-attention-fg: #8a6d1c;
+  --color-attention-muted: rgb(244 201 93 / 40%);
+  --color-attention-subtle: #faf3dd;
+  --color-danger-fg: #c0392b;
+  --color-danger-muted: rgb(255 129 130 / 40%);
+  --color-danger-subtle: #ffebe9;
+  --color-primer-shadow-inset: inset 0 1px 0 rgb(223 232 221 / 20%);
+  --color-scale-gray-1: #eef2eb;
+  --color-scale-blue-1: #e4efe5;
+
+  --color-social-reaction-bg-hover: var(--color-scale-gray-1);
+  --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-1);
+
   font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
 }
 
-/* Header + comment boxes */
-.timeline-comment .comment-body,
-.comment {
-  border-radius: 12px;
+main .pagination-loader-container {
+  background-image: url("https://github.com/images/modules/pulls/progressive-disclosure-line.svg");
 }
 
-/* Reaction + action buttons */
-.Button {
-  border-radius: 8px;
-}
-
-/* Sign-in prompt box */
-.giscus-frame {
-  color-scheme: light;
+main .gsc-loading-image {
+  background-image: url("https://github.githubassets.com/images/mona-loading-default.gif");
 }
