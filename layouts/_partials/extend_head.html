@@ -1,5 +1,12 @@
-<meta name="theme-color" id="theme-color-meta" content="#2e2e33">
-<meta name="msapplication-TileColor" id="ms-tilecolor-meta" content="#2e2e33">
+{{- /* Project override of themes/PaperMod/layouts/_partials/extend_head.html.
+       Self-hosted fonts (static/fonts) for the approved editorial design —
+       no external font CDN dependency. Theme-color metas + scheme listener. */ -}}
+<link rel="stylesheet" href="{{ "fonts/fonts.css" | absURL }}">
+<link rel="preload" href="{{ "fonts/rP2Hp2ywxg089UriCZOIHQ.woff2" | absURL }}" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{ "fonts/nuFkD-vYSZviVYUb_rj3ij__anPXDTnogkk7.woff2" | absURL }}" as="font" type="font/woff2" crossorigin>
+
+<meta name="theme-color" id="theme-color-meta" content="#f4f7f1">
+<meta name="msapplication-TileColor" id="ms-tilecolor-meta" content="#f4f7f1">
 
 <script>
     // Live listener for system color scheme changes
@@ -13,11 +20,11 @@
             // Also update theme-color meta tag dynamically
             const themeColorMeta = document.getElementById('theme-color-meta');
             if (themeColorMeta) {
-                themeColorMeta.content = isDark ? '#1d1e20' : '#ffffff';
+                themeColorMeta.content = isDark ? '#1d1e20' : '#f4f7f1';
             }
             const msTileColorMeta = document.getElementById('ms-tilecolor-meta');
             if (msTileColorMeta) {
-                msTileColorMeta.content = isDark ? '#1d1e20' : '#ffffff';
+                msTileColorMeta.content = isDark ? '#1d1e20' : '#f4f7f1';
             }
         }
 
@@ -28,3 +35,4 @@
         darkModeMedia.addEventListener('change', updateTheme);
     })();
 </script>
+
