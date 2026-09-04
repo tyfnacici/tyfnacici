@@ -1,10 +1,30 @@
+{{- /* Project override of themes/PaperMod/layouts/_partials/footer.html —
+       rich editorial footer. Content all derived from site config/menu.
+       Keeps the theme's scroll-to-top + anchor-scrolling + copy-code scripts. */ -}}
 {{- if not (.Param "hideFooter") }}
-<footer class="footer">
-    {{- if site.Copyright }}
-    <span>{{ site.Copyright | markdownify }}</span>
-    {{- else }}
-    <span>&copy; {{ now.Year }} <a href="{{ "" | absLangURL }}">{{ site.Title }}</a></span>
-    {{- end }}
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-statement">
+                <a href="{{ "" | absLangURL }}" class="brand">
+                    <span class="brand__mark" aria-hidden="true">TA</span>
+                    <span class="brand__name">{{ site.Title }}</span>
+                </a>
+                <p>{{ site.Params.description | default site.Params.title }}</p>
+            </div>
+            <div class="social-row">
+                {{- partial "social_icons.html" (dict "align" "") }}
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <nav class="footer-nav">
+                {{- range site.Menus.main }}
+                <a href="{{ .URL | absLangURL }}">{{ .Name }}</a>
+                {{- end }}
+            </nav>
+            <span class="footer-meta">&copy; {{ now.Year }} {{ site.Title }}</span>
+        </div>
+    </div>
 </footer>
 {{- end }}
 
@@ -64,21 +84,6 @@
 </script>
 {{- end }}
 
-{{- if (not site.Params.disableThemeToggle) }}
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            document.body.classList.add('dark');
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-{{- end }}
-
 {{- if (and (eq .Kind "page") (ne .Layout "archives") (ne .Layout "search") (.Param "ShowCodeCopyButtons")) }}
 <script>
     document.querySelectorAll('pre > code').forEach((codeblock) => {
@@ -116,11 +121,10 @@
 
         if (container.classList.contains("highlight")) {
             container.appendChild(copybutton);
-        } else if (container.parentNode.firstChild == container) {
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
             // td containing LineNos
         } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            // table containing LineNos and code
-            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+            // table containing LineNos
         } else {
             // code blocks not having highlight as parent class
             codeblock.parentNode.appendChild(copybutton);

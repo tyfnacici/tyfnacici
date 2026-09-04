@@ -1,7 +1,8 @@
 baseURL: "https://tyfnacici.com/"
 locale: en-us
 title: Tayfun Açıcı
-paginate: 5
+pagination:
+  pagerSize: 5
 theme: PaperMod
 
 ignoreLogs:
@@ -50,7 +51,7 @@ params:
       https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/assets/favicon.png,
     ]
   DateFormat: "2 Jan 2006"
-  defaultTheme: auto # dark, light
+  defaultTheme: light # design system is light-only (approved forest-green edition)
   disableThemeToggle: true
 
   ShowReadingTime: true
@@ -93,6 +94,20 @@ params:
     imageWidth: 300
     imageHeight: 300
     imageTitle: my image
+
+  # Editorial home hero (design: tyfnacici-portfolio-redesign-e339, approved 31 Aug 2026)
+  homeHero:
+    eyebrow: "Software Engineer · Turkey"
+    title: "Building things that <em>ship</em>"
+    ctaPrimary: "View Projects"
+    ctaSecondary: "Services"
+    availability: "Available for new projects"
+    panelLabel: "Approach"
+    panelHeadline: "From first commit to <em>shipping in production</em>"
+    panelText: "I care about the whole path — thoughtful design, clean architecture, and software that genuinely ships."
+    projectsTitle: "Selected Work"
+    servicesTitle: "What I Do"
+    blogTitle: "Recent Writing"
 
   # home-info mode
   homeInfoParams:

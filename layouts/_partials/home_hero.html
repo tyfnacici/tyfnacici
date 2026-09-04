@@ -1,0 +1,161 @@
+{{- /* Editorial home hero + section teasers (design: tyfnacici-portfolio-redesign-e339).
+       ALL content comes from existing site data — no hardcoded posts/projects.
+       Design furniture strings (eyebrow, panel copy, availability badge) are
+       configurable via params.homeHero.* in hugo.yaml. */ -}}
+
+{{- $hero := site.Params.homeHero | default dict }}
+{{- $pm := site.Params.profileMode }}
+
+<section class="container">
+    <div class="hero">
+        <div class="hero__content">
+            <span class="eyebrow">{{ $hero.eyebrow | default "Software Engineer" }}</span>
+            <h1 class="hero__title">{{ $hero.title | default site.Title | safeHTML }}</h1>
+            {{- with $pm.subtitle }}
+            <p class="hero__sub">{{ . | markdownify }}</p>
+            {{- end }}
+            <div class="hero__actions">
+                <a href="{{ "projects/" | absLangURL }}" class="btn btn--primary">{{ $hero.ctaPrimary | default "View Projects" }}</a>
+                <a href="{{ "services/" | absLangURL }}" class="btn btn--secondary">{{ $hero.ctaSecondary | default "Services" }}</a>
+            </div>
+            <div class="social-row hero-social">
+                {{- partial "social_icons.html" (dict "align" "") }}
+            </div>
+        </div>
+        {{- $img := "" }}
+        {{- with $pm.imageUrl }}{{ $img = . }}{{ end }}
+        {{- if $img }}
+        <div class="hero__photo-wrap">
+            <img src="{{ $img | absURL }}" alt="{{ $pm.imageTitle | default site.Title }}" class="hero__photo"
+                width="{{ $pm.imageWidth | default 300 }}" height="{{ $pm.imageHeight | default 300 }}">
+            {{- with $hero.availability }}
+            <span class="hero__avail availability"><span class="dot" aria-hidden="true"></span>{{ . }}</span>
+            {{- end }}
+        </div>
+        {{- end }}
+    </div>
+
+    {{- /* Signature editorial panel */ -}}
+    {{- with $hero.panelHeadline }}
+    <div class="hero-panel">
+        <span class="panel-label">{{ $hero.panelLabel | default "Approach" }}</span>
+        <div class="panel-rule" aria-hidden="true"></div>
+        <h2>{{ . | markdownify }}</h2>
+        {{- with $hero.panelText }}
+        <p>{{ . | markdownify }}</p>
+        {{- end }}
+        <span class="ring" aria-hidden="true"></span>
+    </div>
+    {{- end }}
+</section>
+
+{{- /* Selected Work — 2 newest real project pages */ -}}
+{{- $projects := where (site.GetPage "projects").RegularPages "Params.hidden" "!=" true }}
+{{- if gt (len $projects) 0 }}
+<section class="section">
+    <div class="container">
+        <div class="section-head">
+            <div>
+                <span class="eyebrow">{{ $hero.projectsLabel | default "Projects" }}</span>
+                <h2 class="section-title">{{ $hero.projectsTitle | default "Selected Work" }}</h2>
+            </div>
+            <a href="{{ "projects/" | absLangURL }}" class="link-arrow">{{ $hero.projectsMore | default "All projects" }}
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                </svg>
+            </a>
+        </div>
+        <div class="featured-strip">
+            {{- range first 2 $projects }}
+            <a href="{{ .Permalink }}" class="card project-card is-hoverable">
+                <h3 class="project-card__title">{{ .Title }}</h3>
+                <p class="project-card__desc">{{ .Description | default (.Summary | plainify | truncate 140) }}</p>
+                {{- with .Params.tags }}
+                <div class="project-card__meta">
+                    <div class="project-card__badges">
+                        {{- range first 3 . }}<span class="badge">{{ . }}</span>{{- end }}
+                    </div>
+                </div>
+                {{- end }}
+            </a>
+            {{- end }}
+        </div>
+    </div>
+</section>
+{{- end }}
+
+{{- /* Services teaser — 2 newest real service pages */ -}}
+{{- $services := where (site.GetPage "services").RegularPages "Params.hidden" "!=" true }}
+{{- if gt (len $services) 0 }}
+<section class="section section--tight">
+    <div class="container">
+        <div class="section-head">
+            <div>
+                <span class="eyebrow">{{ $hero.servicesLabel | default "Services" }}</span>
+                <h2 class="section-title">{{ $hero.servicesTitle | default "What I Do" }}</h2>
+            </div>
+            <a href="{{ "services/" | absLangURL }}" class="link-arrow">{{ $hero.servicesMore | default "Details" }}
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                </svg>
+            </a>
+        </div>
+        <div class="featured-strip">
+            {{- range first 2 $services }}
+            <a href="{{ .Permalink }}" class="card project-card is-hoverable">
+                <h3 class="project-card__title">{{ .Title }}</h3>
+                <p class="project-card__desc">{{ .Description | default (.Summary | plainify | truncate 140) }}</p>
+            </a>
+            {{- end }}
+        </div>
+    </div>
+</section>
+{{- end }}
+
+{{- /* Recent Writing — 3 newest real blog posts */ -}}
+{{- $posts := where (site.GetPage "blog").RegularPages "Params.hidden" "!=" true }}
+{{- if gt (len $posts) 0 }}
+<section class="section section--tight">
+    <div class="container">
+        <div class="section-head">
+            <div>
+                <span class="eyebrow">{{ $hero.blogLabel | default "Blog" }}</span>
+                <h2 class="section-title">{{ $hero.blogTitle | default "Recent Writing" }}</h2>
+            </div>
+            <a href="{{ "blog/" | absLangURL }}" class="link-arrow">{{ $hero.blogMore | default "All posts" }}
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12" />
+                    <polyline points="12 5 19 12 12 19" />
+                </svg>
+            </a>
+        </div>
+        <div class="blog-list">
+            {{- range first 3 $posts }}
+            <a href="{{ .Permalink }}" class="blog-item">
+                <div class="blog-item__left">
+                    <h3 class="blog-item__title">{{ .Title }}</h3>
+                    {{- with .Description }}
+                    <p class="blog-item__desc">{{ . }}</p>
+                    {{- end }}
+                </div>
+                <div class="blog-item__right">
+                    {{- if not .Date.IsZero }}
+                    <span class="blog-item__date">{{ .Date.Format (site.Params.DateFormat | default "2 Jan 2006") }}</span>
+                    {{- end }}
+                    {{- with .Params.tags }}
+                    <div class="blog-item__tags">
+                        {{- range first 2 . }}<span class="tag">{{ . }}</span>{{- end }}
+                    </div>
+                    {{- end }}
+                </div>
+            </a>
+            {{- end }}
+        </div>
+    </div>
+</section>
+{{- end }}
