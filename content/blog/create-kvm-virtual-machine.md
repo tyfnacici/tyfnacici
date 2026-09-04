@@ -210,7 +210,9 @@ Connect to your running virtual machine. You can use the command virsh console u
 
   ```
   
-  ### Resources
+  
+
+### Resources
   
 - https://tr.wikipedia.org/wiki/KVM_(%C3%87ekirdek_tabanl%C4%B1_sanal_makine)
 - https://www.redhat.com/en/topics/virtualization/what-is-KVM

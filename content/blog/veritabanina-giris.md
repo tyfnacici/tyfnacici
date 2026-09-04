@@ -11,7 +11,9 @@ cover:
 
 ### 🔗 [Medium'da Oku](https://medium.com/@tyfnacici/veritabanina-giris)
 
-<img src="https://cdn-images-1.medium.com/max/1024/1*Hy6TraZYhhj1ppjUqt_TiA.png" alt="Image" />### Veritabanı nedir?
+<img src="https://cdn-images-1.medium.com/max/1024/1*Hy6TraZYhhj1ppjUqt_TiA.png" alt="Image" />
+
+### Veritabanı nedir?
 
 Veritabanı, yapılandırılmış verilerin depolanması, yönetilmesi ve erişimine izin veren bir yazılım sistemidir. Veritabanları, bir veya daha fazla kullanıcı veya uygulama tarafından erişilebilen bir dizi ilişkisel veya hiyerarşik veri öğesini içerebilir. Veritabanları genellikle bir bilgisayar sunucusunda barındırılır ve bir veritabanı yönetim sistemi (DBMS) tarafından yönetilir.
 
@@ -26,7 +28,12 @@ SQL (Structured Query Language), ilişkisel veritabanı yönetim sistemlerinde (
 
 Bir veritabanı ilişkisel veritabanı olabilmek için aşağıdaki özellikleri sağlamalıdır:
 
-- **Atomisite** tam bir veritabanı işlemini oluşturan tüm unsurları tanımlar.- **Tutarlılık** veri noktalarını bir işlemden sonra doğru durumda tutmaya ilişkin kuralları tanımlar.- **İzolasyon** karışıklığı önlemek için, kalıcı hâle gelene kadar, bir işlemin etkisini diğer işlemlerden görünmez kılar.- **Dayanıklılık** işlem gerçekleştiğinde veri değişikliklerinin kalıcı olmasını sağlar.### Varlık-İlişki modeli nedir?
+- **Atomisite** tam bir veritabanı işlemini oluşturan tüm unsurları tanımlar.
+- **Tutarlılık** veri noktalarını bir işlemden sonra doğru durumda tutmaya ilişkin kuralları tanımlar.
+- **İzolasyon** karışıklığı önlemek için, kalıcı hâle gelene kadar, bir işlemin etkisini diğer işlemlerden görünmez kılar.
+- **Dayanıklılık** işlem gerçekleştiğinde veri değişikliklerinin kalıcı olmasını sağlar.
+
+### Varlık-İlişki modeli nedir?
 
 Varlık-İlişki modeli, veritabanı tasarımı için örnek bir model/diyagram oluşturmamızı sağlar.
 
@@ -42,7 +49,9 @@ Varlık-İlişki modeli, veritabanı tasarımı için örnek bir model/diyagram 
 
 **2-Özellikler (Attribute): **Bir varlığın niteliğini tanımlamak için kullanılır.
 
-> Örn: id, yaş, tel no, isim vs. olabilir. Modelde daire ile gösterilir.<img src="https://cdn-images-1.medium.com/max/376/1*S9ICjBOwTBzZAEpu2fQFTA.png" alt="Image" />
+> Örn: id, yaş, tel no, isim vs. olabilir. Modelde daire ile gösterilir.
+
+<img src="https://cdn-images-1.medium.com/max/376/1*S9ICjBOwTBzZAEpu2fQFTA.png" alt="Image" />
 
 **A-Anahtar Özellik:** Bir varlığın ana özelliklerini tanımlamak için kullanılır. Bir anahtarı temsil eder. Metnin altı çizili bir daire ile temsil edilir.
 
@@ -69,7 +78,9 @@ Varlık-İlişki modeli, veritabanı tasarımı için örnek bir model/diyagram 
 
 **A-Bire-Bir ilişki:** Bir varlığın yalnızca bir örneği ilişkiyle ilişkilendirildiğinde, bire bir ilişki olarak bilinir.
 
-> Örn: Bir kadın bir erkekle evlenebilir veya bir erkek bir kadınla evlenebilir.<img src="https://cdn-images-1.medium.com/max/567/1*JilJ5g_VCAWJ6W6ftm976g.png" alt="Image" />
+> Örn: Bir kadın bir erkekle evlenebilir veya bir erkek bir kadınla evlenebilir.
+
+<img src="https://cdn-images-1.medium.com/max/567/1*JilJ5g_VCAWJ6W6ftm976g.png" alt="Image" />
 
 **B-Bire çok ilişki:** Bir varlığın yalnızca bir örneği ve Diğer bir varlığın birden fazla örneği ilişkiyle ilişkilendirildiğinde, bu bire çok ilişkisi olarak bilinir.
 
@@ -81,7 +92,9 @@ Varlık-İlişki modeli, veritabanı tasarımı için örnek bir model/diyagram 
 
 **4-Çoka çok ilişki:** Soldaki varlığın birden fazla örneği ve sağdaki bir varlığın birden fazla örneği ilişkiyle ilişkilendirildiğinde, buna çoka çok ilişkisi denir.
 
-<img src="https://cdn-images-1.medium.com/max/468/1*wjiOrt0dUeyM4irbH5riYw.jpeg" alt="Image" />### Veritabanı normalizasyonu nedir?
+<img src="https://cdn-images-1.medium.com/max/468/1*wjiOrt0dUeyM4irbH5riYw.jpeg" alt="Image" />
+
+### Veritabanı normalizasyonu nedir?
 
 Normalleştirme, veri tabanı tasarımında kullanılan bir süreçtir ve bir veritabanındaki verileri organize etmek için kullanılır. Normalleştirme, bir veritabanının tasarımını optimize etmeye ve verilerin tekrarlamasını en aza indirmeye çalışır. Bu, veritabanının daha iyi performans göstermesini sağlar ve verilerin bütünlüğünü korur. Normalleştirme süreci, bir veritabanındaki verilerin yapısal düzenlenmesine odaklanır ve verilerin daha iyi bir şekilde yönetilmesine yardımcı olur.
 
@@ -99,7 +112,10 @@ Günümüzde kullanılan güncel ANSI SQL standardı ise SQL:2016’dır.
 
 WAMP bir teknoloji yığınıdır. WAMP sayesinde kendi bilgisayarınızı bir web sunucusuna çevirebilirsiniz.
 
-- “**W**” Windows işletim sistemi içindir. Bu teknoloji yığınının Linux için olanı da benzer şekilde LAMP olarak adlandırılır.- “**A**”Apache web sunucusu yazılımıdır.- “**M**” MySQL içindir. MySQL sayesinde ilişkisel veritabanlarınızı kontrol edebilirsiniz.- “**P**” PHP yazılım diline karşılık gelir.
+- “**W**” Windows işletim sistemi içindir. Bu teknoloji yığınının Linux için olanı da benzer şekilde LAMP olarak adlandırılır.
+- “**A**”Apache web sunucusu yazılımıdır.
+- “**M**” MySQL içindir. MySQL sayesinde ilişkisel veritabanlarınızı kontrol edebilirsiniz.
+- “**P**” PHP yazılım diline karşılık gelir.
 
 MySQL ve WAMP yazılımları tamamen açık kaynaklı olduğu için (Windows dışında) bu programlar ile istediğinizi yapabilirsiniz.
 

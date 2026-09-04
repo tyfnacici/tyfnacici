@@ -1,0 +1,42 @@
+/* Giscus custom theme — matches the tyfnacici.com design system
+   (cream bg, forest-green accents, DM Sans). Served from /giscus-theme.css. */
+
+main {
+  color-scheme: light;
+  --color-canvas-default: #fafcf8;
+  --color-canvas-overlay: #ffffff;
+  --color-canvas-inset: #eef2eb;
+  --color-border-default: #dfe8dd;
+  --color-border-muted: #dfe8dd;
+  --color-fg-default: #183024;
+  --color-fg-muted: #657a6c;
+  --color-fg-subtle: #82938a;
+  --color-accent-fg: #173b2a;
+  --color-accent-emphasis: #173b2a;
+  --color-accent-muted: rgba(23,59,42,.08);
+  --color-btn-bg: #e4efe5;
+  --color-btn-hover-bg: #d8e8d9;
+  --color-btn-border: #ccdbce;
+  --color-btn-primary-bg: #173b2a;
+  --color-btn-primary-hover-bg: #224a32;
+  --color-btn-primary-border: #173b2a;
+  --color-btn-primary-fg: #fafcf8;
+  --color-neutral-muted: rgba(23,59,42,.08);
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+
+/* Header + comment boxes */
+.timeline-comment .comment-body,
+.comment {
+  border-radius: 12px;
+}
+
+/* Reaction + action buttons */
+.Button {
+  border-radius: 8px;
+}
+
+/* Sign-in prompt box */
+.giscus-frame {
+  color-scheme: light;
+}

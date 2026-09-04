@@ -11,7 +11,13 @@ cover:
 
 ### 🔗 [Medium'da Oku](https://medium.com/@tyfnacici/openvpn-kurulumu)
 
-<img src="https://cdn-images-1.medium.com/max/884/1*dExpXTogMQ1mnsJKvFMOMA.png" alt="Image" />### Gereksinimler- İki adet Ubuntu 20.04 kurulu makine. Bu makinelerin birinde sertifikalarımızı onaylayacağız, diğerinde ise OpenVPN servisimizi kuracağız.- Kuruluma bağlanabilmek için client olacak herhangi bir işletim sistemi kurulu cihaz. (Android, İOS, MacOS, Windows, Linux) Ben kendi makinemde kurulu olan Arch Linux’u kullanacağım.### Sertifikalarımızı onaylayacağımız makinenin kurulumunu ve konfigürasyonunu yapalım
+<img src="https://cdn-images-1.medium.com/max/884/1*dExpXTogMQ1mnsJKvFMOMA.png" alt="Image" />
+
+### Gereksinimler
+- İki adet Ubuntu 20.04 kurulu makine. Bu makinelerin birinde sertifikalarımızı onaylayacağız, diğerinde ise OpenVPN servisimizi kuracağız.
+- Kuruluma bağlanabilmek için client olacak herhangi bir işletim sistemi kurulu cihaz. (Android, İOS, MacOS, Windows, Linux) Ben kendi makinemde kurulu olan Arch Linux’u kullanacağım.
+
+### Sertifikalarımızı onaylayacağımız makinenin kurulumunu ve konfigürasyonunu yapalım
 
 **Not: Bu kısımda bulunanları makinenizde root kullancısı olarak değil, normal bir kullanıcı olarak yapmamız gerekmektedir.**
 
@@ -67,7 +73,8 @@ Ardından dosyayı kaydedelim ve sertifika yetkilimizi oluşturalım.
 
 Bu işlemler sonucunda iki adet çok önemli dosya elde ettiniz. Bunlar **“~/easy-rsa/pki/ca.crt”** **“~/easy-rsa/pki/private/ca.key”**
 
-- ca.crt is the CA’s public certificate file. Users, servers, and clients will use this certificate to verify that they are part of the same web of trust. Every user and server that uses your CA will need to have a copy of this file. All parties will rely on the public certificate to ensure that someone is not impersonating a system and performing a [Man-in-the-middle attack](https://en.wikipedia.org/wiki/Man-in-the-middle_attack).- ca.key is the private key that the CA uses to sign certificates for servers and clients. If an attacker gains access to your CA and, in turn, your ca.key file, you will need to destroy your CA. This is why your ca.key file should **only** be on your CA machine and that, ideally, your CA machine should be kept offline when not signing certificate requests as an extra security measure.
+- ca.crt is the CA’s public certificate file. Users, servers, and clients will use this certificate to verify that they are part of the same web of trust. Every user and server that uses your CA will need to have a copy of this file. All parties will rely on the public certificate to ensure that someone is not impersonating a system and performing a [Man-in-the-middle attack](https://en.wikipedia.org/wiki/Man-in-the-middle_attack).
+- ca.key is the private key that the CA uses to sign certificates for servers and clients. If an attacker gains access to your CA and, in turn, your ca.key file, you will need to destroy your CA. This is why your ca.key file should **only** be on your CA machine and that, ideally, your CA machine should be kept offline when not signing certificate requests as an extra security measure.
 
 With that, your CA is in place and it is ready to be used to sign certificate requests, and to revoke certificates.
 
@@ -275,7 +282,9 @@ sudo nano /etc/openvpn/server/server.conf
 Dosyanın içerisinde “tls-auth” aratalım ve çıkan satırın başına ; ekleyerek yorum satırı haline çevirelim. Altına da “tls-crypt ta.key” kısmını ekleyelim.
 
 
-;tls-auth ta.key 0 # This file is secret
+;tls-auth ta.key 0 
+
+# This file is secret
 tls-crypt ta.key
 
 

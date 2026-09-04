@@ -11,7 +11,9 @@ cover:
 
 ### 🔗 [Medium'da Oku](https://medium.com/@tyfnacici/powerdns-kurulumu)
 
-<img src="https://cdn-images-1.medium.com/max/280/1*tH2YrWgGxZLIuZrsVmXEfw.png" alt="Image" />### DNS nedir?
+<img src="https://cdn-images-1.medium.com/max/280/1*tH2YrWgGxZLIuZrsVmXEfw.png" alt="Image" />
+
+### DNS nedir?
 
 DNS (Alan Adı Sistemi), insan tarafından okunabilir alan adlarını IP adreslerine dönüştüren dağıtılmış ve hiyerarşik bir sistemdir. Bilgisayarlar ve diğer cihazlar birbirleriyle etki alanı adlarını değil IP adreslerini kullanarak iletişim kurduklarından, bu, web sitelerine ve diğer internet tabanlı hizmetlere erişmek için çok önemlidir.
 
@@ -25,7 +27,13 @@ DNS, internet’in kullanıcı dostu bir şekilde çalışmasına izin veren ön
 
 DNS kayıtları, DNS sunucularında depolanan bilgi türleridir. Aşağıdakiler de dahil olmak üzere çeşitli DNS kaydı türleri vardır:
 
-- A (Address) kayıdı: alan adını ip adresi ile eşler.- MX (Mail Exchange) kayıdı: bir etki alanı için e-posta iletilerini kabul etmekten sorumlu posta sunucusunu belirtir.- CNAME (Canonical Name) Kayıdı: bilgisayar adı için takma ad oluşturur.- NS (Name Server) kayıdı: belirli bir etki alanı için yetkili alan adı sunucularını tanımlar- PTR (Pointer) kayıdı: bir IP adresini bir ana bilgisayar adına eşler- TXT (Text) kayıdı: e-posta sahteciliğiyle mücadele için SPF (Gönderen İlkesi Çerçevesi) bilgileri gibi bir ana bilgisayar hakkında ek bilgiler sağlar- SRV (Service) kayıdı: bir etki alanı için belirli bir hizmeti barındıran sunucunun konumu gibi hizmetlerin konumunu belirtmek için kullanılır
+- A (Address) kayıdı: alan adını ip adresi ile eşler.
+- MX (Mail Exchange) kayıdı: bir etki alanı için e-posta iletilerini kabul etmekten sorumlu posta sunucusunu belirtir.
+- CNAME (Canonical Name) Kayıdı: bilgisayar adı için takma ad oluşturur.
+- NS (Name Server) kayıdı: belirli bir etki alanı için yetkili alan adı sunucularını tanımlar
+- PTR (Pointer) kayıdı: bir IP adresini bir ana bilgisayar adına eşler
+- TXT (Text) kayıdı: e-posta sahteciliğiyle mücadele için SPF (Gönderen İlkesi Çerçevesi) bilgileri gibi bir ana bilgisayar hakkında ek bilgiler sağlar
+- SRV (Service) kayıdı: bir etki alanı için belirli bir hizmeti barındıran sunucunun konumu gibi hizmetlerin konumunu belirtmek için kullanılır
 
 Bu kayıtlar, Internet’te bulunan çeşitli hizmetlerin ve kaynakların yapılandırılmasına ve yönetilmesine yardımcı olarak kullanıcıların bunlara erişmesini ve bunları verimli bir şekilde kullanmasını sağlar.
 
@@ -73,13 +81,16 @@ sudo mysql -u root -p
 
 Şifreyi girdiğinizde aşağıdaki gibi bir ekran sizi karşılayacaktır.
 
-<img src="https://cdn-images-1.medium.com/max/795/1*Em3HWZjVJYuiDmZxRGT1iQ.png" alt="Image" />### PowerDNS kurulumunu yapalım
+<img src="https://cdn-images-1.medium.com/max/795/1*Em3HWZjVJYuiDmZxRGT1iQ.png" alt="Image" />
+
+### PowerDNS kurulumunu yapalım
 
 PowerDNS reposunu makinemize eklemek için aşağıdaki komutları sırasıyla yazalım.
 
 
 # Download PowerDNS GPG Key
-wget -qO- https://repo.powerdns.com/FD380FBB-pub.asc | gpg --dearmor > /etc/apt/trusted.gpg.d/pdns.gpg
+wget -qO
+- https://repo.powerdns.com/FD380FBB-pub.asc | gpg --dearmor > /etc/apt/trusted.gpg.d/pdns.gpg
 ​
 # Adding the PowerDNS Repository for Ubuntu 20.04 System
 echo "deb [arch=amd64] http://repo.powerdns.com/ubuntu focal-auth-45 main" | sudo tee /etc/apt/sources.list.d/pdns.list
@@ -88,7 +99,8 @@ echo "deb [arch=amd64] http://repo.powerdns.com/ubuntu focal-auth-45 main" | sud
 Ardından **“/etc/apt/preferences.d/pdns”** dosyasını oluşturalım ve aşağıdakileri girelim.
 
 
-# all packages with first name pdns- will be installed from the repo.powerdns.com repository
+# all packages with first name pdns
+- will be installed from the repo.powerdns.com repository
 Package: pdns-*
 Pin: origin repo.powerdns.com
 Pin-Priority: 600
@@ -112,7 +124,9 @@ sudo systemctl status pdns.service
 
 Gördüğünüz gibi PowerDNS servisi 53 portunda çalışır vaziyette.
 
-<img src="https://cdn-images-1.medium.com/max/1024/1*hAdaX93tpcA_xuJFC8lw9A.png" alt="Image" />### PowerDNS veritabanını konfigüre edelim
+<img src="https://cdn-images-1.medium.com/max/1024/1*hAdaX93tpcA_xuJFC8lw9A.png" alt="Image" />
+
+### PowerDNS veritabanını konfigüre edelim
 
 MySQL konsolumuzu açalım.
 
@@ -145,7 +159,9 @@ mysql -u pdnsadmin -p pdns < /usr/share/pdns-backend-mysql/schema/schema.mysql.s
 
 Bu işlemden sonra aşağıdaki komutu yazdığımızda bize bunun gibi bir çıktı vermesi gerek.
 
-<img src="https://cdn-images-1.medium.com/max/467/1*VOpuPBqLm4wie7YI_8vTWw.png" alt="Image" />### PowerDNS’i MySQL’e bağlayalım
+<img src="https://cdn-images-1.medium.com/max/467/1*VOpuPBqLm4wie7YI_8vTWw.png" alt="Image" />
+
+### PowerDNS’i MySQL’e bağlayalım
 
 Öncelikle PowerDNS servisini durduralım.
 
@@ -188,7 +204,9 @@ sudo systemctl start pdns.service
 # verify status of the PowerDNS service
 sudo systemctl status pdns.service
 
-<img src="https://cdn-images-1.medium.com/max/906/1*cMt5YMGR9JmOJrYNG8qqnQ.png" alt="Image" />### DNS kayıtlarını oluşturalım
+<img src="https://cdn-images-1.medium.com/max/906/1*cMt5YMGR9JmOJrYNG8qqnQ.png" alt="Image" />
+
+### DNS kayıtlarını oluşturalım
 
 MySQL konsolunu açalım.
 

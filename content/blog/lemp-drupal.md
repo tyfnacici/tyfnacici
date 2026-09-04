@@ -19,7 +19,12 @@ cover:
 
 LEMP, web uygulamaları geliştirmek için kullanılan açık kaynaklı bir web uygulaması yığınıdır. LEMP terimi, [Linux işletim sistemi](https://tr.wikipedia.org/wiki/Linux) için L, [Nginx](https://tr.wikipedia.org/wiki/Nginx) web sunucusu (engine-x olarak telaffuz edilir, dolayısıyla kısaltmada E olarak telaffuz edilir), [MySQL](https://tr.wikipedia.org/wiki/MySQL) veritabanı için M ve [PHP](https://tr.wikipedia.org/wiki/PHP) dili için P’yi temsil eden bir kısaltmadır.
 
-- **L-** Linux Operating System- **E-** Nginx Server- **M-** MySQL Database- **P-** PHP### CMS nedir?
+- **L-** Linux Operating System
+- **E-** Nginx Server
+- **M-** MySQL Database
+- **P-** PHP
+
+### CMS nedir?
 
 CMS, İngilizce “Content Management System” kelimesinin kısaltılmışıdır ve Türkçe çevirisi ise “içerik yönetim sistemi” olarak kabul edilmiştir. Hazır kaynak kodlara sahip bu sistemler ile birçok farklı konuda ve alanda internet sitesi tasarlayabilir ve yayına alabilirsiniz. Sistemler diyoruz çünkü tek bir tane CMS sistemi bulunmamaktadır. Dünya üzerinde yüzlerce içerik yönetim sistemi aktif olarak kullanılmaktadır ve farklı amaçlara hizmet etmektedir.
 
@@ -39,7 +44,13 @@ Hiç kimse gezinmesi ve kullanması zor olan yazılımları kullanmaktan hoşlan
 
 Eklentiler ve uzantılar, içerik yönetimi yazılımı ile elde ettiğiniz işlevler dizisini genişletme olanağı sağlar. Sıfırdan kodlamak yerine sadece eklentisini indirerek websitenizi aşağıdaki özelliklere sahip bir hale getirebilirsiniz.
 
-- Alışveriş sepetleri- İletişim formları- E-posta listesi yönetimi senkronizasyonu- Spam koruması- Görüntü sıkıştırma- Ekstra güvenlik- Ve daha bir sürü şey!
+- Alışveriş sepetleri
+- İletişim formları
+- E-posta listesi yönetimi senkronizasyonu
+- Spam koruması
+- Görüntü sıkıştırma
+- Ekstra güvenlik
+- Ve daha bir sürü şey!
 
 Az önce de belirttiğim gibi bunları yapmak için teknik bilgiye sahip olmanız gerekmez. Sadece bir tık ile eklentileri indirmeniz yeterlidir.
 
@@ -67,7 +78,12 @@ SEO: türkçesi, arama motoru optimizasyonu anlamına gelmektedir. Yani internet
 
 Artık neyin ne olduğunu öğrendiysek yavaştan kuruluma geçelim.
 
-### Gereksinimler- Bir adet Ubuntu veya türevi işletim sistemi kurulu min 5GB boş yeri olan bir makine.- İnternet bağlantısı.- Kullanacağınız makinenin ip adresine yönlendiren bir A kaydı olan Domain.### Nginx kurulumumuzu yapalım
+### Gereksinimler
+- Bir adet Ubuntu veya türevi işletim sistemi kurulu min 5GB boş yeri olan bir makine.
+- İnternet bağlantısı.
+- Kullanacağınız makinenin ip adresine yönlendiren bir A kaydı olan Domain.
+
+### Nginx kurulumumuzu yapalım
 
 Aşağıdaki komutu girerek nginx kurulumuzu yapalım.
 
@@ -77,7 +93,9 @@ sudo apt update && sudo apt install nginx
 
 İndirme bittikten sonra sunucumuzun ip adresini tarayıcımıza girelim. Karşımıza aşağıdaki gibi bir ekran çıkması gerek.
 
-<img src="https://cdn-images-1.medium.com/max/780/1*pAAbdNW0szeKaejJAmsFDw.png" alt="Image" />### MySQL kurulumunu yapalım
+<img src="https://cdn-images-1.medium.com/max/780/1*pAAbdNW0szeKaejJAmsFDw.png" alt="Image" />
+
+### MySQL kurulumunu yapalım
 
 Aşağıdaki komutları sırasıyla makinemizin terminaline girerek MySQL kurulumunu yapalım.
 
@@ -117,7 +135,9 @@ sudo mysql -u root -p
 
 Şifreyi girdiğinizde aşağıdaki gibi bir ekran sizi karşılayacaktır.
 
-<img src="https://cdn-images-1.medium.com/max/795/1*Em3HWZjVJYuiDmZxRGT1iQ.png" alt="Image" />### PHP kurulumlarımızı yapalım
+<img src="https://cdn-images-1.medium.com/max/795/1*Em3HWZjVJYuiDmZxRGT1iQ.png" alt="Image" />
+
+### PHP kurulumlarımızı yapalım
 
 Drupalın kullanacağımız sürümü PHP’nin 8.1 ve üzeri sürümlerini desteklemekte. Ubuntu 20.04LTS’nin repolarında PHP’nin bu sürümü bulunmadığı için paket reposunu kendimiz eklememiz gerek.
 
@@ -170,7 +190,8 @@ Drupalı indirebilmek için öncelikle bazı kurulumlar yapmamız gerek.
 
 
 sudo apt install curl git
-curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
+curl -sS https://getcomposer.org/installer | sudo php -
+- --install-dir=/usr/local/bin --filename=composer
 
 
 Kurulumları yaptıktan sonra aşağıdaki komutları sırasıyla yazarak Drupal’ı makinemizin **“/var/www/html”** dizinine kuralım.
@@ -204,7 +225,10 @@ Dosyanın içeriği aşağıdaki gibi olmalı. **“server_name”** kısmına k
 
 server {
  server_name drupal.tayfun.com;
- root /var/www/html/drupal; ## <-- Drupal'ın bulunduğu dizin
+ root /var/www/html/drupal; 
+
+## <-
+- Drupal'ın bulunduğu dizin
 ​
  location = /favicon.ico {
  log_not_found off;
@@ -217,7 +241,9 @@ server {
  access_log off;
  }
 ​
- # Very rarely should these ever be accessed outside of your lan
+ 
+
+# Very rarely should these ever be accessed outside of your lan
  location ~* \.(txt|log)$ {
  allow 192.168.0.0/16;
  deny all;
@@ -231,73 +257,133 @@ server {
  return 403;
  }
 ​
- # Block access to scripts in site files directory
+ 
+
+# Block access to scripts in site files directory
  location ~ ^/sites/[^/]+/files/.*\.php$ {
  deny all;
  }
 ​
- # Allow "Well-Known URIs" as per RFC 5785
+ 
+
+# Allow "Well-Known URIs" as per RFC 5785
  location ~* ^/.well-known/ {
  allow all;
  }
 ​
- # Block access to "hidden" files and directories whose names begin with a
- # period. This includes directories used by version control systems such
- # as Subversion or Git to store control files.
+ 
+
+# Block access to "hidden" files and directories whose names begin with a
+ 
+
+# period. This includes directories used by version control systems such
+ 
+
+# as Subversion or Git to store control files.
  location ~ (^|/)\. {
  return 403;
  }
 ​
  location / {
- # try_files $uri @rewrite; # For Drupal <= 6
- try_files $uri /index.php?$query_string; # For Drupal >= 7
+ 
+
+# try_files $uri @rewrite; 
+
+# For Drupal <= 6
+ try_files $uri /index.php?$query_string; 
+
+# For Drupal >= 7
  }
 ​
  location @rewrite {
- #rewrite ^/(.*)$ /index.php?q=$1; # For Drupal <= 6
- rewrite ^ /index.php; # For Drupal >= 7
+ #rewrite ^/(.*)$ /index.php?q=$1; 
+
+# For Drupal <= 6
+ rewrite ^ /index.php; 
+
+# For Drupal >= 7
  }
 ​
- # Don't allow direct access to PHP files in the vendor directory.
+ 
+
+# Don't allow direct access to PHP files in the vendor directory.
  location ~ /vendor/.*\.php$ {
  deny all;
  return 404;
  }
 ​
- # Protect files and directories from prying eyes.
+ 
+
+# Protect files and directories from prying eyes.
  location ~* \.(engine|inc|install|make|module|profile|po|sh|.*sql|theme|twig|tpl(\.php)?|xtmpl|yml)(~|\.sw[op]|\.bak|\.orig|\.save)?$|^(\.(?!well-known).*|Entries.*|Repository|Root|Tag|Template|composer\.(json|lock)|web\.config)$|^#.*#$|\.php(~|\.sw[op]|\.bak|\.orig|\.save)$ {
  deny all;
  return 404;
  }
 ​
- # In Drupal 8, we must also match new paths where the '.php' appears in
- # the middle, such as update.php/selection. The rule we use is strict,
- # and only allows this pattern with the update.php front controller.
- # This allows legacy path aliases in the form of
- # blog/index.php/legacy-path to continue to route to Drupal nodes. If
- # you do not have any paths like that, then you might prefer to use a
- # laxer rule, such as:
- # location ~ \.php(/|$) {
- # The laxer rule will continue to work if Drupal uses this new URL
- # pattern with front controllers other than update.php in a future
- # release.
+ 
+
+# In Drupal 8, we must also match new paths where the '.php' appears in
+ 
+
+# the middle, such as update.php/selection. The rule we use is strict,
+ 
+
+# and only allows this pattern with the update.php front controller.
+ 
+
+# This allows legacy path aliases in the form of
+ 
+
+# blog/index.php/legacy-path to continue to route to Drupal nodes. If
+ 
+
+# you do not have any paths like that, then you might prefer to use a
+ 
+
+# laxer rule, such as:
+ 
+
+# location ~ \.php(/|$) {
+ 
+
+# The laxer rule will continue to work if Drupal uses this new URL
+ 
+
+# pattern with front controllers other than update.php in a future
+ 
+
+# release.
  location ~ '\.php$|^/update.php' {
  fastcgi_split_path_info ^(.+?\.php)(|/.*)$;
- # Ensure the php file exists. Mitigates CVE-2019-11043
+ 
+
+# Ensure the php file exists. Mitigates CVE-2019-11043
  try_files $fastcgi_script_name =404;
- # Security note: If you're running a version of PHP older than the
- # latest 5.3, you should have "cgi.fix_pathinfo = 0;" in php.ini.
- # See http://serverfault.com/q/627903/94922 for details.
+ 
+
+# Security note: If you're running a version of PHP older than the
+ 
+
+# latest 5.3, you should have "cgi.fix_pathinfo = 0;" in php.ini.
+ 
+
+# See http://serverfault.com/q/627903/94922 for details.
  include fastcgi_params;
- # Block httpoxy attacks. See https://httpoxy.org/.
+ 
+
+# Block httpoxy attacks. See https://httpoxy.org/.
  fastcgi_param HTTP_PROXY "";
  fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
  fastcgi_param PATH_INFO $fastcgi_path_info;
  fastcgi_param QUERY_STRING $query_string;
  fastcgi_intercept_errors on;
- # PHP 5 socket location.
+ 
+
+# PHP 5 socket location.
  #fastcgi_pass unix:/var/run/php5-fpm.sock;
- # PHP 7 socket location.
+ 
+
+# PHP 7 socket location.
  fastcgi_pass unix:/var/run/php/php8.2-fpm.sock;
  }
 ​
@@ -307,21 +393,41 @@ server {
  log_not_found off;
  }
 ​
- # Fighting with Styles? This little gem is amazing.
- # location ~ ^/sites/.*/files/imagecache/ { # For Drupal <= 6
- location ~ ^/sites/.*/files/styles/ { # For Drupal >= 7
+ 
+
+# Fighting with Styles? This little gem is amazing.
+ 
+
+# location ~ ^/sites/.*/files/imagecache/ { 
+
+# For Drupal <= 6
+ location ~ ^/sites/.*/files/styles/ { 
+
+# For Drupal >= 7
  try_files $uri @rewrite;
  }
 ​
- # Handle private files through Drupal. Private file's path can come
- # with a language prefix.
- location ~ ^(/[a-z\-]+)?/system/files/ { # For Drupal >= 7
+ 
+
+# Handle private files through Drupal. Private file's path can come
+ 
+
+# with a language prefix.
+ location ~ ^(/[a-z\-]+)?/system/files/ { 
+
+# For Drupal >= 7
  try_files $uri /index.php?$query_string;
  }
 ​
- # Enforce clean URLs
- # Removes index.php from urls like www.example.com/index.php/my-page --> www.example.com/my-page
- # Could be done with 301 for permanent or other redirect codes.
+ 
+
+# Enforce clean URLs
+ 
+
+# Removes index.php from urls like www.example.com/index.php/my-page --> www.example.com/my-page
+ 
+
+# Could be done with 301 for permanent or other redirect codes.
  if ($request_uri ~* "^(.*/)index\.php/(.*)") {
  return 307 $1$2;
  }

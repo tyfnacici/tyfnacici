@@ -11,7 +11,10 @@ cover:
 
 ### 🔗 [Medium'da Oku](https://medium.com/@tyfnacici/openldap-multimaster)
 
-- En az 2 adet openLDAP kurulu sanal makine. Bu yazıda Ubuntu 22.04 LTS kullanacağız. Aynı dağıtımları kullanmanız şiddetle tavsiye edilir.- Kullanacağımız sanal makinelerin hepsinde kurulu ve senkronize çalışan NTP server.### LDAP Nedir ?
+- En az 2 adet openLDAP kurulu sanal makine. Bu yazıda Ubuntu 22.04 LTS kullanacağız. Aynı dağıtımları kullanmanız şiddetle tavsiye edilir.
+- Kullanacağımız sanal makinelerin hepsinde kurulu ve senkronize çalışan NTP server.
+
+### LDAP Nedir ?
 
 **Lightweight Directory Access Protocol** veya kısaca **LDAP** (\*Basit İndeks Erişim Protokolü\*) TCP/IP üzerinde çalışan indeks servislerini sorgulama ve değiştirme amacıyla kullanılan uygulama katmanı protokolü.
 
@@ -61,7 +64,11 @@ Bu dosyanın içerisine ise makinelerimizin ip adresleri ve onların yanına koy
 
 Bu ayarımızın çalışıp çalışmadığını denemek için makinelerimizin birinden diğerine yazdığınız adresleri girip ping atabilirsiniz.
 
-### Artık ldap kurulumuna geçebiliriz.#### Multi-Master Kurulumunda Master olmasını istediğimiz makinemize Ldap kurulumunu yapıyoruz.#### 1-Aşağıda belirttiğim adımlar her iki makinede de yapılmalıdır.
+### Artık ldap kurulumuna geçebiliriz.
+
+#### Multi-Master Kurulumunda Master olmasını istediğimiz makinemize Ldap kurulumunu yapıyoruz.
+
+#### 1-Aşağıda belirttiğim adımlar her iki makinede de yapılmalıdır.
 
 apt -y install slapd ldap-utils
 
@@ -74,14 +81,23 @@ dpkg-reconfigure slapd
 
 Bu komutu çalıştırdıktan sonra çıkan sorulara aşağıdaki gibi cevap vermeniz gerekiyor.
 
-- **Omit OpenLDAP Server Configuration:** No- **DNS Domain Name:** This creates the base structure for your directory path.<img src="https://cdn-images-1.medium.com/max/619/1*wRNMw9cHCumOx8XpodwteA.png" alt="Image" />- **Organization Name: **The name to be used as the base DN for your LDAP directory.- **Administrator Password:** Az önce ayarladığınız admin şifresi- **Remove The Database When Slapd Is Purged:** No- **Move Old Database:** Yes
+- **Omit OpenLDAP Server Configuration:** No
+- **DNS Domain Name:** This creates the base structure for your directory path.
+
+<img src="https://cdn-images-1.medium.com/max/619/1*wRNMw9cHCumOx8XpodwteA.png" alt="Image" />
+- **Organization Name: **The name to be used as the base DN for your LDAP directory.
+- **Administrator Password:** Az önce ayarladığınız admin şifresi
+- **Remove The Database When Slapd Is Purged:** No
+- **Move Old Database:** Yes
 
 Bu ayarlamaları yaptıktan sonra aşağıdaki komutu konsola yazarak ayarlarınızı kontrol edebilirsiniz.
 
 
 slapcat
 
-<img src="https://cdn-images-1.medium.com/max/621/1*sEBkZGM_paKyh9KTxN4xgA.png" alt="Image" />#### 3-Kullanıcılar ve gruplar için bir temel DN oluşturalım.
+<img src="https://cdn-images-1.medium.com/max/621/1*sEBkZGM_paKyh9KTxN4xgA.png" alt="Image" />
+
+#### 3-Kullanıcılar ve gruplar için bir temel DN oluşturalım.
 
 Aşağıdaki şekilde dosyayı oluşturalım ve içerisine de eklediğim yazıları koyalım.
 
@@ -106,7 +122,9 @@ ldapadd -x -D cn=admin,dc=plusclouds,dc=com -W -f base.ldif
 
 Şifre sorduğu zaman ise ldap’i kurarken eklediğiniz şifreyi yazmanız gerekiyor.
 
-#### Multi-Master Kurulumundaki slave olmasını istediğimiz sunucuların kurulumuna geçelim#### 1-Gerekli paketlerin kurulumunu yapalım.
+#### Multi-Master Kurulumundaki slave olmasını istediğimiz sunucuların kurulumuna geçelim
+
+#### 1-Gerekli paketlerin kurulumunu yapalım.
 
 apt -y install libnss-ldapd libpam-ldapd ldap-utils
 

@@ -62,7 +62,13 @@ GTID replikasyonunda, master sunucu her işlem için benzersiz bir GTID atar ve 
 
 GTID replikasyonu, replikasyon kurulumunuza yeni bir slave sunucu eklemek istediğinizde size kolaylıklar sunar. Bağladığınız yeni slave son GTID ile başlar, geleneksel replikasyondaki gibi binlog dosyası ve pozisyonunu belirtmenize gerek kalmaz.
 
-### Gereksinimler- Hepsi aynı ağda bulunan 3 Adet Ubuntu 22.04LTS kurulu makine- İnternet bağlantısı### Clusterimizdeki makinelerin kurulumlarını yapalım### Percona XtraDB Cluster kurulumlarını makinelerimize yapalım
+### Gereksinimler
+- Hepsi aynı ağda bulunan 3 Adet Ubuntu 22.04LTS kurulu makine
+- İnternet bağlantısı
+
+### Clusterimizdeki makinelerin kurulumlarını yapalım
+
+### Percona XtraDB Cluster kurulumlarını makinelerimize yapalım
 
 Clusterde olacak makinelerimizin **tümünün** terminaline aşağıdaki kodları sırasıyla girerek gerekli indirmeleri yapalım.
 
@@ -224,7 +230,9 @@ systemctl start mysql
 
 Artık clusterimizdeki makineler Multi-Master konfigürasyonunda çalışmaya başladılar.
 
-### Slave makinemizi Clustere bağlayalım### Makinemize Percona Server kurulumunu yapalım
+### Slave makinemizi Clustere bağlayalım
+
+### Makinemize Percona Server kurulumunu yapalım
 
 Aşağıdaki komutları sırasıyla makinemizin terminaline girerek gereki kurulumları yapalım.
 

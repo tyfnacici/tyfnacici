@@ -11,13 +11,27 @@ cover:
 
 ### 🔗 [Medium'da Oku](https://medium.com/@tyfnacici/linux-vs-windows)
 
-### Windowsunuzu illegal yollardan aktifleştirmekten sıkılmadınız mı?<img src="https://cdn-images-1.medium.com/max/639/1*fm2Y1noSdJ-j1HUIyFKpgA.png" alt="Image" />
+### Windowsunuzu illegal yollardan aktifleştirmekten sıkılmadınız mı?
+
+<img src="https://cdn-images-1.medium.com/max/639/1*fm2Y1noSdJ-j1HUIyFKpgA.png" alt="Image" />
 *Windowsu aktifleştirin*
-### Bu ekranı ne kadar iyi tanıyorsunuz?<img src="https://cdn-images-1.medium.com/max/1024/1*bpZqaCzJ-x0dEJ7kkQogtA.png" alt="Image" />
+### Bu ekranı ne kadar iyi tanıyorsunuz?
+
+<img src="https://cdn-images-1.medium.com/max/1024/1*bpZqaCzJ-x0dEJ7kkQogtA.png" alt="Image" />
 *Blue Screen of Death*
-### Windows makinenizin izniniz olmadan güncelleme yapıp sizi hiç beklettiği oldu mu?### Windowsun size sormadan bilgisayarınıza kurduğu kaç adet programınız var? (Evet, özellikle de Candy Crush’ı ve Edge’yi kast ediyorum ^^)### İki yıl önce aldığın bilgisayarında Windows 10 dan Windows 11 e yükseltemiyor musun? 😂<img src="https://cdn-images-1.medium.com/max/921/1*X5cqasLQpZpFX-iLudRX9g.jpeg" alt="Image" />
+### Windows makinenizin izniniz olmadan güncelleme yapıp sizi hiç beklettiği oldu mu?
+
+### Windowsun size sormadan bilgisayarınıza kurduğu kaç adet programınız var? (Evet, özellikle de Candy Crush’ı ve Edge’yi kast ediyorum ^^)
+
+### İki yıl önce aldığın bilgisayarında Windows 10 dan Windows 11 e yükseltemiyor musun? 😂
+
+<img src="https://cdn-images-1.medium.com/max/921/1*X5cqasLQpZpFX-iLudRX9g.jpeg" alt="Image" />
 *haha*
-### Peki, Windows bilgisayarına internetten program kurmaya çalışırken hiç bilgisayarına virüs soktuğun oldu mu?### Şunu söylediğinizi duyar gibiyim “Tamam ama bilgisayarıma başka nasıl bir program kurabilirim kii!!??”<img src="https://cdn-images-1.medium.com/max/1024/1*TN6BSdhXKW5w2HmbBU-Hkg.jpeg" alt="Image" />
+### Peki, Windows bilgisayarına internetten program kurmaya çalışırken hiç bilgisayarına virüs soktuğun oldu mu?
+
+### Şunu söylediğinizi duyar gibiyim “Tamam ama bilgisayarıma başka nasıl bir program kurabilirim kii!!??”
+
+<img src="https://cdn-images-1.medium.com/max/1024/1*TN6BSdhXKW5w2HmbBU-Hkg.jpeg" alt="Image" />
 *Arch, Ubuntu and Linux mint*
 
 
@@ -59,7 +73,9 @@ Burada açık kaynaklı olan bir projenin sahip olduğu potansiyel ne olabilir �
 
 Tarihini öğrendiğimize göre asıl konumuz olan peki **“Neden Linuxu kullanmalıyız” **kısmına geçebiliriz.
 
-### 1-**Linux** daha güvenlidir.<img src="https://cdn-images-1.medium.com/max/1024/1*XwprTEu_Oc_qVNIrqWbwKw.png" alt="Image" />
+### 1-**Linux** daha güvenlidir.
+
+<img src="https://cdn-images-1.medium.com/max/1024/1*XwprTEu_Oc_qVNIrqWbwKw.png" alt="Image" />
 *[https://www.t4.ai/industry/desktop-operating-system-market-share](https://www.t4.ai/industry/desktop-operating-system-market-share)*
 
 
@@ -103,7 +119,8 @@ Not: Bazı laptoplarda örn: fan modu, klavye aydınlatmasının modları gibi �
 
 <img src="https://cdn-images-1.medium.com/max/916/1*8EI5_F745_vE-Dpr85_f-A.png" alt="Image" />
 *Windows 10 destek sonu tarihi.*
-### 5- **Linux** ücretsizdir.
+### 5
+- **Linux** ücretsizdir.
 
 Windowsu her ne kadar ücretsiz olarak kullanabilseniz de her özelliğini kullanabilmek için ya para vermek ya da illegal yollardan aktifleştirmeniz gerek. **Linux** ise tamamen ücretsizdir.
 
@@ -117,7 +134,9 @@ Açık kaynaklı olduğundan dolayı **Linux**da sınır hayal gücünüzdür. A
 
 İster görünüş olarak ister işlev olarak neredeyse her şeyi yapabilirsiniz.
 
-<iframe src="https://cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FupCemv2UaLc%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DupCemv2UaLc&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FupCemv2UaLc%2Fhqdefault.jpg&key=a19fcc184b9711e1b4764040d3dc5c07&type=text%2Fhtml&schema=youtube" width="854" height="480" frameborder="0" scrolling="no">[https://medium.com/media/0ab6b9779eaea1ce7bd5c52de31c788c/href](https://medium.com/media/0ab6b9779eaea1ce7bd5c52de31c788c/href)</iframe><img src="https://cdn-images-1.medium.com/max/1024/1*P_Tt32iT7aI3kJYMG8n1bQ.jpeg" alt="Image" />
+<iframe src="https://cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FupCemv2UaLc%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DupCemv2UaLc&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FupCemv2UaLc%2Fhqdefault.jpg&key=a19fcc184b9711e1b4764040d3dc5c07&type=text%2Fhtml&schema=youtube" width="854" height="480" frameborder="0" scrolling="no">[https://medium.com/media/0ab6b9779eaea1ce7bd5c52de31c788c/href](https://medium.com/media/0ab6b9779eaea1ce7bd5c52de31c788c/href)</iframe>
+
+<img src="https://cdn-images-1.medium.com/max/1024/1*P_Tt32iT7aI3kJYMG8n1bQ.jpeg" alt="Image" />
 *i use arch btw*
 ### **7-Linux geliştirici/yazılımcı dostudur**<iframe src="https://cdn.embedly.com/widgets/media.html?src=https%3A%2F%2Fwww.youtube.com%2Fembed%2FVhh_GeBPOhs%3Ffeature%3Doembed&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DVhh_GeBPOhs&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2FVhh_GeBPOhs%2Fhqdefault.jpg&key=a19fcc184b9711e1b4764040d3dc5c07&type=text%2Fhtml&schema=youtube" width="640" height="480" frameborder="0" scrolling="no">[https://medium.com/media/98a0122ad1e71e8cc68f21993caa5c85/href](https://medium.com/media/98a0122ad1e71e8cc68f21993caa5c85/href)</iframe>
 
@@ -139,7 +158,9 @@ Eskiden bu doğruydu fakat günümüzde Steamın da kendi “Steam Deck” isiml
 
 Ayrıca Lutris ve Wineyi kullanarak bir Windows uygulamasını **Linux**da çalışmak üzere emüle edebilirsiniz.
 
-### 2-**Linux **çok zor! Sadece bilgisayar hakkında bilgili kişiler (NERDler ) için yapılmış.<img src="https://cdn-images-1.medium.com/max/544/1*2H5mlbdnNAviqSdV5kFKrw.jpeg" alt="Image" />
+### 2-**Linux **çok zor! Sadece bilgisayar hakkında bilgili kişiler (NERDler ) için yapılmış.
+
+<img src="https://cdn-images-1.medium.com/max/544/1*2H5mlbdnNAviqSdV5kFKrw.jpeg" alt="Image" />
 
 Bilgisayarınızı Windowstan başka bir şey ile kullanmadığınız için elbette arada bir adaptasyon süreci yaşayacaksınız. Bu adaptasyon sürecini şu şekilde kolaylıkla atlayabilirsiniz.
 
@@ -149,7 +170,9 @@ Bilgisayarınızın içinde bir **Linux** sanal makinesi oluşturun ve yavaş ya
 
 Ek olarak gidip **Linux** kullanmaya bir pencere yöneticisi (bkz: dwm, i3) ile başlamadıysanız rahatlıkla alışabileceğinizi söyleyebilirim.
 
-### 3-Neden Windowstan **Linuxa **geçip tekrardan öğrenmek ile uğraşayım ki? Ne gerek var?<img src="https://cdn-images-1.medium.com/max/343/1*-QerLUTJr-ArWTH16qBQ4g.jpeg" alt="Image" />
+### 3-Neden Windowstan **Linuxa **geçip tekrardan öğrenmek ile uğraşayım ki? Ne gerek var?
+
+<img src="https://cdn-images-1.medium.com/max/343/1*-QerLUTJr-ArWTH16qBQ4g.jpeg" alt="Image" />
 *Siber Güvenlik*
 
 

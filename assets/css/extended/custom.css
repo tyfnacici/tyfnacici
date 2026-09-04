@@ -1264,3 +1264,11 @@ a.card:hover, .card.is-hoverable:hover {
 
 /* Related / comments block spacing harmonization */
 .post-single .pagination__title { display: none; }
+
+/* --- Giscus comments wrapper --- */
+.giscus-wrap {
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--tb-border);
+}
+.giscus-label { margin-bottom: 1.5rem; display: inline-flex; }
