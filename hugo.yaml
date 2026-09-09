@@ -101,7 +101,6 @@ params:
     title: "Building things that <em>ship</em>"
     ctaPrimary: "View Projects"
     ctaSecondary: "Services"
-    availability: "Available for new projects"
     panelLabel: "Approach"
     panelHeadline: "From first commit to <em>shipping in production</em>"
     panelText: "I care about the whole path — thoughtful design, clean architecture, and software that genuinely ships."
