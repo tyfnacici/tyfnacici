@@ -766,10 +766,11 @@ a.card:hover, .card.is-hoverable:hover {
 }
 
 @media (max-width: 900px) {
-  .hero { flex-direction: column-reverse; text-align: center; align-items: center; gap: 3rem; padding-block: 3rem 2.5rem; }
-  .hero__photo-wrap { width: 164px; height: 164px; margin-top: 1rem; }
+  .hero { flex-direction: column-reverse; text-align: center; align-items: center; gap: 1.5rem; padding-block: 1.25rem 2rem; }
+  .hero__photo-wrap { width: 164px; height: 164px; margin-top: 0; }
   .hero__title { max-width: 100%; }
-  .hero__sub { max-width: 100%; }
+  .hero__sub { max-width: 100%; margin-bottom: 1.25rem; }
+  .hero-social { margin-top: 1.25rem; }
   .hero__actions { justify-content: center; }
 }
 
