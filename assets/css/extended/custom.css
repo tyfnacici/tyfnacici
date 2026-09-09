@@ -1,6 +1,8 @@
 /* ==========================================================================
    Tayfun Açıcı — Design System (approved 31 Aug 2026, forest-green edition)
-   Applied as a PaperMod extended-CSS layer. Light-only.
+   Applied as a PaperMod extended-CSS layer.
+   Light is the default; an OS-driven dark variant lives in the "Dark mode"
+   section at the bottom (html[data-theme="dark"], set by extend_head.html).
    ========================================================================== */
 
 :root {
@@ -266,6 +268,7 @@ em, .serif {
   color: var(--tb-green);
 }
 .btn--secondary:hover { background: #d8e8d9; border-color: var(--tb-green-light); }
+html[data-theme="dark"] .btn--secondary:hover { background: var(--tb-bg-raised); }
 
 /* ==========================================================================
    Navigation (replaces PaperMod header)
@@ -1292,3 +1295,85 @@ a.card:hover, .card.is-hoverable:hover {
   border-top: 1px solid var(--tb-border);
 }
 .giscus-label { margin-bottom: 1.5rem; display: inline-flex; }
+
+/* ==========================================================================
+   Dark mode (OS-driven — html[data-theme="dark"] is set by extend_head.html
+   from (prefers-color-scheme: dark); there is no toggle UI).
+   Deep green-tinted near-black surfaces, light text, brand greens re-tuned
+   for dark contrast. Yellow stays as the single warm accent.
+   Placed last so it overrides both the light :root block above and
+   PaperMod's own neutral :root[data-theme=dark] values.
+   ========================================================================== */
+
+/*:root[data-theme=dark] matches PaperMod's own dark block's specificity
+   ((0,2,0) — html[data-theme=dark] would LOSE to it at (0,1,1)); being later
+   in source order, this block wins for both --tb-* and bridge tokens. */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* --- Surfaces: green-tinted near-black, raised steps lighter --- */
+  --tb-bg:            #101512;
+  --tb-bg-raised:     #18201b;
+  --tb-surface:       rgba(24, 33, 27, .72);
+  --tb-surface-solid: #1b241e;
+  --tb-fg:            #e8efe9;
+  --tb-muted:         #a3b5a8;
+  --tb-muted-2:       #8a9c8f;
+  --tb-border:        #2a362d;
+  --tb-border-strong: #3c4c3f;
+
+  /* --- Brand greens flip to tints for text/border use on dark --- */
+  --tb-green:       #8fc7a4;
+  --tb-green-dark:  #c9e4d2;
+  --tb-green-light: #a9d6b8;
+  --tb-mint:        #223328;
+  --tb-mint-border: #3a4d3f;
+  --tb-yellow:      #f4c95d;
+
+  /* --- Accent: mint-green on dark; yellow kept as warm pop --- */
+  --tb-accent:      #8fc7a4;
+  --tb-accent-fg:   #10241a;
+  --tb-accent-soft: rgba(143, 199, 164, .14);
+  --tb-focus-ring:  rgba(143, 199, 164, .35);
+
+  --tb-status-live:     #4ec07e;
+  --tb-status-live-soft: rgba(78, 192, 126, .18);
+
+  /* --- Darker, deeper shadows --- */
+  --tb-shadow-rest: 0 1px 2px rgba(0, 0, 0, .3), 0 2px 8px -2px rgba(0, 0, 0, .35);
+  --tb-shadow-hover: 0 4px 12px -2px rgba(0, 0, 0, .4), 0 16px 40px -12px rgba(0, 0, 0, .5);
+
+  /* --- Translucent dark nav --- */
+  --tb-nav-bg: rgba(16, 21, 18, .82);
+
+  /* --- Bridge into PaperMod's tokens (overrides PaperMod's own
+         :root[data-theme=dark] neutrals with design-system values) --- */
+  --header-height: 68px;
+  --theme: #101512;
+  --entry: #1b241e;
+  --primary: #e8efe9;
+  --secondary: #a3b5a8;
+  --tertiary: #3c4c3f;
+  --content: #e8efe9;
+  --border: #2a362d;
+  --code-bg: #18201b;
+  /* Code blocks: Catppuccin-style token colors are light-on-dark already;
+     keep a green-tinted dark backdrop for their wrapper. */
+  --code-block-bg: #14201a;
+  --radius: 16px;
+}
+
+/* Signature deep-green hero panel: keep the rich gradient; its text
+   (--tb-green/--tb-surface-solid flip to light tints above, which would be
+   unreadable on it), so re-pin panel text explicitly. */
+html[data-theme="dark"] .hero-panel {
+  background: linear-gradient(145deg, #0d2317, #1d4430);
+  color: #eef6f0;
+}
+html[data-theme="dark"] .hero-panel h2 { color: #eef6f0; }
+html[data-theme="dark"] .hero-panel p { color: rgba(255, 255, 255, .8); }
+
+/* Inline code in prose: --tb-green-dark becomes a light tint in dark mode
+   and would vanish against the dark chip background — use dark text on the
+   raised chip instead. */
+html[data-theme="dark"] .post-content code { color: var(--tb-fg); }

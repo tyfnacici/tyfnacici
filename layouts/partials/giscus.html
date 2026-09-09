@@ -1,6 +1,8 @@
 {{- /* Giscus embed (data unchanged from the original 2024 setup).
-       Theme is a custom CSS file matching the approved design system;
-       it is applied post-load via the giscus.setParams message. */ -}}
+       Theme follows the site's OS-driven dark mode: the theme CSS URL is
+       chosen from (prefers-color-scheme: dark) BEFORE the client script is
+       injected (no wrong-theme flash), and a media listener keeps the live
+       widget in sync via giscus.setConfig postMessage. */ -}}
 <script src="https://giscus.app/client.js"
         data-repo="tyfnacici/tyfnacici"
         data-repo-id="R_kgDOJneIFw"
@@ -11,9 +13,48 @@
         data-reactions-enabled="1"
         data-emit-metadata="0"
         data-input-position="top"
-        data-theme="https://tyfnacici.com/giscus-theme.css"
+        data-theme="{{ "giscus-theme.css" | absURL }}"
         data-lang="tr"
         data-loading="lazy"
         crossorigin="anonymous"
         async>
+</script>
+<script>
+(function () {
+    'use strict';
+    var LIGHT = {{ "giscus-theme.css" | absURL }};
+    var DARK  = {{ "giscus-theme-dark.css" | absURL }};
+    var mq = window.matchMedia('(prefers-color-scheme: dark)');
+    var requested = mq.matches ? DARK : LIGHT;
+    var sent = false;
+
+    function push() {
+        var frame = document.querySelector('iframe.giscus-frame');
+        if (!frame) return false;
+        frame.contentWindow.postMessage({
+            giscus: { setConfig: { theme: requested } }
+        }, 'https://giscus.app');
+        sent = true;
+        return true;
+    }
+
+    function onSchemeChange() {
+        requested = mq.matches ? DARK : LIGHT;
+        push();
+    }
+
+    mq.addEventListener('change', onSchemeChange);
+
+    // Correct late-loaded widget (data-loading="lazy"): retry until the
+    // iframe exists, then keep pushing until giscus acknowledges.
+    var attempts = 0;
+    var timer = setInterval(function () {
+        if (sent || attempts++ > 30) { clearInterval(timer); return; }
+        push();
+    }, 500);
+
+    document.addEventListener('visibilitychange', function () {
+        if (document.visibilityState === 'visible' && !sent) push();
+    });
+})();
 </script>
