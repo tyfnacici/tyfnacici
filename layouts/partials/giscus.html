@@ -1,32 +1,31 @@
-{{- /* Giscus embed (data unchanged from the original 2024 setup).
-       Theme follows the site's OS-driven dark mode: the theme CSS URL is
-       chosen from (prefers-color-scheme: dark) BEFORE the client script is
-       injected (no wrong-theme flash), and a media listener keeps the live
-       widget in sync via giscus.setConfig postMessage. */ -}}
-<script src="https://giscus.app/client.js"
-        data-repo="tyfnacici/tyfnacici"
-        data-repo-id="R_kgDOJneIFw"
-        data-category="General"
-        data-category-id="DIC_kwDOJneIF84ChMs1"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="{{ "giscus-theme.css" | absURL }}"
-        data-lang="tr"
-        data-loading="lazy"
-        crossorigin="anonymous"
-        async>
-</script>
+{{- /* Giscus is created after choosing the OS theme, avoiding a wrong-theme flash.
+       The listener and retry loop keep the lazy-loaded widget synchronized. */ -}}
 <script>
 (function () {
     'use strict';
+
     var LIGHT = {{ "giscus-theme.css" | absURL }};
     var DARK  = {{ "giscus-theme-dark.css" | absURL }};
     var mq = window.matchMedia('(prefers-color-scheme: dark)');
     var requested = mq.matches ? DARK : LIGHT;
-    var sent = false;
+
+    var s = document.createElement('script');
+    s.setAttribute('src', 'https://giscus.app/client.js');
+    s.setAttribute('data-repo', 'tyfnacici/tyfnacici');
+    s.setAttribute('data-repo-id', 'R_kgDOJneIFw');
+    s.setAttribute('data-category', 'General');
+    s.setAttribute('data-category-id', 'DIC_kwDOJneIF84ChMs1');
+    s.setAttribute('data-mapping', 'pathname');
+    s.setAttribute('data-strict', '0');
+    s.setAttribute('data-reactions-enabled', '1');
+    s.setAttribute('data-emit-metadata', '1');
+    s.setAttribute('data-input-position', 'top');
+    s.setAttribute('data-lang', 'tr');
+    s.setAttribute('data-loading', 'lazy');
+    s.setAttribute('data-theme', requested);
+    s.setAttribute('crossorigin', 'anonymous');
+    s.setAttribute('async', 'true');
+    document.currentScript.after(s);
 
     function push() {
         var frame = document.querySelector('iframe.giscus-frame');
@@ -34,7 +33,6 @@
         frame.contentWindow.postMessage({
             giscus: { setConfig: { theme: requested } }
         }, 'https://giscus.app');
-        sent = true;
         return true;
     }
 
@@ -45,16 +43,23 @@
 
     mq.addEventListener('change', onSchemeChange);
 
-    // Correct late-loaded widget (data-loading="lazy"): retry until the
-    // iframe exists, then keep pushing until giscus acknowledges.
     var attempts = 0;
+    var startupSucceeded = false;
     var timer = setInterval(function () {
-        if (sent || attempts++ > 30) { clearInterval(timer); return; }
-        push();
+        attempts++;
+        if (push()) {
+            startupSucceeded = true;
+            clearInterval(timer);
+        } else if (attempts >= 30) {
+            clearInterval(timer);
+        }
     }, 500);
 
     document.addEventListener('visibilitychange', function () {
-        if (document.visibilityState === 'visible' && !sent) push();
+        if (document.visibilityState === 'visible' && !startupSucceeded && push()) {
+            startupSucceeded = true;
+            clearInterval(timer);
+        }
     });
 })();
 </script>
