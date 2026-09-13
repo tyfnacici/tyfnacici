@@ -51,7 +51,7 @@ params:
       https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/assets/favicon.png,
     ]
   DateFormat: "2 Jan 2006"
-  defaultTheme: light # design system is light-only (approved forest-green edition)
+  defaultTheme: light # base stays light; OS-driven dark variant exists (extend_head.html + custom.css flip html[data-theme] from prefers-color-scheme, no toggle UI)
   disableThemeToggle: true
 
   ShowReadingTime: true
