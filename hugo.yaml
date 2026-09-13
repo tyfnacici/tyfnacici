@@ -48,7 +48,7 @@ params:
   # author: ["Me", "You"] # multiple authors
   images:
     [
-      https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/assets/favicon.png,
+      https://tyfnacici.com/assets/favicon.png,
     ]
   DateFormat: "2 Jan 2006"
   defaultTheme: light # base stays light; OS-driven dark variant exists (extend_head.html + custom.css flip html[data-theme] from prefers-color-scheme, no toggle UI)
