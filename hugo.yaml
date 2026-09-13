@@ -77,6 +77,8 @@ params:
     favicon: "assets/favicon.png"
     favicon16x16: "assets/favicon-16.png"
     favicon32x32: "assets/favicon-32.png"
+    theme_color: "#f4f7f1"
+    msapplication_TileColor: "#f4f7f1"
     apple_touch_icon: "assets/apple-touch-icon.png"
     safari_pinned_tab: "assets/favicon.png"
 

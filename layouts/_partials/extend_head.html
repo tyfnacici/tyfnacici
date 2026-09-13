@@ -17,11 +17,10 @@
             const isDark = e.matches;
             document.querySelector('html').dataset.theme = isDark ? 'dark' : 'light';
 
-            // Also update theme-color meta tag dynamically
-            const themeColorMeta = document.getElementById('theme-color-meta');
-            if (themeColorMeta) {
+            // Also update theme-color meta tags dynamically
+            document.querySelectorAll('meta[name="theme-color"]').forEach((themeColorMeta) => {
                 themeColorMeta.content = isDark ? '#101512' : '#f4f7f1';
-            }
+            });
             const msTileColorMeta = document.getElementById('ms-tilecolor-meta');
             if (msTileColorMeta) {
                 msTileColorMeta.content = isDark ? '#101512' : '#f4f7f1';
