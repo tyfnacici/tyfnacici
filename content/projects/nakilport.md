@@ -63,10 +63,10 @@ Key aspects of the development process included:
 - Enhanced Collaboration: The messaging system and responsive design foster better communication and collaboration between carriers and shippers.
 - Scalability: Built with Next.js and Firebase, NakilPort can scale to accommodate growing user bases and increasing data volumes.
 
-![](https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/projects/nakilport/1.png)
-![](https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/projects/nakilport/2.png)
-![](https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/projects/nakilport/3.png)
-![](https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/projects/nakilport/4.png)
-![](https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/projects/nakilport/5.png)
-![](https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/projects/nakilport/6.png)
+![](/projects/nakilport/1.png)
+![](/projects/nakilport/2.png)
+![](/projects/nakilport/3.png)
+![](/projects/nakilport/4.png)
+![](/projects/nakilport/5.png)
+![](/projects/nakilport/6.png)
 

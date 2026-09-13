@@ -9,7 +9,7 @@ weight: 99
 
 # What is Homebrew?
 
-![](https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/blog/setup-homebrew/homebrew.png)
+![](/blog/setup-homebrew/homebrew.png)
 
 Homebrew is a powerful package manager for macOS or Linux that makes installing and managing software a breeze. Whether you’re a developer, a power user, or someone just looking to simplify their macOS experience, Homebrew is an essential tool. In this guide, I'll walk you through the straightforward steps to install Homebrew on your macOS device.
 

@@ -9,7 +9,7 @@ weight: 102
 
 # What is DNS (Domain Name Server)?
 
-![](https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/blog/what-is-dns/domain.webp)
+![](/blog/what-is-dns/domain.webp)
 
 From your mobile phone to your laptop or servers hosting major websites, all computers on the internet use IP addresses to find and communicate with each other. However, when accessing a website, instead of typing the IP address, we enter the site's domain name in our web browser to reach the website. In fact, you could reach the site by typing the IP address instead of the domain name, but imagine doing this for all the sites you visit in a day. Rather than remembering all these numbers, we use domains that people can more easily understand. DNS is the service that allows us to type domain names into the browser to go to IP addresses.
 
@@ -40,7 +40,7 @@ If a request to a recursive DNS server has been made recently, the DNS server re
 
 ## How Does the DNS Server Direct an Incoming Request to Your Web Application?
 
-![](https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/blog/what-is-dns/dns-lookup-steps.png)
+![](/blog/what-is-dns/dns-lookup-steps.png)
 
 1. A user types 'example.com' into a web browser, and the query goes to the internet, received by a DNS recursive resolver.
 2. The resolver then sends a query to a DNS root name server (.).

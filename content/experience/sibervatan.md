@@ -22,8 +22,8 @@ weight: 5
 - Investigated blockchain technology and its applications in cyber security, understanding its potential and limitations.
 - Engaged in continuous learning and development, staying up-to-date with the latest trends and advancements in the field of cyber security.
 
-![](https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/experience/bakka1.jpg)
-![](https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/experience/bakka2.jpg)
-![](https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/experience/zirve.jpeg)
+![](/experience/bakka1.jpg)
+![](/experience/bakka2.jpg)
+![](/experience/zirve.jpeg)
 
 

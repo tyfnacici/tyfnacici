@@ -9,7 +9,7 @@ weight: 103
 
 # What is SSL (Secure Socket Layer)?
 
-![](https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/blog/what-is-ssl/ssl.jpg)
+![](/blog/what-is-ssl/ssl.jpg)
 
 SSL (Secure Socket Layer) is a cryptographic protocol used to ensure security during data transmission over the internet. It is one of the most commonly used protocols to secure communication on the internet. SSL ensures that data is transmitted securely, preventing unauthorized persons from intercepting or altering the information. This article will detail how SSL works, its applications, and the process of ensuring security.
 

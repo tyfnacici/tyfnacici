@@ -17,4 +17,4 @@ weight: 8
 - Actively contributed to the growth and development of the team from its inception, playing a key role in establishing a strong foundation and culture of learning.
 - Facilitated workshops and seminars on various cyber security topics, engaging the university community and raising awareness about the importance of cyber security.
 
-![](https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/experience/cyberus.jpeg)
+![](/experience/cyberus.jpeg)

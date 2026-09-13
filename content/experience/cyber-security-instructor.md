@@ -17,4 +17,4 @@ weight: 7
 - Mentored and guided students through practical exercises and projects, helping them develop critical thinking and problem-solving skills related to cyber security.
 - Received positive feedback from both students and parents, highlighting the program's success in raising cyber security awareness among children.
 
-![](https://raw.githubusercontent.com/tyfnacici/tyfnacici/main/static/experience/basiskele.jpeg)
+![](/experience/basiskele.jpeg)
