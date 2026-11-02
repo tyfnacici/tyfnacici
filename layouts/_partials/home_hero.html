@@ -67,9 +67,10 @@
                 </svg>
             </a>
         </div>
-        <div class="featured-strip">
+        <div class="featured-strip featured-strip--projects">
             {{- range first 2 $projects }}
             <a href="{{ .Permalink }}" class="card project-card is-hoverable">
+                <span class="card-go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7" /><polyline points="8 7 17 7 17 16" /></svg></span>
                 <h3 class="project-card__title">{{ .Title }}</h3>
                 <p class="project-card__desc">{{ .Description | default (.Summary | plainify | truncate 140) }}</p>
                 {{- with .Params.tags }}
@@ -104,9 +105,10 @@
                 </svg>
             </a>
         </div>
-        <div class="featured-strip">
+        <div class="featured-strip featured-strip--services">
             {{- range first 2 $services }}
             <a href="{{ .Permalink }}" class="card project-card is-hoverable">
+                <span class="card-go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7" /><polyline points="8 7 17 7 17 16" /></svg></span>
                 <h3 class="project-card__title">{{ .Title }}</h3>
                 <p class="project-card__desc">{{ .Description | default (.Summary | plainify | truncate 140) }}</p>
             </a>

@@ -1,5 +1,6 @@
 {{- /* Project override of themes/PaperMod/layouts/_partials/header.html —
-       editorial design-system nav (sticky, TA brand mark, active underline).
+       editorial design-system nav (sticky, TA brand mark). On small screens the
+       menu is a modal side drawer with a scrim (see liquid.css).
        Menu comes from site.Menus.main; content untouched. */ -}}
 <header class="site-nav">
     <div class="site-nav__inner container">
@@ -8,7 +9,7 @@
             <span class="brand__name">{{ site.Title }}</span>
         </a>
         <div class="nav-links" id="menu">
-            <button class="nav-close" id="nav-close" aria-label="Menüyü kapat">
+            <button class="nav-close" id="nav-close" aria-label="Close menu">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
                     stroke-linecap="round" aria-hidden="true">
                     <line x1="18" y1="6" x2="6" y2="18" />
@@ -24,21 +25,18 @@
         </div>
         <div class="nav-right">
             <button class="nav-toggle" id="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="menu">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" aria-hidden="true">
-                    <line x1="3" y1="6" x2="21" y2="6" />
-                    <line x1="3" y1="12" x2="21" y2="12" />
-                    <line x1="3" y1="18" x2="21" y2="18" />
-                </svg>
+                <span class="nav-toggle__bars" aria-hidden="true"><i></i><i></i><i></i></span>
             </button>
         </div>
     </div>
+    <div class="nav-scrim" id="nav-scrim" aria-hidden="true"></div>
 </header>
 <script>
     (function () {
         var toggle = document.getElementById('nav-toggle');
         var links = document.getElementById('menu');
         var closeBtn = document.getElementById('nav-close');
+        var scrim = document.getElementById('nav-scrim');
         if (!toggle || !links) return;
         var close = function () {
             links.classList.remove('is-open');
@@ -53,6 +51,7 @@
             document.body.style.overflow = open ? 'hidden' : '';
         });
         if (closeBtn) closeBtn.addEventListener('click', close);
+        if (scrim) scrim.addEventListener('click', close);
         links.addEventListener('click', function (e) {
             if (e.target.closest('a')) close();
         });

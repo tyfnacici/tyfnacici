@@ -1,0 +1,506 @@
+/* ==========================================================================
+   Liquid-glass accents + motion, layered on top of custom.css.
+   Loaded after custom.css (alphabetical), so it only refines — the green
+   editorial design, markup and tokens stay as they are.
+   Performance rules: backdrop-filter only on the desktop nav and the
+   scroll-to-top button; everything else is gradients + inner highlights.
+   All motion is transform/opacity and respects prefers-reduced-motion.
+   ========================================================================== */
+
+:root {
+  /* Softer, Material-3-like corner scale (existing components pick it up) */
+  --tb-radius-sm: 10px;
+  --tb-radius-md: 14px;
+  --tb-radius-lg: 22px;
+  --tb-radius-xl: 30px;
+
+  /* Roboto Flex (self-hosted, static/fonts) — Material's own typeface */
+  --tb-font-display: 'Roboto Flex', Roboto, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --tb-font-body: 'Roboto Flex', Roboto, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  --tb-tracking-tight: -0.025em;
+  --tb-tracking-tighter: -0.03em;
+
+  /* More saturated green, same family as the approved palette */
+  --tb-bg: #eef8ea;
+  --tb-bg-raised: #e4f2df;
+  --tb-fg: #0f2819;
+  --tb-muted: #4b6855;
+  --tb-muted-2: #6c8574;
+  --tb-border: #d3e8d0;
+  --tb-border-strong: #b4d6b6;
+  --tb-mint: #c6efd3;
+  --tb-mint-border: #a0dab4;
+  --tb-green: #136a3d;
+  --tb-green-dark: #0b4a29;
+  --tb-green-light: #1f8f55;
+  --tb-accent: #136a3d;
+  --theme: #eef8ea;
+  --primary: #0f2819;
+  --secondary: #4b6855;
+
+  /* Material 3 tonal containers for cards */
+  --m-c1: #b9ebc9;
+  --m-c2: #bde9f0;
+  --m-c3: #d9ebc4;
+  --m-c4: #fae8a4;
+  --m-on: #0c2a18;
+
+  --lg-glass: rgba(255, 255, 255, .55);
+  --lg-glass-hi: rgba(255, 255, 255, .78);
+  --lg-edge: rgba(255, 255, 255, .85);
+  --lg-line: rgba(19, 106, 61, .14);
+  --lg-glow: rgba(52, 190, 112, .3);
+  --lg-glow-2: rgba(244, 201, 93, .2);
+  --lg-spot: rgba(52, 190, 112, .18);
+  --lg-ease: cubic-bezier(.16, 1, .3, 1);
+}
+
+:root[data-theme="dark"] {
+  --tb-green: #86dba6;
+  --tb-green-light: #a4e8bd;
+  --tb-accent: #86dba6;
+  --tb-mint: #1d4a33;
+  --tb-mint-border: #2f6648;
+  --m-c1: #174a31;
+  --m-c2: #17414c;
+  --m-c3: #2f4420;
+  --m-c4: #4a3d12;
+  --m-on: #e4f6ea;
+  --lg-glass: rgba(30, 44, 35, .5);
+  --lg-glass-hi: rgba(40, 58, 46, .62);
+  --lg-edge: rgba(255, 255, 255, .09);
+  --lg-line: rgba(255, 255, 255, .08);
+  --lg-glow: rgba(78, 192, 126, .2);
+  --lg-glow-2: rgba(244, 201, 93, .07);
+  --lg-spot: rgba(143, 199, 164, .13);
+}
+
+/* --------------------------------------------------------------------------
+   Ambient green light behind the page (one fixed, compositor-only layer)
+   -------------------------------------------------------------------------- */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: -15% -10%;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(42% 38% at 80% 8%, var(--lg-glow), transparent 70%),
+    radial-gradient(36% 34% at 6% 55%, var(--lg-glow-2), transparent 70%),
+    radial-gradient(40% 36% at 72% 100%, var(--lg-glow), transparent 70%);
+  animation: lg-drift 30s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes lg-drift {
+  to { transform: translate3d(-3%, 2.5%, 0) scale(1.05); }
+}
+
+/* --------------------------------------------------------------------------
+   Navigation: glass bar, tonal pill for hover / active (desktop only —
+   the mobile fullscreen menu keeps its solid bar, see custom.css)
+   -------------------------------------------------------------------------- */
+
+.site-nav { transition: box-shadow .3s var(--lg-ease); }
+
+@media (min-width: 901px) {
+  .site-nav {
+    background: color-mix(in srgb, var(--tb-bg) 60%, transparent);
+    backdrop-filter: blur(20px) saturate(1.6);
+    -webkit-backdrop-filter: blur(20px) saturate(1.6);
+    border-bottom-color: var(--lg-line);
+    box-shadow: inset 0 -1px 0 var(--lg-edge);
+  }
+  .site-nav.is-scrolled { box-shadow: 0 10px 30px -14px rgba(14, 40, 26, .28), inset 0 -1px 0 var(--lg-edge); }
+  :root[data-theme="dark"] .site-nav.is-scrolled { box-shadow: 0 10px 30px -14px rgba(0, 0, 0, .6), inset 0 -1px 0 var(--lg-edge); }
+
+  .nav-links { gap: .25rem; }
+  .nav-links a {
+    padding: .45rem 1rem;
+    border-radius: 999px;
+    transition: color .2s var(--lg-ease), background-color .2s var(--lg-ease);
+  }
+  .nav-links a:hover { background: var(--lg-glass-hi); }
+  .nav-links a.is-active { background: var(--tb-mint); color: var(--tb-green); }
+  .nav-links a.is-active::after { display: none; }
+}
+
+.brand__mark { border-radius: 12px; }
+
+/* --------------------------------------------------------------------------
+   Buttons: pills with a soft top highlight and a Material-style ripple
+   -------------------------------------------------------------------------- */
+
+.btn { border-radius: 999px; position: relative; overflow: hidden; isolation: isolate; }
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+
+.btn--primary {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .22), 0 1px 2px rgba(23, 59, 42, .2), 0 8px 20px -8px rgba(23, 59, 42, .5);
+}
+.btn--secondary {
+  background: var(--tb-mint);
+  border-color: transparent;
+}
+.btn--secondary:hover { background: var(--tb-mint); border-color: transparent; box-shadow: 0 2px 10px -2px rgba(19, 106, 61, .3); }
+
+.lg-ripple {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: .2;
+  transform: scale(0);
+  pointer-events: none;
+  animation: lg-ripple .65s var(--lg-ease) forwards;
+}
+@keyframes lg-ripple { to { transform: scale(1); opacity: 0; } }
+
+/* Tags / badges / status → pills */
+.badge, .tag, .post-tags a, .post-single .post-tags a { border-radius: 999px; }
+
+/* --------------------------------------------------------------------------
+   Cards: translucent glass surface + inner edge light + cursor spotlight
+   -------------------------------------------------------------------------- */
+
+.card, .post-entry, .toc, .paginav a {
+  background: linear-gradient(150deg, var(--lg-glass-hi), var(--lg-glass));
+  border-color: var(--lg-line);
+  box-shadow: inset 0 1px 0 var(--lg-edge), var(--tb-shadow-rest);
+  position: relative;
+  isolation: isolate;
+}
+
+a.card:hover, .card.is-hoverable:hover, .post-entry:hover, .paginav a:hover {
+  border-color: var(--tb-border-strong);
+  box-shadow: inset 0 1px 0 var(--lg-edge), var(--tb-shadow-hover);
+}
+
+.card::before, .post-entry::before, .paginav a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(340px circle at var(--mx, 50%) var(--my, 0%), var(--lg-spot), transparent 70%);
+  transition: opacity .35s var(--lg-ease);
+}
+.card:hover::before, .post-entry:hover::before, .paginav a:hover::before { opacity: 1; }
+
+.blog-item:hover {
+  background: var(--lg-glass-hi);
+  box-shadow: inset 0 1px 0 var(--lg-edge);
+}
+
+.social-row .social-icons a, .share-buttons a { box-shadow: inset 0 1px 0 var(--lg-edge); }
+
+.top-link {
+  border-radius: 999px;
+  background: var(--lg-glass-hi);
+  border-color: var(--lg-line);
+  backdrop-filter: blur(12px) saturate(1.5);
+  -webkit-backdrop-filter: blur(12px) saturate(1.5);
+}
+
+.site-footer { background: color-mix(in srgb, var(--tb-bg-raised) 70%, transparent); }
+
+/* --------------------------------------------------------------------------
+   Hero
+   -------------------------------------------------------------------------- */
+
+.hero__photo-wrap::before {
+  inset: -24%;
+  border: 0;
+  border-radius: 50%;
+  transform: none;
+  background: radial-gradient(circle, var(--lg-glow), transparent 68%);
+}
+.hero__photo {
+  border: 1px solid var(--lg-edge);
+  box-shadow: 0 0 0 6px var(--lg-glass), var(--tb-shadow-hover);
+  animation: lg-float 7s ease-in-out infinite;
+}
+@keyframes lg-float {
+  50% { transform: translateY(-7px); }
+}
+
+.hero-panel {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .2), inset 0 0 0 1px rgba(255, 255, 255, .05),
+    0 1px 2px rgba(14, 40, 26, .2), 0 20px 48px -20px rgba(14, 40, 26, .5);
+}
+.hero-panel .ring { animation: lg-breathe 6s ease-in-out infinite; }
+@keyframes lg-breathe { 50% { transform: scale(1.18); opacity: .55; } }
+
+/* Page load: hero rises in, staggered (pure CSS, no JS dependency) */
+@keyframes lg-rise {
+  from { opacity: 0; transform: translateY(22px); filter: blur(8px); }
+  to   { opacity: 1; transform: none; filter: blur(0); }
+}
+.hero__content > *,
+.hero__photo-wrap { animation: lg-rise .9s var(--lg-ease) backwards; }
+.hero__content > :nth-child(1) { animation-delay: .04s; }
+.hero__content > :nth-child(2) { animation-delay: .12s; }
+.hero__content > :nth-child(3) { animation-delay: .22s; }
+.hero__content > :nth-child(4) { animation-delay: .3s; }
+.hero__content > :nth-child(5) { animation-delay: .38s; }
+.hero__photo-wrap { animation-delay: .2s; }
+
+/* --------------------------------------------------------------------------
+   Scroll reveal (motion.js adds .is-in). Opacity-only hidden state, and the
+   entrance is an animation with backwards fill, so it never fights the
+   hover transforms/transitions of the elements it animates.
+   Keep this list in sync with SEL in assets/js/motion.js.
+   -------------------------------------------------------------------------- */
+
+.js :is(.section-head, .featured-strip > *, .blog-item, .post-entry, .page-header,
+        .post-single .post-header, .toc, .paginav, .hero-panel, .timeline-item,
+        .giscus-wrap):not(.is-in) { opacity: 0; }
+
+.js :is(.section-head, .featured-strip > *, .blog-item, .post-entry, .page-header,
+        .post-single .post-header, .toc, .paginav, .hero-panel, .timeline-item,
+        .giscus-wrap).is-in {
+  animation: lg-reveal .75s var(--lg-ease) backwards;
+  animation-delay: calc(var(--i, 0) * 70ms);
+}
+@keyframes lg-reveal {
+  from { opacity: 0; transform: translateY(18px); }
+}
+
+/* --------------------------------------------------------------------------
+   Reading progress on posts (scroll-driven, no JS; ignored where unsupported)
+   -------------------------------------------------------------------------- */
+
+@supports (animation-timeline: scroll()) {
+  body:has(.post-single)::after {
+    content: "";
+    position: fixed;
+    inset: 0 0 auto 0;
+    height: 3px;
+    z-index: 60;
+    background: linear-gradient(90deg, var(--tb-green), var(--tb-yellow));
+    transform-origin: 0 50%;
+    transform: scaleX(0);
+    animation: lg-progress linear both;
+    animation-timeline: scroll(root);
+  }
+}
+@keyframes lg-progress { to { transform: scaleX(1); } }
+
+/* --------------------------------------------------------------------------
+   Page-to-page crossfade (cross-document view transitions; progressive)
+   -------------------------------------------------------------------------- */
+
+@view-transition { navigation: auto; }
+::view-transition-old(root) { animation-duration: .18s; }
+::view-transition-new(root) { animation-duration: .28s; }
+
+/* -------------------------------------------------------------------------- */
+
+@media (hover: none) {
+  .card::before, .post-entry::before, .paginav a::before { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition-duration: .01ms !important;
+  }
+  .js :is(.section-head, .featured-strip > *, .blog-item, .post-entry, .page-header,
+          .post-single .post-header, .toc, .paginav, .hero-panel, .timeline-item,
+          .giscus-wrap):not(.is-in) { opacity: 1; }
+}
+
+/* ==========================================================================
+   v2 — Material 3 tonal language for content, glass kept for chrome only
+   ========================================================================== */
+
+/* Emphasis: no italic serif; a colour accent (plus an animated highlight in the hero) */
+em, .serif { font-family: inherit; font-style: italic; font-weight: inherit; letter-spacing: 0; }
+
+.hero__title { isolation: isolate; font-weight: 600; }
+.hero__title em, .hero-panel h2 em {
+  font-style: normal;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  font-family: inherit;
+}
+.hero__title em { position: relative; color: var(--tb-green-light); }
+.hero__title em::after {
+  content: "";
+  position: absolute;
+  left: -.04em; right: -.04em; bottom: .02em;
+  height: .2em;
+  z-index: -1;
+  border-radius: 999px;
+  background: var(--tb-yellow);
+  opacity: .75;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: lg-underline .9s var(--lg-ease) 1s forwards;
+}
+@keyframes lg-underline { to { transform: scaleX(1); } }
+
+.eyebrow::before { transform-origin: left; animation: lg-underline 1s var(--lg-ease) .3s backwards; }
+
+/* Tonal project / service cards on the home page */
+.featured-strip--projects > :nth-child(1) { --c: var(--m-c1); }
+.featured-strip--projects > :nth-child(2) { --c: var(--m-c2); }
+.featured-strip--services > :nth-child(1) { --c: var(--m-c3); }
+.featured-strip--services > :nth-child(2) { --c: var(--m-c4); }
+
+.featured-strip .card {
+  background: var(--c);
+  color: var(--m-on);
+  border-color: transparent;
+  border-radius: 28px;
+  padding: 1.75rem;
+  box-shadow: none;
+}
+.featured-strip a.card:hover {
+  border-color: transparent;
+  box-shadow: 0 10px 28px -10px rgba(10, 60, 30, .35);
+}
+.featured-strip .card::before {
+  background: radial-gradient(340px circle at var(--mx, 50%) var(--my, 0%), rgba(255, 255, 255, .38), transparent 70%);
+}
+:root[data-theme="dark"] .featured-strip .card::before {
+  background: radial-gradient(340px circle at var(--mx, 50%) var(--my, 0%), rgba(255, 255, 255, .09), transparent 70%);
+}
+.featured-strip .project-card__title { color: inherit; padding-right: 3.2rem; font-weight: 600; }
+.featured-strip .project-card__desc { color: inherit; opacity: .8; }
+.featured-strip .project-card__meta { border-top-color: color-mix(in srgb, currentColor 16%, transparent); }
+.featured-strip .badge {
+  background: rgba(255, 255, 255, .55);
+  border-color: transparent;
+  color: inherit;
+}
+:root[data-theme="dark"] .featured-strip .badge { background: rgba(255, 255, 255, .1); }
+
+.card-go {
+  position: absolute;
+  top: 1.25rem; right: 1.25rem;
+  width: 42px; height: 42px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  background: var(--tb-bg);
+  color: var(--m-on);
+  transition: transform .4s var(--lg-ease), background-color .25s, color .25s;
+}
+.card:hover .card-go {
+  transform: translate(3px, -3px) scale(1.05);
+  background: var(--m-on);
+  color: var(--c, var(--tb-bg));
+}
+
+/* Hero photo: soft shape morph on hover (Material expressive feel) */
+.hero__photo { transition: border-radius .7s var(--lg-ease); }
+.hero__photo-wrap:hover .hero__photo { border-radius: 50%; }
+
+/* Blog rows */
+.blog-item__title { transition: transform .35s var(--lg-ease), color .2s; }
+.blog-item:hover .blog-item__title { transform: translateX(4px); color: var(--tb-green); }
+
+/* Approach panel: richer green */
+.hero-panel { background: linear-gradient(145deg, #0a4a28, #1b8a50); }
+
+/* --------------------------------------------------------------------------
+   Mobile menu: modal side drawer (glass) with scrim, icon morph, staggered items
+   -------------------------------------------------------------------------- */
+
+.nav-scrim { display: none; }
+
+.nav-toggle {
+  border: 0;
+  border-radius: 50%;
+  background: var(--tb-mint);
+  color: var(--tb-green);
+  position: relative;
+  transition: transform .25s var(--lg-ease), background-color .2s;
+}
+.nav-toggle:active { transform: scale(.9); }
+.nav-toggle__bars { position: relative; display: block; width: 18px; height: 14px; }
+.nav-toggle__bars i {
+  position: absolute;
+  left: 0; right: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: currentColor;
+  transition: transform .45s var(--lg-ease), opacity .2s, width .3s var(--lg-ease);
+}
+.nav-toggle__bars i:nth-child(1) { top: 0; }
+.nav-toggle__bars i:nth-child(2) { top: 6px; left: auto; width: 70%; }
+.nav-toggle__bars i:nth-child(3) { top: 12px; }
+.nav-toggle[aria-expanded="true"] .nav-toggle__bars i:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] .nav-toggle__bars i:nth-child(2) { opacity: 0; transform: translateX(8px); }
+.nav-toggle[aria-expanded="true"] .nav-toggle__bars i:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+@media (max-width: 900px) {
+  .nav-scrim {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 90;
+    background: rgba(5, 25, 14, .5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .4s var(--lg-ease);
+  }
+  html.nav-open .nav-scrim { opacity: 1; pointer-events: auto; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
+
+  .nav-links {
+    display: flex;
+    inset: 0 auto 0 0;
+    width: min(84vw, 340px);
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: .35rem;
+    padding: 1rem .85rem 2rem;
+    border-radius: 0 28px 28px 0;
+    background: color-mix(in srgb, var(--tb-bg) 78%, transparent);
+    backdrop-filter: blur(26px) saturate(1.7);
+    -webkit-backdrop-filter: blur(26px) saturate(1.7);
+    border-right: 1px solid var(--lg-line);
+    box-shadow: 24px 0 60px -24px rgba(0, 0, 0, .4), inset -1px 0 0 var(--lg-edge);
+    transform: translateX(-104%);
+    visibility: hidden;
+    transition: transform .5s var(--lg-ease), visibility 0s .5s;
+    z-index: 100;
+  }
+  .nav-links.is-open { transform: none; visibility: visible; transition: transform .5s var(--lg-ease), visibility 0s; }
+
+  .nav-close {
+    display: flex;
+    align-self: flex-end;
+    margin-bottom: .75rem;
+    border: 0;
+    border-radius: 50%;
+    background: var(--tb-mint);
+    color: var(--tb-green);
+  }
+
+  .nav-links a {
+    display: flex;
+    align-items: center;
+    height: 56px;
+    padding: 0 1.25rem;
+    border-radius: 999px;
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--tb-fg);
+    opacity: 0;
+    transform: translateX(-24px);
+    transition: opacity .4s var(--lg-ease), transform .55s var(--lg-ease), background-color .2s;
+  }
+  .nav-links.is-open a { opacity: 1; transform: none; }
+  .nav-links.is-open a:nth-of-type(1) { transition-delay: .12s; }
+  .nav-links.is-open a:nth-of-type(2) { transition-delay: .17s; }
+  .nav-links.is-open a:nth-of-type(3) { transition-delay: .22s; }
+  .nav-links.is-open a:nth-of-type(4) { transition-delay: .27s; }
+  .nav-links.is-open a:nth-of-type(5) { transition-delay: .32s; }
+  .nav-links a.is-active { background: var(--tb-mint); color: var(--tb-green); }
+  .nav-links a:active { background: var(--lg-glass-hi); }
+}
