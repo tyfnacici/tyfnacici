@@ -6,10 +6,9 @@ tags: ["DNS", "PowerDNS", "Ubuntu", "Linux"]
 showToc: true
 weight: 30
 cover:
-    image: "blog/powerdns-kurulumu/cover.png"
+    image: "blog/powerdns-installation/cover.png"
 ---
 
-### 🔗 [Read on Medium](https://medium.com/@tyfnacici/powerdns-kurulumi)
 
 <img src="https://cdn-images-1.medium.com/max/280/1*tH2YrWgGxZLIuZrsVmXEfw.png" alt="Image" />
 

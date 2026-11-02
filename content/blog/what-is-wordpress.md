@@ -6,10 +6,9 @@ tags: ["WordPress", "CMS", "Web Development", "PHP"]
 showToc: true
 weight: 10
 cover:
-    image: "blog/wordpress-nedir/cover.png"
+    image: "blog/what-is-wordpress/cover.png"
 ---
 
-### 🔗 [Read on Medium](https://medium.com/@tyfnacici/wordpress-nedir)
 
 <img src="https://cdn-images-1.medium.com/max/1024/1*07_Hfc0FKvNuMUSDYpDGRA.png" alt="Image" />
 *What is WordPress?*

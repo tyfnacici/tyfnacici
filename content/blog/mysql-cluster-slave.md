@@ -1,6 +1,6 @@
 ---
-title: "MySQL cluster kurulumu ve dışarıdan Slave ekleme"
-description: "MySQL cluster kurulumu ve harici bir sunucudan Slave ekleme rehberi"
+title: "Setting up a MySQL cluster and adding a Slave from outside"
+description: "A guide to setting up a MySQL cluster and adding a Slave from an external server"
 draft: false
 tags: ["MySQL", "Database", "Replication"]
 showToc: true
@@ -9,68 +9,68 @@ cover:
     image: "blog/mysql-cluster-slave/cover.png"
 ---
 
-### 🔗 [Medium'da Oku](https://medium.com/@tyfnacici/mysql-cluster-slave)
+### 🔗 [Read on Medium](https://medium.com/@tyfnacici/mysql-cluster-slave)
 
 <img src="https://cdn-images-1.medium.com/max/1024/1*EpWj-CORo0-P_1kaaLb5aQ.png" alt="Image" />
 
-Bu yazımda size bir MySQL clusterine GTID replikasyon yöntemini kullanarak bir slave eklemeyi göstereceğim. Bunun sayesinde Clusterinize slave makineyi dahil etmeden dışarıdan veritabanınızın yedeğini alabileceksiniz. MySQL serveri olarak Percona Server, Clusterdeki makineler için ise Percona XtraDB Cluster kullanacağım. Makinelerimin tümü ise Ubuntu 22.04LTS.
+In this article, I will show you how to add a slave to a MySQL cluster using the GTID replication method. Thanks to this, you will be able to back up your database from the outside without including the slave machine in your cluster. As the MySQL server I will use Percona Server, and for the machines in the cluster, Percona XtraDB Cluster. All of my machines run Ubuntu 22.04 LTS.
 
-### MySQL nedir, ne işe yarar?
+### What is MySQL and what does it do?
 
-MySQL, veritabanı yönetim sistemi (DBMS) olarak kullanılan bir açık kaynak kodlu yazılımdır. MySQL, SQL (Structured Query Language) dillerini kullanarak veritabanı oluşturma, sorgulama, güncelleme ve silme gibi işlemleri yapmanıza olanak tanır.
+MySQL is open-source software used as a database management system (DBMS). MySQL allows you to perform operations such as creating, querying, updating, and deleting a database using SQL (Structured Query Language).
 
-### Nerede kullanılır?
+### Where is it used?
 
-MySQL, web tabanlı uygulamalar, e-ticaret siteleri, bloglar ve forumlar gibi internet tabanlı projeler için yaygın olarak kullanılır. Ayrıca, büyük veri depolama ve analitik işlemler için de kullanılabilir. Örneğin, birçok web sitesi ve uygulama, ziyaretçi verilerini MySQL veritabanında saklar.
+MySQL is widely used for internet-based projects such as web applications, e-commerce sites, blogs, and forums. It can also be used for big data storage and analytics operations. For example, many websites and applications store visitor data in a MySQL database.
 
-### MySQL Cluster nedir?
+### What is a MySQL Cluster?
 
-MySQL Cluster, MySQL veritabanı yönetim sistemi üzerine inşa edilmiş, ölçeklenebilir ve yüksek performanslı bir veritabanı yönetim sistemidir. Bu sistem, verilerin birden fazla sunucu arasında dağıtılmasını ve senkronize edilmesini sağlar. Bu sayede, veritabanı işlemleri esnasında oluşabilecek gecikmeler ve kesintiler minimize edilir ve veri kaybı riski azaltılır.
-
-
-MySQL Cluster, sınırsız veri büyüklüğüne ve yüksek kullanıcı sayısına karşı ölçeklenebilir. Bu sayede, web tabanlı uygulamalar, e-ticaret siteleri, mobil uygulamalar, IoT projeleri gibi internet tabanlı projeler için büyük veri yükünü taşıyabilir. Ayrıca, yüksek kullanıcı sayısına ve veri trafiğine karşı dayanıklıdır.
-
-### Veritabanı replikasyonu nedir, ne işe yarar?
-
-Veritabanı replikasyonu, bir veritabanının içeriğinin birden fazla konumda kopyalanmasını ve senkronize edilmesini sağlamak için kullanılan bir yöntemdir. Bu sayede, veritabanı işlemleri esnasında oluşabilecek gecikmeler ve kesintiler minimize edilir ve veri kaybı riski azaltılır. Replikasyon ayrıca yedekleme ve geri yükleme işlemleri için de kullanılabilir.
+MySQL Cluster is a scalable, high-performance database management system built on top of the MySQL database management system. This system enables data to be distributed and synchronized across multiple servers. In this way, delays and interruptions that may occur during database operations are minimized, and the risk of data loss is reduced.
 
 
-Veritabanı replikasyonu, çeşitli amaçlar için kullanılabilir. Örneğin, veritabanının yedeklenmesi ve geri yüklenmesi için kullanılabilir. Bu sayede, veritabanı işlemleri esnasında oluşabilecek sorunlar veya kazalar sonucunda verilerin kaybı önlenebilir. Ayrıca, veritabanının performansını arttırmak için kullanılabilir. Örneğin, veritabanının yükünü azaltmak için, sorguların çoğunlukla yedek sunucular üzerinde gerçekleştirilmesi sağlanabilir.
+MySQL Cluster is scalable against unlimited data size and a high number of users. This way, it can carry a large data load for internet-based projects such as web applications, e-commerce sites, mobile applications, and IoT projects. It is also resilient against a high number of users and heavy data traffic.
 
-### Master-Slave Replikasyon
+### What is database replication and what does it do?
 
-Bu yöntemde, veritabanı işlemleri (sorgulama, güncelleme) yalnızca Master sunucuda gerçekleştirilir. Master sunucu tarafından gerçekleştirilen işlemler, Slave sunucular tarafından otomatik olarak tekrarlanır. Böylece tüm sunucular aynı anda senkronize edilir.
-
-### Multi-Master Replikasyon
-
-Bu yöntemde, birden fazla master sunucu bulunur. Her master sunucu, diğer master sunuculara veri yansıtır ve herhangi bir master sunucuda gerçekleşen işlemler diğer master sunucular tarafından algılanır ve uyarlanır. Bu yöntem, Master-Master Replikasyon yöntemine göre daha yüksek ölçeklenebilirlik ve esneklik sağlar.
-
-### Percona nedir?
-
-Percona, MySQL veritabanı yönetim sistemi için açık kaynak kodlu bir alternatiftir. Percona, MySQL’in performansını ve ölçeklenebilirliğini arttırmak için özel olarak optimize edilmiş bir sürümünü sunar.
+Database replication is a method used to ensure that the content of a database is copied and synchronized in more than one location. In this way, delays and interruptions that may occur during database operations are minimized, and the risk of data loss is reduced. Replication can also be used for backup and restore operations.
 
 
-Percona, MySQL’in temel özelliklerini korurken, aynı zamanda ek özellikler ve araçlar sunar. Bu yazımda da Percona’nın Percona Server ve Percona XtraDB Cluster yazılımlarını kullanacağız.
+Database replication can be used for various purposes. For example, it can be used to back up and restore a database. This way, data loss resulting from problems or accidents that may occur during database operations can be prevented. It can also be used to improve database performance. For example, in order to reduce the load on the database, it can be ensured that queries are mostly executed on the backup servers.
 
-### Yazımızda Master Slave replikasyonu için GTID replikasyonunu kullanacağız. Peki neden GTID replikasyonunu kullanıyoruz?
+### Master-Slave Replication
 
-Geleneksel replikasyonda, master sunucunun slave sunuculara gönderdiği binary loglar içerisindeki işlemler, slave sunucular tarafından master sunucuda yapılan aynı sıra ile tekrar gerçekleştirilir. Ancak, bu yöntem birden fazla replikasyon kanalı ile uğraşırken veya replikasyon hatalarından kurtulmaya çalışırken bize sorunlar çıkartabilmektedir.
+In this method, database operations (querying, updating) are performed only on the Master server. The operations performed by the Master server are automatically repeated by the Slave servers. This way, all servers are synchronized at the same time.
+
+### Multi-Master Replication
+
+In this method, there are multiple master servers. Each master server mirrors data to the other master servers, and operations occurring on any master server are detected and adapted by the other master servers. This method provides higher scalability and flexibility compared to the Master-Master Replication method.
+
+### What is Percona?
+
+Percona is an open-source alternative for the MySQL database management system. Percona offers a specially optimized version of MySQL to improve its performance and scalability.
 
 
-GTID replikasyonunda, master sunucu her işlem için benzersiz bir GTID atar ve bunu slave sunuculara binary log ile birlikte gönderir. Slave sunucular daha sonra işlemi yürütür ve kendi GTID durumlarını ana sunucudaki ile eşleştirir. Bu, replikasyon hatalarının kolayca izlenip düzeltilmesini ve mevcut master sunucunun bozulması durumunda yeni bir master sunucuya geçmeyi kolaylaştırır.
+While preserving MySQL’s core features, Percona also offers additional features and tools. In this article, we will use Percona’s Percona Server and Percona XtraDB Cluster software.
+
+### In this article, we will use GTID replication for Master Slave replication. So why do we use GTID replication?
+
+In traditional replication, the transactions in the binary logs that the master server sends to the slave servers are re-executed by the slave servers in the same order in which they were made on the master server. However, this method can cause us problems when dealing with multiple replication channels or when trying to recover from replication errors.
 
 
-GTID replikasyonu, replikasyon kurulumunuza yeni bir slave sunucu eklemek istediğinizde size kolaylıklar sunar. Bağladığınız yeni slave son GTID ile başlar, geleneksel replikasyondaki gibi binlog dosyası ve pozisyonunu belirtmenize gerek kalmaz.
+In GTID replication, the master server assigns a unique GTID to each transaction and sends it to the slave servers along with the binary log. The slave servers then execute the transaction and match their own GTID state with the one on the source server. This makes it easy to monitor and fix replication errors, and makes switching to a new master server easier in case the current master server is corrupted.
 
-### Gereksinimler
-- Hepsi aynı ağda bulunan 3 Adet Ubuntu 22.04LTS kurulu makine
-- İnternet bağlantısı
 
-### Clusterimizdeki makinelerin kurulumlarını yapalım
+GTID replication offers you conveniences when you want to add a new slave server to your replication setup. The new slave you connect starts from the last GTID, and you don’t need to specify the binlog file and its position as in traditional replication.
 
-### Percona XtraDB Cluster kurulumlarını makinelerimize yapalım
+### Requirements
+- 3 machines with Ubuntu 22.04 LTS installed, all on the same network
+- An internet connection
 
-Clusterde olacak makinelerimizin **tümünün** terminaline aşağıdaki kodları sırasıyla girerek gerekli indirmeleri yapalım.
+### Let’s set up the machines in our cluster
+
+### Let’s install Percona XtraDB Cluster on our machines
+
+Let’s make the necessary downloads by entering the following codes, in order, into the terminal of **all** of the machines that will be in the cluster.
 
 
 sudo apt update
@@ -81,36 +81,36 @@ sudo apt update
 sudo percona-release setup pxc80
 sudo apt install -y percona-xtradb-cluster
 
-### Kurulumunu yaptığımız makineleri konfigüre edelim
+### Let’s configure the machines we have installed
 
-Gerekli indirmeleri yaptıktan sonra tüm makinelerimizde MySQL sunucularını konfigürasyon yapacağımız için durdurmamız gerekiyor.
+After making the necessary downloads, we need to stop the MySQL servers on all of our machines, since we are going to configure them.
 
 
 sudo service mysql stop
 
 
-Konfigürasyon işlemi için **“/etc/mysql/mysql.conf.d/mysqld.cnf”** dosyasını açıyoruz.
+For the configuration process, we open the **“/etc/mysql/mysql.conf.d/mysqld.cnf”** file.
 
 
 sudo nano /etc/mysql/mysql.conf.d/mysqld.cnf
 
 
-Burada **“wsrep_cluster_address”** kısmına ağımızda bulunacak bilgisayarların ip adreslerini sırasıyla girelim. Ardından bu adımı clusterde bulunacak tüm cihazlar için tekrarlıyalım. Ben iki adet makine ile clusterimi kuracağım.
+Here, let’s enter the IP addresses of the computers that will be on our network, in order, into the **“wsrep_cluster_address”** part. Then let’s repeat this step for all the devices that will be in the cluster. I will set up my cluster with two machines.
 
 
 wsrep_cluster_address=gcomm://192.168.70.61,192.168.70.62,192.168.70.63
 
 
-Buraya kadar yapılan işlemlerimizi clusterde bulunacak tüm makinelerimiz için yapıyoruz.
+We perform the operations done up to this point for all of our machines that will be in the cluster.
 
 
-Birinci nodemizi aşağıdaki bilgilere göre konfigüre edelim.
+Let’s configure our first node according to the following information.
 
 
-**“wsrep_node_name”: Clusterdeki her makine için farklı olmalıdır.**
+**“wsrep_node_name”: Must be different for each machine in the cluster.**
 
 
-**“wsrep_node_address”: O makinenin ip adresi**
+**“wsrep_node_address”: That machine’s IP address**
 
 
 wsrep_node_name=pxc1
@@ -118,42 +118,42 @@ wsrep_node_address=192.168.70.61
 pxc_strict_mode=ENFORCING
 
 
-Diğer nodelerimizi de buna benzer şekilde fakat her [wsrep_node_name](https://docs.percona.com/percona-xtradb-cluster/8.0/wsrep-system-index.html#wsrep_node_name) and [wsrep_node_address](https://docs.percona.com/percona-xtradb-cluster/8.0/wsrep-system-index.html#wsrep_node_address)kısmı kendine has olacak şekilde düzenliyoruz.
+We configure our other nodes in a similar way, but so that every [wsrep_node_name](https://docs.percona.com/percona-xtradb-cluster/8.0/wsrep-system-index.html#wsrep_node_name) and [wsrep_node_address](https://docs.percona.com/percona-xtradb-cluster/8.0/wsrep-system-index.html#wsrep_node_address) part is unique to itself.
 
 
-Ben kurulumda ssl kullanmayacağım için bunu kapatacağım. Bunu yapmak için tüm makinelerimizde konfigürsayon dosyasına şu satırı ekleyelim.
+Since I will not use ssl in my setup, I will turn this off. To do this, let’s add the following line to the configuration file on all of our machines.
 
 
 pxc_encrypt_cluster_traffic = OFF
 
 
-SSL sertifikası ile kurulum yapacaksanız dökümantasyonun [bu](https://docs.percona.com/percona-xtradb-cluster/8.0/configure.html#configure) ve [bu kısımlarına](https://docs.percona.com/percona-xtradb-cluster/8.0/security/encrypt-traffic.html#encrypt-replication-traffic) bakabilirsiniz.
+If you are going to do the setup with an SSL certificate, you can take a look at [this](https://docs.percona.com/percona-xtradb-cluster/8.0/configure.html#configure) and [this part](https://docs.percona.com/percona-xtradb-cluster/8.0/security/encrypt-traffic.html#encrypt-replication-traffic) of the documentation.
 
-### Birinci nodemizi bootstrap moduna alalım
+### Let’s put our first node into bootstrap mode
 
-Bootstrap, bilinen herhangi bir cluster adresi olmadan ilk nodenin başlatılması anlamına gelir: wsrep_cluster_address değişkeni boşsa, Percona XtraDB Kümesi bunun ilk node olduğunu varsayar ve clusteri başlatır.
+Bootstrap means starting the first node without any known cluster address: if the wsrep_cluster_address variable is empty, Percona XtraDB Cluster assumes it is the first node and starts the cluster.
 
 
-Bootstrap modunda başlatmak için aşağıdaki komutu ilk nodemizde çalıştırıyoruz.
+To start in bootstrap mode, we run the following command on our first node.
 
 
 systemctl start mysql@bootstrap.service
 
 
-Bu komutu kullanarak clusteri başlattığınızda, konfigürasyon dosyasında ayarladığımız şekilde çalışmaktansa “**wsrep_cluster_address=gcomm://**” şeklinde başlar ve bootstrap modunda çalışır. Bu, nodeye clusteri “**wsrep_cluster_conf_id**” değişkeni 1'e ayarlı olarak başlatmasını söyler. Yani clusterin ilk nodesini belirlemiş oluruz.
+When you start the cluster using this command, instead of running as we configured in the configuration file, it starts as “**wsrep_cluster_address=gcomm://**” and runs in bootstrap mode. This tells the node to start the cluster with the “**wsrep_cluster_conf_id**” variable set to 1. In other words, we have determined the first node of the cluster.
 
 
-Clustere nodelerimizi ekledikten sonra, bootstrap modunu kapatıp bu nodeyi normal şekilde yeniden başlatabilirsiniz.
+After adding our nodes to the cluster, you can turn off bootstrap mode and restart this node normally.
 
 
-Ardından ilk nodemizde MySQL konsolunu açıp clusterin başlayıp başlamadığını kontrol edelim.
+Then let’s open the MySQL console on our first node and check whether the cluster has started.
 
 
 mysql -p
 show status like 'wsrep%';
 
 
-Şu şekilde bir çıktı vermesi gerek.
+It should give an output like this.
 
 
 +----------------------------+--------------------------------------+
@@ -172,22 +172,22 @@ show status like 'wsrep%';
 +----------------------------+--------------------------------------+
 40 rows in set (0.01 sec)
 
-### İkinci nodemizi clustere ekleyelim
+### Let’s add our second node to the cluster
 
-İkinci nodemizde MySQL servisini çalıştıralım.
+Let’s run the MySQL service on our second node.
 
 
 systemctl start mysql
 
 
-Ardından bu nodemizde MySQL konsolunu açarak clustere bağlanıp bağlanmadığını kontrol edelim.
+Then let’s open the MySQL console on this node of ours and check whether it has joined the cluster.
 
 
 mysql -p
 show status like 'wsrep%';
 
 
-**wsrep_cluster_size**’nin 2 ye çıkması gerek.
+**wsrep_cluster_size** should rise to 2.
 
 
 +----------------------------------+--------------------------------------------------+
@@ -212,29 +212,29 @@ show status like 'wsrep%';
 75 rows in set (0.00 sec)
 
 
-Ekleyeceğiniz diğer nodeleri de ikinci nodemizde yaptığımız işlemleri tekrarlayarak yapabilirsiniz.
+You can add the other nodes as well by repeating the operations we performed on our second node.
 
-### Bootstrap modunu kapatalım
+### Let’s turn off bootstrap mode
 
-Tüm nodeleri clustere bağladıktan sonra ilk nodemizde açtığımız Bootstrap modunu kapatalım.
+After connecting all the nodes to the cluster, let’s turn off the Bootstrap mode we enabled on our first node.
 
 
 systemctl stop mysql@bootstrap.service
 
 
-Ardından MySQL servisimizi normal bir şekilde başlatalım.
+Then let’s start our MySQL service normally.
 
 
 systemctl start mysql
 
 
-Artık clusterimizdeki makineler Multi-Master konfigürasyonunda çalışmaya başladılar.
+Now the machines in our cluster have started working in a Multi-Master configuration.
 
-### Slave makinemizi Clustere bağlayalım
+### Let’s connect our Slave machine to the cluster
 
-### Makinemize Percona Server kurulumunu yapalım
+### Let’s install Percona Server on our machine
 
-Aşağıdaki komutları sırasıyla makinemizin terminaline girerek gereki kurulumları yapalım.
+Let’s do the necessary installations by entering the following commands, in order, into our machine’s terminal.
 
 
 sudo apt update
@@ -245,21 +245,21 @@ sudo apt update
 sudo percona-release setup ps80
 sudo apt install percona-server-server
 
-### Master sunucumuzun konfigürasyonlarını yapalım
+### Let’s configure our Master server
 
-Clusterde hangi makinenin slave sunucumuzun masteri olmasını istiyorsak ona geliyoruz. Master olacak makinemizin 3306 portunu replikasyon için açmamız gerekiyor.
+We go to whichever machine in the cluster we want to be the master of our slave server. We need to open port 3306 of the machine that will be the Master, for replication.
 
 
-Aşağıdaki kodu Master olacak makinemizin terminaline girelim.
+Let’s enter the following code into the terminal of the machine that will be the Master.
 
 
 sudo ufw allow from replica_server_ip to any port 3306
 
 
-Buraya **“*replica_server_ip*”** kısmına slave olacak sunucumuzun ip adresini girmemiz gerekli.
+Here, into the **“*replica_server_ip*”** part, we need to enter the IP address of our server that will be the slave.
 
 
-Ardından Master sunucumuzda **“/etc/mysql/mysql.conf.d/mysqld.cnf”** dosyasını seçtiğimiz text editörümüz ile açıyoruz ve aşağıdaki kodları bu dosyaya ekliyoruz.
+Then, on our Master server, we open the **“/etc/mysql/mysql.conf.d/mysqld.cnf”** file with our text editor of choice and add the following codes to this file.
 
 
 nano /etc/mysql/mysql.conf.d/mysqld.cnf
@@ -272,10 +272,10 @@ gtid_mode = ON
 enforce-gtid-consistency = ON
 
 
-**“server-id”** = Her sunucunun kendisine özgü olması gereken sunucu idsi
+**“server-id”** = A server ID that must be unique to each server
 
 
-**“binlog_do_db”** = Replikasyonun olmasını istediğiniz veritabanı. Eğer birden fazla veritabanını replike edecekseniz aşağıdaki gibi yapabilirsiniz.
+**“binlog_do_db”** = The database you want to be replicated. If you are going to replicate more than one database, you can do it as follows.
 
 
 binlog_do_db = db1
@@ -285,48 +285,48 @@ binlog_do_db = db3
 ...
 
 
-**“gtid_mode = ON” ve “enforce-gtid-consistency = ON”** GTID replikasyonu yapabilmemizi sağlar.
+**“gtid_mode = ON” and “enforce-gtid-consistency = ON”** enable us to perform GTID replication.
 
 
-GTID hakkında daha detaylı bilgi için [buraya](https://dev.mysql.com/doc/refman/8.0/en/replication-gtids-concepts.html) tıklayabilirsiniz.
+For more detailed information about GTID, you can click [here](https://dev.mysql.com/doc/refman/8.0/en/replication-gtids-concepts.html).
 
 
-Bu dosyayı yukarıdaki gibi düzenledikten sonra mysql servisimizi yeniden başlatıyoruz.
+After editing this file as above, we restart our mysql service.
 
 
 sudo systemctl restart mysql
 
-### Replikasyon için bir kullanıcı oluşturalım
+### Let’s create a user for replication
 
-Master sunucumuzda MySQL konsolunu açalım ve aşağıdaki komutu isteğimize göre düzenleyelim ve girelim.
+Let’s open the MySQL console on our Master server, edit the following command according to our needs, and enter it.
 
 
 CREATE USER 'replica_user'@'replica_server_ip' IDENTIFIED WITH mysql_native_password BY 'password';
 
 
-**“replica_user”** = replikasyon yapacak kullanıcı
+**“replica_user”** = the user that will perform the replication
 
 
-**“replica_server_ip”** = slave sunucumuzun ip adresi
+**“replica_server_ip”** = the IP address of our slave server
 
 
-**“password”** = replikasyon kullanıcının şifresi
+**“password”** = the replication user’s password
 
 
-Ardından bu replikasyon yapacak kullanıcıya yetki vermemiz gerekiyor.
+Then we need to grant privileges to this user that will perform the replication.
 
 
 GRANT REPLICATION SLAVE ON *.* TO 'replica_user'@'replica_server_ip';
 
 
-Bunun ardından şu komutu çalıştıralım.
+After this, let’s run the following command.
 
 
 FLUSH PRIVILEGES;
 
-### Slave sunucumuzun konfigurasyonlarını yapalım.
+### Let’s configure our Slave server.
 
-Slave sunucumuzda aşağıdaki komutu çalıştırarak mysqld.cnf dosyasını açalım.
+On our Slave server, let’s open the mysqld.cnf file by running the following command.
 
 
 nano /etc/mysql/mysql.conf.d/mysqld.cnf
@@ -342,10 +342,10 @@ skip-replica-start=ON
 relay-log = /var/log/mysql/mysql-relay-bin.log
 
 
-**“server-id”** = Her sunucunun kendisine özgü olması gereken sunucu idsi
+**“server-id”** = A server ID that must be unique to each server
 
 
-**“binlog_do_db”** = Replikasyonun olmasını istediğiniz veritabanı. Eğer birden fazla veritabanını replike edecekseniz aşağıdaki gibi yapabilirsiniz.
+**“binlog_do_db”** = The database you want to be replicated. If you are going to replicate more than one database, you can do it as follows.
 
 
 binlog_do_db = db1
@@ -355,14 +355,14 @@ binlog_do_db = db3
 ...
 
 
-Son olarak MySQL servisimizi yeniden başlatalım.
+Finally, let’s restart our MySQL service.
 
 
 sudo systemctl restart mysql
 
-### Replikasyonu başlatalım
+### Let’s start the replication
 
-Slave sunucumuzda MySQL konsolumuzu açalım ve aşağıdaki komutları girelim.
+Let’s open our MySQL console on our Slave server and enter the following commands.
 
 
 CHANGE REPLICATION SOURCE TO
@@ -372,22 +372,22 @@ SOURCE_PASSWORD='password',
 SOURCE_AUTO_POSITION=1;
 
 
-Burada SOURCE_LOG_FILE ve SOURCE_LOG_POS kısmını size unutmayın dediğim tablodaki değerler ile değiştirmeniz gerek.
+Here, you need to replace the SOURCE_LOG_FILE and SOURCE_LOG_POS parts with the values from the table I told you to note down.
 
 
-Artık replikasyonu başlatabiliriz.
+Now we can start the replication.
 
 
 START SLAVE;
 
 
-Replikasyon işlemimizin detaylarına bakalım.
+Let’s take a look at the details of our replication process.
 
 
 SHOW REPLICA STATUS\G;
 
 
-Yukarıdaki komutu girdiğimizde bize bunun gibi bir çıktı verecektir.
+When we enter the command above, it will give us an output like this.
 
 
 *************************** 1. row ***************************
@@ -457,7 +457,7 @@ ERROR:
 No query specified
 
 
-Master sunucumuzda aşağıdaki kodu çalıştırdığımızda bize “Retrieved_Gtid_Set: 09df97bf-9bbb-11ed-9703–6e6b4394799a:1–4” kısmındaki gtid kodu ile aşağıda verecek gtid kodu aynı oluyorsa makineler eşleşti demektir.
+When we run the following code on our Master server, if the GTID code it gives below is the same as the GTID code in the “Retrieved_Gtid_Set: 09df97bf-9bbb-11ed-9703–6e6b4394799a:1–4” part, it means the machines have matched.
 
 
 show master status;
@@ -467,42 +467,42 @@ show master status;
 | mysql-bin.000001 | 1593 | | | 09df97bf-9bbb-11ed-9703-6e6b4394799a:1-6 |
 +------------------+----------+--------------+------------------+------------------------------------------+
 
-### Replikasyonumuza gecikme ekleyelim
+### Let’s add a delay to our replication
 
-Slave sunucumuzda MySQL konsoluna girerek replikasyonu durduralım.
+Let’s enter the MySQL console on our Slave server and stop the replication.
 
 
 stop slave;
 
 
-Ardından ise gecikmeyi belirleyelim. Ben burada hemen deneyebilmek için 30 yazacağım. Bu yazdığım değer saniye cinsinden olduğu için yarım dakika gecikmeli şekilde veritabanı replikasyonu olacaktır. Bu değeri isteğiniz şekilde ayarlayabilirsiniz.
+Then we set the delay. I will write 30 here so that I can try it right away. Since the value I write is in seconds, the database replication will happen with a half-minute delay. You can set this value however you wish.
 
 
 CHANGE MASTER TO MASTER_DELAY = 30;
 
 
-Replikasyonu tekrar başlatalım.
+Let’s start the replication again.
 
 
 START SLAVE;
 
 
-Gecikmeyi kontrol etmek için aşağıdaki kodu MySQL konsoluna girerek çıkan ekranda “Master_Delay” kısmına bakabilirsiniz.
+To check the delay, you can enter the following code into the MySQL console and look at the “Master_Delay” part on the resulting screen.
 
 
 SHOW SLAVE STATUS \G
 
 
-Gecikmeyi sıfırlamak için ise MySQL konsoluna
+To reset the delay, in the MySQL console
 
 
 reset slave;
 
 
-Yazmanız yeterlidir.
+it is enough to write this.
 
 
-Daha detaylı bilgi için [buraya](https://dev.mysql.com/doc/refman/8.0/en/replication-delayed.html) tıklayabilirsiniz.
+For more detailed information, you can click [here](https://dev.mysql.com/doc/refman/8.0/en/replication-delayed.html).
 
 
-Okuduğunuz için teşekkürler.
+Thank you for reading.

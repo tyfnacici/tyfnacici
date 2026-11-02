@@ -1,6 +1,6 @@
 ---
 title: "Long Term Internship"
-description: "Kocaeli Üniversitesi Teknopark A.Ş | On-site"
+description: "Kocaeli University Technopark | On-site"
 dateString: Feb 2025 - Jun 2026
 weight: 3
 draft: false

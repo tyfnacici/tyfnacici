@@ -1,6 +1,6 @@
 ---
-title: "TLS ile OpenLDAP Multimaster replication konfigürasyonu"
-description: "OpenLDAP Multimaster replication kurulumu ve TLS ile güvenli hale getirme"
+title: "OpenLDAP Multimaster replication configuration with TLS"
+description: "Setting up OpenLDAP Multimaster replication and securing it with TLS"
 draft: false
 tags: ["LDAP", "OpenLDAP", "TLS", "Linux"]
 showToc: true
@@ -9,97 +9,97 @@ cover:
     image: "blog/openldap-multimaster/cover.png"
 ---
 
-### 🔗 [Medium'da Oku](https://medium.com/@tyfnacici/openldap-multimaster)
+### 🔗 [Read on Medium](https://medium.com/@tyfnacici/openldap-multimaster)
 
-- En az 2 adet openLDAP kurulu sanal makine. Bu yazıda Ubuntu 22.04 LTS kullanacağız. Aynı dağıtımları kullanmanız şiddetle tavsiye edilir.
-- Kullanacağımız sanal makinelerin hepsinde kurulu ve senkronize çalışan NTP server.
+- At least 2 virtual machines with openLDAP installed. In this article, we will use Ubuntu 22.04 LTS. It is strongly recommended that you use the same distributions.
+- An NTP server installed and synchronizing properly on all of the virtual machines we will use.
 
-### LDAP Nedir ?
+### What is LDAP?
 
-**Lightweight Directory Access Protocol** veya kısaca **LDAP** (\*Basit İndeks Erişim Protokolü\*) TCP/IP üzerinde çalışan indeks servislerini sorgulama ve değiştirme amacıyla kullanılan uygulama katmanı protokolü.
-
-
-Bu protokol, OpenLDAP, Sun Directory Server, Microsoft Active Directory gibi indeks sunucuları tarafından kullanılmaktadır. Başlangıç için veritabanına benzer yapıda diyebiliriz fakat bir veritabanı ile en temel farkı hiyerarşik bir yapıda olmamasıdır.
+**Lightweight Directory Access Protocol** or simply **LDAP**, is an application layer protocol used to query and modify directory services running over TCP/IP.
 
 
-LDAP protokolü message-oriented (mesaj kaynaklı) bir protokoldür. Bunun anlamı şudur: istemci istek içeren bir LDAP iletisi oluşturur, ve mesajı sunucuya gönderir, sunucu ise bu istemi işler, ve sonucu bir veya birden fazla LDAP mesajı olarak istemciye yanıtı gönderir.
+This protocol is used by directory servers such as OpenLDAP, Sun Directory Server, and Microsoft Active Directory. For starters, we can say it has a structure similar to a database, but its most fundamental difference from a database is that it does not have a hierarchical structure.
 
 
-LDAP mesaj tabanlı bir protokol olduğu için, istemci tek seferde birden fazla istemde bulunabilir. Örneğin bir istemci aynı anda iki arama işlemini yapabilir. Birden fazla işlemi aynı anda yababilmeyi mümkün kılması LDAP protokolünü buna izin vermeyen HTTP ve benzeri protokollere göre daha esnek ve verimli bir protokol yapmaktadır.
-
-### OpenLDAP Nedir ?
-
-OpenLDAP, LDAP ‘ın OpenLDAP Project tarafından geliştirilmiş bir uygulamasıdır. OpenLDAP Kamu Lisansı olarak bilinen BSD-türevi bir lisans kullanmaktadır. Platform bağımsız bir protokoldür. Kullanımda olan birçok Linux dağıtımı, LDAP desteği için OpenLDAP yazılımını barındırır.
-
-### NTP Nedir ?
-
-NTP, fazlalık kapasitesi olan bir sıralı zaman dağıtım sistemidir. Ağdaki ve de hedef makinedeki algoritmaları, gecikmeleri ölçer. Bu teknikleri kullanarak saatleri saliselere kadar senkronize edebilir. NTP ayarları hangi dağıtımın kullanıldığına bağlı olarak ya /etc/ntp.conf ya da /etc/xntp.conf dosyasından yapılır.
+The LDAP protocol is a message-oriented protocol. What this means is this: the client creates an LDAP message containing a request, and sends the message to the server; the server processes this request, and sends the client the result as a response in one or more LDAP messages.
 
 
-Çoğu temel yapılandırmalı ntp.conf dosyasında iki sunucu ismi mevcuttur. Birisi, saat ayarının yapılması istenen sunucunun adı ve diğeri de sahte bir IP adresidir.
-Sahte IP adresi ağ problemleri olması durumunda veya NTP sunucusunun kapalı olması/çökmesi durumunda kullanılır. Sistemdeki NTP uygulaması, uzak NTP sunucusu ayağa kalkınca, sistem saatini tekrar ona göre ayarlayacaktır. Bu iki sunucudan birincisi asıl sunucu olarak işlem yapar, ikincisi ise yedek amaçlıdır. Ayrıca bu hedef dosyanın yeri de belirtilmelidir. NTP zamanla, sistem saatindeki hata oranını “öğrenecek” ve kendini buna göre ayarlayacaktır.
+Since LDAP is a message-based protocol, the client can make more than one request at a time. For example, a client can perform two search operations at the same time. Making it possible to perform multiple operations at the same time makes the LDAP protocol a more flexible and efficient protocol compared to HTTP and similar protocols that do not allow this.
 
-### Kuruluma Başlayalım
+### What is OpenLDAP?
 
-Aşağıdaki adımları her iki sunucuda da uygulamanız gerekmektedir.
+OpenLDAP is an implementation of LDAP developed by the OpenLDAP Project. It uses a BSD-derived license known as the OpenLDAP Public License. It is a platform-independent protocol. Many Linux distributions in use include the OpenLDAP software for LDAP support.
 
-#### 1-Öncelikle cihazlarımızın ikisine de NTP kurup bütün makinelerimizin senkron çalışmasını sağlayalım.
+### What is NTP?
+
+NTP is a sequential time distribution system with redundant capacity. It measures the algorithms and delays on the network and on the target machine. Using these techniques, it can synchronize clocks to within thousandths of a second. NTP settings are made either from the /etc/ntp.conf file or from the /etc/xntp.conf file, depending on which distribution is used.
+
+
+In most ntp.conf files with a basic configuration, there are two server names. One is the name of the server whose time is to be set, and the other is a dummy IP address.
+The dummy IP address is used in case there are network problems or in case the NTP server is down/crashed. When the remote NTP server comes back up, the NTP application on the system will set the system clock according to it again. Of these two servers, the first acts as the primary server, and the second is for backup purposes. In addition, the location of this target file must also be specified. Over time, NTP will “learn” the error rate of the system clock and adjust itself accordingly.
+
+### Let's Start the Installation
+
+You need to apply the following steps on both servers.
+
+#### 1-First, let's install NTP on both of our devices and make all of our machines run in sync.
 
 apt -y install ntp
 
 
-Ubuntuda NTP paketi hali hazırda konfigüre edilmiş olduğundan dolayı NTP ile ilgili herhangi ek bir işlem yapmamıza gerek kalmıyor.
+Since the NTP package is already configured on Ubuntu, we don't need to do any additional operation regarding NTP.
 
-#### 2-Sunucularımızın hepsi birbirini tanımalı
+#### 2-All of our servers must know one another
 
 nano /etc/hosts
 
 
-Bu dosyanın içerisine ise makinelerimizin ip adresleri ve onların yanına koymak istediğimiz adresleri yazıyoruz.
+Into this file, we write our machines' IP addresses and the addresses we want to put next to them.
 
 
 10.0.0.1 ldap1.tayfun.com
 10.0.0.2 ldap2.tayfun.com
 
 
-Bu ayarımızın çalışıp çalışmadığını denemek için makinelerimizin birinden diğerine yazdığınız adresleri girip ping atabilirsiniz.
+To test whether this setting of ours works, you can enter the addresses you wrote from one of our machines to the other and ping them.
 
-### Artık ldap kurulumuna geçebiliriz.
+### Now we can move on to the LDAP installation.
 
-#### Multi-Master Kurulumunda Master olmasını istediğimiz makinemize Ldap kurulumunu yapıyoruz.
+#### In the Multi-Master setup, we install LDAP on the machine we want to be the Master.
 
-#### 1-Aşağıda belirttiğim adımlar her iki makinede de yapılmalıdır.
+#### 1-The steps I list below must be done on both machines.
 
 apt -y install slapd ldap-utils
 
 <img src="https://cdn-images-1.medium.com/max/802/1*p3mMm6KZOpqNtrZMyN8j0w.png" alt="Image" />
-*Kurulum esnasında belirlediğiniz şifreyi unutmayın bize lazım olacak :).*
-#### 2-Kurulum bittikten sonra aşağıdaki komutu çalıştırıp bazı konfigürasyonları tamamlamamız gerekiyor.
+*Don't forget the password you set during the installation, we will need it :).*
+#### 2-After the installation is finished, we need to run the following command to complete some configurations.
 
 dpkg-reconfigure slapd
 
 
-Bu komutu çalıştırdıktan sonra çıkan sorulara aşağıdaki gibi cevap vermeniz gerekiyor.
+After running this command, you need to answer the questions that appear as follows.
 
 - **Omit OpenLDAP Server Configuration:** No
 - **DNS Domain Name:** This creates the base structure for your directory path.
 
 <img src="https://cdn-images-1.medium.com/max/619/1*wRNMw9cHCumOx8XpodwteA.png" alt="Image" />
 - **Organization Name: **The name to be used as the base DN for your LDAP directory.
-- **Administrator Password:** Az önce ayarladığınız admin şifresi
+- **Administrator Password:** The admin password you set a moment ago
 - **Remove The Database When Slapd Is Purged:** No
 - **Move Old Database:** Yes
 
-Bu ayarlamaları yaptıktan sonra aşağıdaki komutu konsola yazarak ayarlarınızı kontrol edebilirsiniz.
+After making these settings, you can check your settings by writing the following command to the console.
 
 
 slapcat
 
 <img src="https://cdn-images-1.medium.com/max/621/1*sEBkZGM_paKyh9KTxN4xgA.png" alt="Image" />
 
-#### 3-Kullanıcılar ve gruplar için bir temel DN oluşturalım.
+#### 3-Let's create a base DN for users and groups.
 
-Aşağıdaki şekilde dosyayı oluşturalım ve içerisine de eklediğim yazıları koyalım.
+Let's create the file as follows and put the text I added inside it.
 
 
 vim base.ldif
@@ -114,45 +114,45 @@ objectClass: organizationalUnit
 ou: groups
 
 
-Bu dosyayı ldap kurulumumuza eklemek için şu komutu çalıştırmamız gerekiyor
+To add this file to our LDAP installation, we need to run this command
 
 
 ldapadd -x -D cn=admin,dc=plusclouds,dc=com -W -f base.ldif
 
 
-Şifre sorduğu zaman ise ldap’i kurarken eklediğiniz şifreyi yazmanız gerekiyor.
+When it asks for the password, you need to type the password you added while installing LDAP.
 
-#### Multi-Master Kurulumundaki slave olmasını istediğimiz sunucuların kurulumuna geçelim
+#### Let's move on to the setup of the servers we want to be slaves in the Multi-Master configuration
 
-#### 1-Gerekli paketlerin kurulumunu yapalım.
+#### 1-Let's install the necessary packages.
 
 apt -y install libnss-ldapd libpam-ldapd ldap-utils
 
-#### 2-Kurulumu yaptıktan sonra aşağıdaki komutu çalıştırarak gerekli konfigürasyonları yapalım
+#### 2-After the installation, let's run the following command to make the necessary configurations
 
 dpkg-reconfigure nslcd
 
 <img src="https://cdn-images-1.medium.com/max/621/1*YN-w9sncdQfOlgVxc4csrA.png" alt="Image" />
 
-Gelen ekranda Master olan sunucumuzun hosts dosyasında belirlediğimiz adresi ne ise onu girelim.
+On the screen that appears, let's enter whatever address we specified in the hosts file of our Master server.
 
 <img src="https://cdn-images-1.medium.com/max/621/1*oN-QDQi2CrEZVEhdJ3tG0w.png" alt="Image" />
-*LDAP base adresimizi de girelim.*
+*Let's also enter our LDAP base address.*
 <img src="https://cdn-images-1.medium.com/max/1024/1*3GdsgToF4sVhCdqBP_LOug.png" alt="Image" />
-*Burada simpleyi seçiyoruz.*
+*Here we select “simple”.*
 <img src="https://cdn-images-1.medium.com/max/1024/1*T1USgfUSRVbVs2na_ioYvA.png" alt="Image" />
-*Burada hangi hesap ile ldap veri tabanına erişilmesini istiyorsanız onu giriniz. Ben admin hesabını gireceğim.*
+*Here, enter whichever account you want to be used to access the LDAP database. I will enter the admin account.*
 
 
-Daha sonra çıkan ekranda ldap admin şifremizi girdikten sonra Use StartTLS seçeneğine evet diyoruz.
+Then, on the next screen, after entering our LDAP admin password, we say yes to the “Use StartTLS” option.
 
 <img src="https://cdn-images-1.medium.com/max/1024/1*glMFxxUu6f_jBEw-gS2A_A.png" alt="Image" />
-*Bu ekrana ise allow diyoruz.*
+*On this screen we say “allow”.*
 <img src="https://cdn-images-1.medium.com/max/1024/1*V45R_jGNlMqyg-wJLI0-Tg.png" alt="Image" />
-*Burada benim belirttim adresi yazınız. Biraz sonra buraya sertifikayı ekleyeceğiz.*
+*Here, write the address I specified. We will add the certificate here shortly.*
 
 
-Bu konfigürasyonları yaptıktan sonra aşağıdaki dosyaya girip en sonuna şu satırları eklemeniz gerekiyor.
+After making these configurations, you need to open the following file and add these lines to the very end of it.
 
 
 vim /etc/pam.d/common-session
@@ -161,57 +161,57 @@ vim /etc/pam.d/common-session
 session optional pam_mkhomedir.so skel=/etc/skel umask=077
 
 
-Daha sonra Slave makinanızda şu komutu çalıştırınız.
+Then run the following command on your Slave machine.
 
 
 systemctl restart nscd nslcd
 
 
-Ardından makinenizden “exit” komutu ile çıkış yapıp tekrar bağlantı kurunuz. Bağlantı kurduğunuzda ise “passwd” komutu ile yeni bir şifre belirleyiniz. Bu şifre ssh ile bağlandığınızda slave makinenizdeki kullanıcı hesabının şifresi olacak.
+Then exit your machine with the “exit” command and connect again. Once you have connected, set a new password with the “passwd” command. This password will be the password of the user account on your slave machine when you connect via ssh.
 
-### SSL için sertifika oluşturmak.
+### Creating a certificate for SSL.
 
-Bu kısımın sadece test ve geliştirme yapma amaçlı kullanmak için yapılması tavsiye edilir. Gerçek ortamda kullanılacak sistemlerde bir otoriteden sertifikayı almanız daha güvenli olacaktır.
+It is recommended that this part be done only for testing and development purposes. On systems that will be used in production, it will be more secure to obtain the certificate from an authority.
 
 
-tüm makinelerimizde “**/etc/ssl/openssl.cnf” dosyasına **Master makinenizin DNS i olacak şekilde** aşağıda belirteceğim şekilde bir ekleme yapmalısınız.**
+On all of our machines, you must make an addition to the “**/etc/ssl/openssl.cnf” file **with your Master machine’s DNS**, in the manner I will specify below.**
 
 
 [ plusclouds.com ]
 subjectAltName = DNS:ldap1.tayfun.com
 
 
-ardından “/etc/ssl/private” dizinine gidip şu komutu çalıştırınız.
+then go to the “/etc/ssl/private” directory and run this command.
 
 
 openssl genrsa -aes128 2048 > server.key
 
 
-Bir şifre belirledikten sonra şu komutu çalıştırınız
+After setting a passphrase, run this command
 
 
 openssl rsa -in server.key -out server.key
 
 
-SSL sertifikanızı oluşturmak için son olarak şu komutu çalıştırınız.
+Finally, run this command to create your SSL certificate.
 
 
 openssl req -utf8 -new -key server.key -out server.csr
 
 
-Bu komut size birkaç soru soracaktır. Şu an test amaçlı bunu yaptığımızsdan dolayı hepsini boş bırakarak devam ediyorum.
+This command will ask you a few questions. Since we are doing this for testing purposes at the moment, I am continuing by leaving them all blank.
 
 
-Tebrikler sertifikamızı oluşturduk.
+Congratulations, we have created our certificate.
 
 
-Sertifikamızı kullanabilmek için şu komutu çalıştırmamız gerekiyor.
+To be able to use our certificate, we need to run this command.
 
 
 openssl x509 -in server.csr -out server.crt -req -signkey server.key -extfile /etc/ssl/openssl.cnf -extensions plusclouds.com -days 3650
 
 
-Ardından bulunduğumuz dizinde izinleri düzeliyoruz.
+Then we fix the permissions in our current directory.
 
 
 chmod 600 server.key
@@ -219,12 +219,12 @@ chmod 600 server.key
 
 ll server.*
 
-### Sertifikamıza sahip olduğumuza göre SSL kurulumuna geçelim.
+### Now that we have our certificate, let's move on to the SSL setup.
 
-Aşağıdaki adımlar tüm sunucularımızda yapılacaktır.
+The following steps will be performed on all of our servers.
 
 
-Aşağıdaki iki komutu ardarda çalıştırıyoruz.
+We run the following two commands one after the other.
 
 
 cp /etc/ssl/private/server.key \
@@ -238,7 +238,7 @@ chown openldap. /etc/ldap/sasl2/server.key \
 /etc/ldap/sasl2/ca-certificates.crt
 
 
-Ardından bir “mod_ssl.ldif” isimli dosya oluşturuyoruz ve içini aşağıdaki şekilde dolduruyoruz.
+Then we create a file named “mod_ssl.ldif” and fill it in as follows.
 
 
 dn: cn=config
@@ -253,34 +253,34 @@ replace: olcTLSCertificateKeyFile
 olcTLSCertificateKeyFile: /etc/ldap/sasl2/server.key
 
 
-Bu dosyamızı ise LDAP konfigürasyonumuza şu şekilde ekliyoruz.
+We add this file to our LDAP configuration as follows.
 
 
 ldapmodify -Y EXTERNAL -H ldapi:/// -f mod_ssl.ldif
 
 
-Ardından aşağıdaki komutu yazarak slapd servisini yeniden başlatıyoruz.
+Then we restart the slapd service by writing the following command.
 
 
  systemctl restart slapd
 
-#### Sunucularımızdaki SSL için gerekli ayarlamaları yaptık. Aşağıdaki adımları ise Slave sunucumuzda uygulamamız gerek.
+#### We have made the necessary settings for SSL on our servers. The following steps, however, we need to apply on our Slave server.
 
-“etc/nslcd.conf” dosyamıza girip 29. satıra aşağıdaki eklemeleri yapıyoruz.
+We go into our “etc/nslcd.conf” file and make the following additions on line 29.
 
 
 ssl start_tls
 tls_reqcert allow
 
 
-ardından “[**systemctl**](https://www.server-world.info/en/command/html/systemctl.html)** restart nslcd” ile servisimizi yeniden başlatıyoruz ve exit dedikten sonra ssh ile tekrar bağlanıyoruz.**
+then we restart our service with “[**systemctl**](https://www.server-world.info/en/command/html/systemctl.html)** restart nslcd” and after typing exit, we connect again via ssh.**
 
-### Bütün kurulumları yaptık. Artık Multi-Master Replication kurulumumuza geçelim.
+### We have done all the installations. Now let's move on to our Multi-Master Replication setup.
 
-Aşağıdaki adımları her iki sunucumuzda da yapıyoruz.
+We do the following steps on both of our servers.
 
 
-Bir “mod_syncprov.ldif” isimli dosya oluşturuyoruz ve içerisini aşağıdaki gibi dolduruyoruz.
+We create a file named “mod_syncprov.ldif” and fill its contents as follows.
 
 
 dn: cn=module,cn=config
@@ -293,10 +293,10 @@ olcModuleLoad: syncprov.la
 ldapadd -Y EXTERNAL -H ldapi:/// -f mod_syncprov.ldif
 
 
-Yukarıdaki komut ile bu dosyayı konfigürasyonumuza ekliyoruz.
+With the command above, we add this file to our configuration.
 
 
-Bu işlmin ardından “syncprov.ldif” isimli bir dosya oluşturuyoruz. İçerisini de aşağıdaki gibi dolduruyoruz.
+Following this operation, we create a file named “syncprov.ldif”. We fill its contents as follows.
 
 
 dn: olcOverlay=syncprov,olcDatabase={1}mdb,cn=config
@@ -306,28 +306,28 @@ olcOverlay: syncprov
 olcSpSessionLog: 100
 
 
-Bu dosyayı da aşağıdaki komut ile konfigürasyonumuza ekliyoruz.
+We add this file to our configuration with the following command as well.
 
 
 ldapadd -Y EXTERNAL -H ldapi:/// -f syncprov.ldif
 
 
-“multimaster.ldif” isimli bir dosya oluşturuyoruz. İçerisini de aşağıdaki gibi dolduruyoruz.
+We create a file named “multimaster.ldif”. We fill its contents as follows.
 
 
 dn: cn=config
 changetype: modify
 replace: olcServerID
-olcServerID: 1 //Burası her sunucuda farklı olmalıdır. Slave/Master fark etmeksizin.
+olcServerID: 1 //This must be different on each server, Slave or Master alike.
 
 dn: olcDatabase={1}mdb,cn=config
 changetype: modify
 add: olcSyncRepl
 olcSyncRepl: rid=001
- provider=ldap://10.0.0.1:389/ //Her makinenin kendi ip adresi ve 389 portu
+ provider=ldap://10.0.0.1:389/ //Each machine's own IP address and port 389
  bindmethod=simple
  binddn="cn=admin,dc=plusclouds,dc=com"
- credentials=123 //ldap şifreniz
+ credentials=123 //your ldap password
  searchbase="dc=plusclouds,dc=com"
  scope=sub
  schemachecking=on
@@ -345,29 +345,29 @@ objectClass: olcSyncProvConfig
 olcOverlay: syncprov
 
 
-Ardından bu dosyayı her iki makinemizde de konfigürasyona ekliyelim.
+Then let's add this file to the configuration on both of our machines.
 
 
 ldapmodify -Y EXTERNAL -H ldapi:/// -f master01.ldif
 
 
-Aşağıdaki adımı ise sadece Slave olacak makinemizde uyguluyoruz.
+We apply the following step only on the machine of ours that will be the Slave.
 
 
-“/etc/nslcd.conf” dosyasına girip 10. satıra şunları ekliyoruz.
+We go into the “/etc/nslcd.conf” file and add the following to line 10.
 
 
 uri ldap://ldap1.tayfun.com/ ldap://ldap2.tayfun.com/
 
 
-Son olarak aşağıdaki komut ile nslcd servisini yeniden başlatıyoruz.
+Finally, we restart the nslcd service with the following command.
 
 
 systemctl restart nslcd
 
-### Kurulumumuzu tamamladık. Haydi çalışıp çalışmadığını bir deneyelim.
+### We have completed our installation. Come on, let's give it a try and see whether it works.
 
-Herhangi bir makinemizde “ldapuser.ldif” isimli dosya oluşturalım.
+Let's create a file named “ldapuser.ldif” on any one of our machines.
 
 
 dn: uid=jammy,ou=people,dc=plusclouds,dc=com
@@ -376,7 +376,7 @@ objectClass: posixAccount
 objectClass: shadowAccount
 cn: jammy
 sn: ubuntu
-userPassword: {SSHA}j3oQtXCibE6YNoWl5Dh3G6+sHd1+pCOW //Buraya slappaswd ile bir şifre alıp onu koymanız gerekmektedir.
+userPassword: {SSHA}j3oQtXCibE6YNoWl5Dh3G6+sHd1+pCOW //Here you need to generate a password with slappasswd and put it in.
 loginShell: /bin/bash
 uidNumber: 2000
 gidNumber: 2000
@@ -389,7 +389,7 @@ gidNumber: 2000
 memberUid: jammy
 
 
-Bu kullanıcıyı konfigürasyonumuza aşağıdaki komut ile ekledikten sonra diğer makinelerimizde de bu kullanıcının oluşması gerekmektedir.
+After adding this user to our configuration with the following command, this user should also be created on our other machines.
 
 
 ldapadd -x -D cn=admin,dc=plusclouds,dc=com -W -f ldapuser.ldif

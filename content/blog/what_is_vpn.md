@@ -6,10 +6,9 @@ tags: ["VPN", "Networking", "Security", "Linux"]
 showToc: true
 weight: 20
 cover:
-    image: "blog/vpn-nedir/cover.png"
+    image: "blog/what-is-vpn/cover.png"
 ---
 
-### 🔗 [Read on Medium](https://medium.com/@tyfnacici/vpn-nedir)
 
 A VPN (Virtual Private Network) is a technology that creates a secure and encrypted connection over a public or untrusted network like the internet. It allows users to access private networks while protecting their privacy and security, and sharing data remotely over public networks.
 

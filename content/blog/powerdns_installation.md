@@ -6,10 +6,9 @@ tags: ["DNS", "PowerDNS", "Ubuntu", "Linux"]
 showToc: true
 weight: 30
 cover:
-    image: "blog/powerdns-kurulumu/cover.png"
+    image: "blog/powerdns-installation/cover.png"
 ---
 
-### 🔗 [Read on Medium](https://medium.com/@tyfnacici/powerdns-kurulumi)
 
 <img src="https://cdn-images-1.medium.com/max/280/1*tH2YrWgGxZLIuZrsVmXEfw.png" alt="Image" />
 
@@ -233,7 +232,8 @@ INSERT INTO records (domain_id, name, type, content, ttl)
 VALUES (1, 'example.com', 'SOA', 'ns1.example.com hostmaster.example.com 2023010101 10800 3600 604800 361', 3600);
 
 
-MySQL konsolundan çıkalım ve aşağıdaki komutu yazarak konfigürasyonları doğrulayalım.
+
+Exit the MySQL console and verify the configuration by running the command below.
 
 
 pdnsutil check-all-zones

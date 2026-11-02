@@ -11,7 +11,7 @@ weight: 101
 
 ## Instruction
 
-In this guide, you'll learn how to set up your environment, so that you can run your project with Android Studio and Xcode. This will allow you to develop with Android emulators and iOS simulators, build your app locally, and more. (biraz değiştir)
+In this guide, you'll learn how to set up your environment, so that you can run your project with Android Studio and Xcode. This will allow you to develop with Android emulators and iOS simulators, build your app locally, and more.
 
 #### Installing Homebrew
 

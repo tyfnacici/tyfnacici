@@ -6,10 +6,9 @@ tags: ["Database", "SQL", "Database"]
 showToc: true
 weight: 80
 cover:
-    image: "blog/veritabanina-giris/cover.png"
+    image: "blog/intro-to-databases/cover.png"
 ---
 
-### 🔗 [Read on Medium](https://medium.com/@tyfnacici/veritabanina-girisy)
 
 <img src="https://cdn-images-1.medium.com/max/1024/1*Hy6TraZYhhj1ppjUqt_TiA.png" alt="Image" />
 

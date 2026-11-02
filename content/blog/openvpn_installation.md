@@ -6,10 +6,9 @@ tags: ["OpenVPN", "VPN", "Linux", "Security"]
 showToc: true
 weight: 40
 cover:
-    image: "blog/openvpn-kurulumu/cover.png"
+    image: "blog/openvpn-installation/cover.png"
 ---
 
-### 🔗 [Read on Medium](https://medium.com/@tyfnacici/openvpn-kurulumu)
 
 <img src="https://cdn-images-1.medium.com/max/884/1*dExpXTogMQ1mnsJKvFMOMA.png" alt="Image" />
 

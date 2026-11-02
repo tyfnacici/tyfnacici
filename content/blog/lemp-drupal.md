@@ -1,6 +1,6 @@
 ---
-title: "LEMP stack ile Drupal kurulumu"
-description: "LEMP (Linux, Nginx, MySQL, PHP) stack üzerinde Drupal CMS kurulumu"
+title: "Drupal Installation with the LEMP Stack"
+description: "Installing the Drupal CMS on the LEMP (Linux, Nginx, MySQL, PHP) stack"
 draft: false
 tags: ["Drupal", "LEMP", "CMS", "Linux"]
 showToc: true
@@ -9,107 +9,107 @@ cover:
     image: "blog/lemp-drupal/cover.png"
 ---
 
-### 🔗 [Medium'da Oku](https://medium.com/@tyfnacici/lemp-drupal)
+### 🔗 [Read on Medium](https://medium.com/@tyfnacici/lemp-drupal)
 
-### Drupal nedir?
+### What is Drupal?
 
-**Drupal** ücretsiz, [açık kaynaklı](https://tr.wikipedia.org/wiki/A%C3%A7%C4%B1k_kaynak) bir [içerik yönetim sistemi](https://tr.wikipedia.org/wiki/%C4%B0%C3%A7erik_y%C3%B6netim_sistemi) ya da içerik yönetim’e odaklı bir [altyapı yazılımıdır](https://tr.wikipedia.org/w/index.php?title=Altyap%C4%B1_yaz%C4%B1l%C4%B1m%C4%B1&action=edit&redlink=1). Modüler yapısı sayesinde, web [uygulama çatısı](https://tr.wikipedia.org/w/index.php?title=Uygulama_%C3%A7at%C4%B1s%C4%B1&action=edit&redlink=1), topluluk [portalı](https://tr.wikipedia.org/wiki/Portal), [forum](https://tr.wikipedia.org/wiki/Forum) ya da [blog motoru](https://tr.wikipedia.org/w/index.php?title=Blog_motoru&action=edit&redlink=1) olarak da kullanılabilmektedir. **Drupal** şu anda mevcut olan en popüler **CMS**’lerden biridir ve devlet kurumları, büyük dernekler, kar amacı gütmeyen kuruluşlar ve birçok Fortune 500 şirketi tarafından kullanılmaktadır.
+**Drupal** is a free, [open-source](https://tr.wikipedia.org/wiki/A%C3%A7%C4%B1k_kaynak) [content management system](https://tr.wikipedia.org/wiki/%C4%B0%C3%A7erik_y%C3%B6netim_sistemi), or an [infrastructure software](https://tr.wikipedia.org/w/index.php?title=Altyap%C4%B1_yaz%C4%B1l%C4%B1m%C4%B1&action=edit&redlink=1) focused on content management. Thanks to its modular structure, it can also be used as a web [application framework](https://tr.wikipedia.org/w/index.php?title=Uygulama_%C3%A7at%C4%B1s%C4%B1&action=edit&redlink=1), a community [portal](https://tr.wikipedia.org/wiki/Portal), a [forum](https://tr.wikipedia.org/wiki/Forum), or a [blog engine](https://tr.wikipedia.org/w/index.php?title=Blog_motoru&action=edit&redlink=1). **Drupal** is currently one of the most popular **CMS**s out there and is used by government agencies, large associations, non-profit organizations, and many Fortune 500 companies.
 
-### LEMP stack nedir?
+### What is the LEMP stack?
 
-LEMP, web uygulamaları geliştirmek için kullanılan açık kaynaklı bir web uygulaması yığınıdır. LEMP terimi, [Linux işletim sistemi](https://tr.wikipedia.org/wiki/Linux) için L, [Nginx](https://tr.wikipedia.org/wiki/Nginx) web sunucusu (engine-x olarak telaffuz edilir, dolayısıyla kısaltmada E olarak telaffuz edilir), [MySQL](https://tr.wikipedia.org/wiki/MySQL) veritabanı için M ve [PHP](https://tr.wikipedia.org/wiki/PHP) dili için P’yi temsil eden bir kısaltmadır.
+LEMP is an open-source web application stack used for developing web applications. The term LEMP is an acronym representing the L for the [Linux operating system](https://tr.wikipedia.org/wiki/Linux), the [Nginx](https://tr.wikipedia.org/wiki/Nginx) web server (pronounced engine-x, hence it is spoken as the E in the acronym), the M for the [MySQL](https://tr.wikipedia.org/wiki/MySQL) database, and the P for the [PHP](https://tr.wikipedia.org/wiki/PHP) language.
 
 - **L-** Linux Operating System
 - **E-** Nginx Server
 - **M-** MySQL Database
 - **P-** PHP
 
-### CMS nedir?
+### What is a CMS?
 
-CMS, İngilizce “Content Management System” kelimesinin kısaltılmışıdır ve Türkçe çevirisi ise “içerik yönetim sistemi” olarak kabul edilmiştir. Hazır kaynak kodlara sahip bu sistemler ile birçok farklı konuda ve alanda internet sitesi tasarlayabilir ve yayına alabilirsiniz. Sistemler diyoruz çünkü tek bir tane CMS sistemi bulunmamaktadır. Dünya üzerinde yüzlerce içerik yönetim sistemi aktif olarak kullanılmaktadır ve farklı amaçlara hizmet etmektedir.
+CMS is an abbreviation of the English term “Content Management System”. With these systems, which come with ready-made source code, you can design and launch websites on many different topics and in many different fields. We say “systems” because there is no single CMS out there. Hundreds of content management systems are actively used around the world, each serving different purposes.
 
-### CMS yazılımları kullanmanın artısı nelerdir?
+### What are the advantages of using CMS software?
 
-**1-Kullanıcı dostudurlar**
-
-
-Hiç kimse gezinmesi ve kullanması zor olan yazılımları kullanmaktan hoşlanmaz. Sizin de onları kullanmama şansınız olsaydı hiç kullanmamayı tercih ettiğiniz bazı uygulamalar vardır.
+**1-They are user-friendly**
 
 
-**2-Kolaylıkla isteğinize göre özelleştirebilirsiniz**
+Nobody likes using software that is hard to navigate and use. There are some applications that, if you had had the chance not to use them, you would have preferred never to use at all.
 
 
-Çoğu içerik yönetim sisteminin birçok özelleştirme seçeneği vardır. Yeni bir tema yükleyerek genel tasarımı, görünümü ve düzeni kolayca ayarlayabilirsiniz. Bu özelleştirmeler, temel renklerden ve menü konumlarından tutun içeriğin görüntülenme biçimine kadar her şeyi değiştirmenize olanak tanır.
+**2-You can easily customize them to suit your needs**
 
 
-Eklentiler ve uzantılar, içerik yönetimi yazılımı ile elde ettiğiniz işlevler dizisini genişletme olanağı sağlar. Sıfırdan kodlamak yerine sadece eklentisini indirerek websitenizi aşağıdaki özelliklere sahip bir hale getirebilirsiniz.
-
-- Alışveriş sepetleri
-- İletişim formları
-- E-posta listesi yönetimi senkronizasyonu
-- Spam koruması
-- Görüntü sıkıştırma
-- Ekstra güvenlik
-- Ve daha bir sürü şey!
-
-Az önce de belirttiğim gibi bunları yapmak için teknik bilgiye sahip olmanız gerekmez. Sadece bir tık ile eklentileri indirmeniz yeterlidir.
+Most content management systems have plenty of customization options. By installing a new theme, you can easily adjust the overall design, look, and layout. These customizations allow you to change everything from basic colors and menu positions to how content is displayed.
 
 
-Tüm web sitelerinin aynı özelliklere ve işlevselliğe ihtiyaç duymadığının farkındasızındır, ondan dolayı bu özelleştirme seçenekleri çok kullanışlıdır. İstemediğiniz bir özellik için gereksiz yere depolama alanı harcamanıza gerek kalmaz. Örneğin, işletmenizin yalnızca birkaç sayfa içeriğe ihtiyacı olabilir veya çeşitli ürün sayfalarını sergileyecek eksiksiz bir e-Ticaret sitesi oluşturuyor olabilirsiniz. Gereksinimleriniz ne olursa olsun, kullandığınız CMS’nin gereksinimlerinize uyacak şekilde özelleştirilebilmesi için yeterince esnek olması gerekir.
+Plugins and extensions give you the opportunity to expand the set of functions you get with content management software. Instead of coding from scratch, you can simply download a plugin to turn your website into one with the following features.
+
+- Shopping carts
+- Contact forms
+- Email list management synchronization
+- Spam protection
+- Image compression
+- Extra security
+- And much more!
+
+As I just mentioned, you don't need any technical knowledge to do these. All it takes is a single click to download the plugins.
 
 
-**3-Mobil dostudur**
+Not all websites need the same features and functionality, and that is why these customization options are so useful. You don't have to waste storage space on a feature you don't want. For example, your business may only need a few pages of content, or you may be building a complete e-Commerce site showcasing various product pages. Whatever your requirements may be, the CMS you use needs to be flexible enough to be customized to meet your needs.
 
 
-Responsive bir tasarım yapısı, çeşitli cihazlarda kesintisiz içerik görüntülemeye olanak tanır. Günümüzde neredeyse hepimizin bir cep telefonu bulunuyor. Bu durum responsive tasarımların gerekliliğini gösterdi. Siteniz tüm cihazlara duyarlı olmalıdır. Drupal ve diğer CMS yazılımları doğuştan mobil dostu olarak kurulurlar. Gönderilerinizi normal bir websitesinde yapacağınız gibi ekran tiplerine göre ayarlamanız gerekmez. Bunu yazılım sizin yerinize yapar.
+**3-It is mobile-friendly**
 
 
-**4-SEO dostudur**
+A responsive design structure allows content to be displayed seamlessly across various devices. Nowadays almost all of us have a mobile phone, which has demonstrated the necessity of responsive designs. Your site should be responsive to all devices. Drupal and other CMS software come mobile-friendly out of the box. You don't need to adjust your posts for screen types as you would on a regular website. The software does that for you.
 
 
-SEO: türkçesi, arama motoru optimizasyonu anlamına gelmektedir. Yani internette herhangi bir şey arattığınızda sizin websitenizin arama sonuçlarında ne kadar yukarıda çıkacağını belirler. Çoğunuz internette bir arama yaptığınızda ilk 3–4 sonuç dışındakilere bakma ihtiyacı bile duymazsınız. Websitenizin SEO ayarlarının ne kadar mühim olduğunu anlıyorsunuzdur. Normal bir websitesinde bu ayarları kendiniz hatta cidden buna önem veriyorsanız SEO uzmanı tutarak ona yaptırmanız gerekebilir. CMS yazılımları bunları sizin yerinize yaparak arama motorları için sizin websitenizi optimize eder. Bu yeterli gelmezse SEOda daha iyi puanlar almak için eklentiler de kurabilirsiniz.
+**4-It is SEO-friendly**
 
 
-**5-Maliyet**
+SEO: it stands for Search Engine Optimization. In other words, it determines how high up your website appears in the search results when you search for anything on the internet. Most of you don't even feel the need to look beyond the first 3–4 results when doing a search on the internet. So you understand how important your website's SEO settings are. On a regular website, you may have to make these settings yourself, or even hire an SEO expert to do them for you if you really care about it. CMS software does these for you, optimizing your website for search engines. If that is not enough, you can also install plugins to score even better on SEO.
 
 
-İşletmeniz için sıfırdan bir blog sitesi oluşturacağınızı düşünelim. Eğer bu alanlarda herhangi bir yeteneğiniz yoksa yapması için bir web geliştiricisi tutmanız gerekecektir. Websitesi yapıldıktan sonra ileride herhangi bir değişiklik yapmak isterseniz büyük ihtimal tekrar bir web geliştiricisi tutmanız gerekebilir. Ayrıca bu değişiklikler yapması uzun sürebileceğinden zaman olarak da size kaybettirebilir. Drupal gibi CMS yazılımları kullanarak kurulumunu ve istediğiniz değişiklikleri tamamen kendiniz yapabilirsiniz. Ayrıca değişiklik yaparken de eklenti vb. kullanarak normal bir websitesinde günler alabilecek değişikleri siz çok kısa süreler içerisinde yapabilirsiniz.
+**5-Cost**
 
 
-Artık neyin ne olduğunu öğrendiysek yavaştan kuruluma geçelim.
+Imagine you are going to create a blog site from scratch for your business. If you don't have any skills in these areas, you will need to hire a web developer to do it. After the website is built, if you want to make any changes later on, chances are you will need to hire a web developer again. Also, since these changes can take a long time to make, they can cost you time as well. By using CMS software like Drupal, you can do the installation and any changes you want entirely by yourself. Moreover, when making changes, by using plugins etc. you can make changes that could take days on a regular website within very short periods of time.
 
-### Gereksinimler
-- Bir adet Ubuntu veya türevi işletim sistemi kurulu min 5GB boş yeri olan bir makine.
-- İnternet bağlantısı.
-- Kullanacağınız makinenin ip adresine yönlendiren bir A kaydı olan Domain.
 
-### Nginx kurulumumuzu yapalım
+Now that we have learned what is what, let's slowly move on to the installation.
 
-Aşağıdaki komutu girerek nginx kurulumuzu yapalım.
+### Requirements
+- A machine with Ubuntu or a derivative operating system installed and at least 5GB of free space.
+- An internet connection.
+- A domain with an A record pointing to the IP address of the machine you will use.
+
+### Let's install Nginx
+
+Let's install nginx by entering the following command.
 
 
 sudo apt update && sudo apt install nginx
 
 
-İndirme bittikten sonra sunucumuzun ip adresini tarayıcımıza girelim. Karşımıza aşağıdaki gibi bir ekran çıkması gerek.
+After the download finishes, let's enter our server's IP address into our browser. A screen like the one below should appear.
 
 <img src="https://cdn-images-1.medium.com/max/780/1*pAAbdNW0szeKaejJAmsFDw.png" alt="Image" />
 
-### MySQL kurulumunu yapalım
+### Let's install MySQL
 
-Aşağıdaki komutları sırasıyla makinemizin terminaline girerek MySQL kurulumunu yapalım.
+Let's install MySQL by entering the following commands, in order, into our machine's terminal.
 
 
 sudo apt install mariadb-server mariadb-client
 
 
-Ardından MySQL konsolunun güvenliği için şifre belirleyelim.
+Then let's set a password for the security of the MySQL console.
 
 
 sudo mysql_secure_installation
 
 
-Aşağıdaki gibi cevaplandırıyoruz.
+We answer as follows.
 
 
 Enter current password for root (enter for none): PRESS ENTER
@@ -127,19 +127,19 @@ Reload privilege tables now? [Y/n] y
 All done!
 
 
-Denemek için MySQL konsoluna girelim.
+Let's enter the MySQL console to test it.
 
 
 sudo mysql -u root -p
 
 
-Şifreyi girdiğinizde aşağıdaki gibi bir ekran sizi karşılayacaktır.
+When you enter the password, a screen like the one below will greet you.
 
 <img src="https://cdn-images-1.medium.com/max/795/1*Em3HWZjVJYuiDmZxRGT1iQ.png" alt="Image" />
 
-### PHP kurulumlarımızı yapalım
+### Let's install PHP
 
-Drupalın kullanacağımız sürümü PHP’nin 8.1 ve üzeri sürümlerini desteklemekte. Ubuntu 20.04LTS’nin repolarında PHP’nin bu sürümü bulunmadığı için paket reposunu kendimiz eklememiz gerek.
+The version of Drupal we are going to use supports PHP versions 8.1 and above. Since this version of PHP is not available in the Ubuntu 20.04 LTS repositories, we need to add the package repository ourselves.
 
 
 sudo apt-get install software-properties-common
@@ -147,46 +147,46 @@ sudo add-apt-repository ppa:ondrej/php
 sudo apt update
 
 
-Ardından PHP’yi makinemize kurabiliriz.
+Then we can install PHP on our machine.
 
 
 sudo apt install php8.2-fpm php8.2-common php8.2-mysql php8.2-gmp php8.2-curl php8.2-intl php8.2-mbstring php8.2-xmlrpc php8.2-gd php8.2-xml php8.2-cli php8.2-zip
 
-### Drupal için bir veritabanı oluşturalım
+### Let's create a database for Drupal
 
-Drupal, kendi verilerini tutmak için bir veritabanına ihtiyaç duyuyor. Ona bir veritabanı oluşturmak için aşağıdaki komutu girerek MySQL konsolumuzu açalım ve belirlediğimiz şifremizi girelim.
+Drupal needs a database to store its data. To create one for it, let's open our MySQL console by entering the following command and enter the password we set.
 
 
 sudo mysql -u root -p
 
 
-Ardından veritabanını oluşturalım.
+Then let's create the database.
 
 
 CREATE DATABASE drupaldb;
 
 
-Drupal’ın bu veritabanında düzenlemeler yapabilmesi için ona ayrı bir kullanıcı oluşturmamız gerek.
+For Drupal to be able to make changes in this database, we need to create a separate user for it.
 
 
 CREATE USER 'drupal'@'localhost' IDENTIFIED BY 'password';
 
 
-Oluşturduğumuz kullanıcıya “drupaldb” veritabanında işlem yapmak için izin verelim.
+Let's grant the user we created permission to operate on the “drupaldb” database.
 
 
 GRANT ALL ON drupaldb.* TO 'drupal'@'localhost' WITH GRANT OPTION;
 
 
-Aşağıdaki komutları yazarak işlemleri kaydedelim ve çıkalım.
+Let's save the changes and exit by writing the following commands.
 
 
 FLUSH PRIVILEGES;
 EXIT;
 
-### Drupal’ı makinemize indirelim
+### Let's download Drupal to our machine
 
-Drupalı indirebilmek için öncelikle bazı kurulumlar yapmamız gerek.
+In order to download Drupal, we first need to make some installations.
 
 
 sudo apt install curl git
@@ -194,7 +194,7 @@ curl -sS https://getcomposer.org/installer | sudo php -
 - --install-dir=/usr/local/bin --filename=composer
 
 
-Kurulumları yaptıktan sonra aşağıdaki komutları sırasıyla yazarak Drupal’ı makinemizin **“/var/www/html”** dizinine kuralım.
+After making the installations, let's install Drupal into our machine's **“/var/www/html”** directory by writing the following commands in order.
 
 
 cd /var/www/html
@@ -203,24 +203,24 @@ cd /var/www/html/drupal
 sudo composer install
 
 
-Burada “Continue as root/super user [yes]?” diye sorarsa yes diyerek devam edelim.
+If it asks “Continue as root/super user [yes]?” here, let's continue by saying yes.
 
 
-Drupalın bulunduğu dizine nginx’in erişebilmesi için izinlerini değiştirmemiz gerek.
+For nginx to be able to access the directory where Drupal resides, we need to change its permissions.
 
 
 sudo chown -R www-data:www-data /var/www/html/drupal/
 sudo chmod -R 755 /var/www/html/drupal/
 
-### Drupal için Nginx’i ayarlayalım
+### Let's configure Nginx for Drupal
 
-Drupal’ı indirme işlemini tamamladık. Şimdi, Nginx’i Drupal web sitemizle kullanmak üzere yeni bir sunucu bloğu oluşturalım. Nginx ile istediğiniz kadar sunucu bloğu oluşturabilirsiniz.
+We have completed the download of Drupal. Now let's create a new server block to use Nginx with our Drupal website. With Nginx, you can create as many server blocks as you want.
 
 
 sudo nano /etc/nginx/sites-available/drupal.conf
 
 
-Dosyanın içeriği aşağıdaki gibi olmalı. **“server_name”** kısmına kendi domaininizi girebilirsiniz.
+The content of the file should be as follows. You can enter your own domain in the **“server_name”** part.
 
 
 server {
@@ -228,7 +228,7 @@ server {
  root /var/www/html/drupal; 
 
 ## <-
-- Drupal'ın bulunduğu dizin
+- The directory where Drupal is located
 ​
  location = /favicon.ico {
  log_not_found off;
@@ -434,26 +434,26 @@ server {
 }
 
 
-Ardından aşağıdaki komutları girerek Drupal’ı çalıştıracak şekilde ayarlayalım.
+Then let's enter the following commands to set it up so that it runs Drupal.
 
 
 sudo ln -s /etc/nginx/sites-available/drupal.conf /etc/nginx/sites-enabled/
 sudo systemctl restart nginx.service
 
-### Makinemize erişelim
+### Let's access our machine
 
-Domaininizi tarayıcınız ile eriştiğinizde sizi aşağıdaki gibi bir ekran karşılayacak.
+When you access your domain with your browser, a screen like the one below will greet you.
 
 <img src="https://cdn-images-1.medium.com/max/1024/1*-drF4YyECkpjh4GbUPjhXw.png" alt="Image" />
 
-Burada istenen dili seçiyoruz ardından veritabanı bağlantısını oluşturduğumuz veritabanı ile kullanıcı şifre girerek sağlıyoruz.
+Here we select the requested language, then we establish the database connection by entering the database we created along with the user and password.
 
 <img src="https://cdn-images-1.medium.com/max/564/1*FMowraDKYWHf8W45BvvLdQ.png" alt="Image" />
 
-Son olarak site bilgisini isteğimize bağlı dolduruyoruz.
+Finally, we fill in the site information according to our preferences.
 
 <img src="https://cdn-images-1.medium.com/max/1024/1*UvujZ73U8TEJNUbWiV3NeA.jpeg" alt="Image" />
 
-Tebrikler! Kurulumu başarı ile tamamladınız.
+Congratulations! You have successfully completed the installation.
 
 <img src="https://cdn-images-1.medium.com/max/1024/1*v-V6mUYcS1qFHoQLPbJ39g.png" alt="Image" />

@@ -14,7 +14,7 @@ buildDrafts: false
 buildFuture: false
 buildExpired: false
 
-# RSS yok — sadece HTML + sitemap
+# No RSS — HTML + sitemap only
 outputs:
   home: ["HTML", "SITEMAP"]
   section: ["HTML"]
