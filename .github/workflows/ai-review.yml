@@ -1,0 +1,23 @@
+name: AI review
+
+on:
+  pull_request:
+    # AI review on open/ready and when the `ai-review` label is added; every push only runs the secret scan.
+    branches: [main]
+    types: [opened, synchronize, reopened, ready_for_review, labeled]
+
+concurrency:
+  group: ai-review-${{ github.event.pull_request.number }}-${{ github.event.action }}-${{ github.event.label.name }}
+  cancel-in-progress: true
+
+permissions:
+  contents: write  # only so the bot can resolve its own fixed review threads
+  pull-requests: write
+  statuses: write  # the ai-review/threads commit status
+  vulnerability-alerts: read  # lets the review mention open Dependabot alerts
+
+jobs:
+  review:
+    uses: tyfnacici/ai-review/.github/workflows/review.yml@main
+    with:
+      runs_on: '["self-hosted", "ai-review"]'
