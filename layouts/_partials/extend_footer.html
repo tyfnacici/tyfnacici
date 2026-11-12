@@ -1,6 +1,10 @@
 {{- /* Motion layer (scroll reveal, card spotlight, nav state, ripple).
-       Inlined: tiny, and avoids a render-blocking request. */ -}}
+       Inlined once: tiny, and avoids a render-blocking request. */ -}}
 {{- with resources.Get "js/motion.js" }}
 {{- $js := . | resources.Minify }}
 <script>{{ $js.Content | safeJS }}</script>
+{{- end }}
+{{- /* 3D hero layer: home page only. Self-guards (reduced motion, saveData, no WebGL). */ -}}
+{{- if .IsHome }}
+<script type="module" src="{{ "js/hero3d.js" | absURL }}"></script>
 {{- end }}
