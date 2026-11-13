@@ -645,12 +645,20 @@ html.cards-alive--lite:has(#scene3d) .featured-strip .card {
   transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
   transition: transform .35s var(--lg-ease), box-shadow .3s var(--lg-ease), border-color .3s;
   animation: card-float 9s ease-in-out infinite;
+  animation-delay: var(--fd, 0s);
   will-change: transform;
 }
+/* This rule outranks the lg-reveal rule, so repeat the entrance here (only
+   once revealed, like the original) and run the float alongside it. */
+html.cards-alive--full:has(#scene3d) .featured-strip .card.is-in,
+html.cards-alive--lite:has(#scene3d) .featured-strip .card.is-in {
+  animation: lg-reveal .75s var(--lg-ease) backwards, card-float 9s ease-in-out infinite;
+  animation-delay: calc(var(--i, 0) * 70ms), var(--fd, 0s);
+}
 html.cards-alive--full:has(#scene3d) .featured-strip .card:nth-child(2n),
-html.cards-alive--lite:has(#scene3d) .featured-strip .card:nth-child(2n) { animation-delay: -3s; }
+html.cards-alive--lite:has(#scene3d) .featured-strip .card:nth-child(2n) { --fd: -3s; }
 html.cards-alive--full:has(#scene3d) .featured-strip .card:nth-child(3n),
-html.cards-alive--lite:has(#scene3d) .featured-strip .card:nth-child(3n) { animation-delay: -6s; }
+html.cards-alive--lite:has(#scene3d) .featured-strip .card:nth-child(3n) { --fd: -6s; }
 html.cards-alive--full:has(#scene3d) .featured-strip a.card:hover,
 html.cards-alive--lite:has(#scene3d) .featured-strip a.card:hover { transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); }
 html.cards-alive--full .featured-strip .card.is-tilting { transition: transform .08s linear, box-shadow .3s var(--lg-ease); }
