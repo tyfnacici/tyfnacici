@@ -4,3 +4,7 @@
 {{- $js := . | resources.Minify }}
 <script>{{ $js.Content | safeJS }}</script>
 {{- end }}
+{{- /* Home-only scroll-driven three.js drift field; self-guards for reduced motion, saveData and WebGL. */ -}}
+{{- if .IsHome }}
+<script type="module" src="{{ "js/scene3d.js" | absURL }}"></script>
+{{- end }}

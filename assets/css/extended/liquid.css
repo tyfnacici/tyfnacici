@@ -504,3 +504,21 @@ em, .serif { font-family: inherit; font-style: italic; font-weight: inherit; let
   .nav-links a.is-active { background: var(--tb-mint); color: var(--tb-green); }
   .nav-links a:active { background: var(--lg-glass-hi); }
 }
+
+/* --------------------------------------------------------------------------
+   Scroll-driven 3D drift field (home only; see static/js/scene3d.js)
+   -------------------------------------------------------------------------- */
+
+.scene3d {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  contain: strict;
+  opacity: 0;
+  transition: opacity .9s var(--lg-ease);
+}
+.scene3d.is-ready { opacity: var(--scene3d-o, 1); }
+.scene3d canvas { display: block; width: 100%; height: 100%; }
+
+@media (prefers-reduced-motion: reduce) { .scene3d { display: none; } }
