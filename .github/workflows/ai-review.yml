@@ -8,7 +8,7 @@ permissions:
   statuses: write
   vulnerability-alerts: read
 jobs:
-  probe:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo probe
+  review:
+    uses: tyfnacici/ai-review/.github/workflows/review.yml@c5fd631d0e3747c19b1c85e68d29d7d95c35f6f6
+    with:
+      runs_on: '["self-hosted", "ai-review"]'
