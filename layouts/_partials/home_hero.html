@@ -6,6 +6,7 @@
 {{- $hero := site.Params.homeHero | default dict }}
 {{- $pm := site.Params.profileMode }}
 
+<div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
 <div id="scene3d" class="scene3d" aria-hidden="true"></div>
 
 <section class="container">
@@ -51,7 +52,7 @@
     {{- end }}
 </section>
 
-{{- /* Selected Work — 2 newest real project pages */ -}}
+{{- /* Selected Work — 4 newest real project pages */ -}}
 {{- $projects := where (site.GetPage "projects").RegularPages "Params.hidden" "!=" true }}
 {{- if gt (len $projects) 0 }}
 <section class="section">
@@ -70,7 +71,7 @@
             </a>
         </div>
         <div class="featured-strip featured-strip--projects">
-            {{- range first 2 $projects }}
+            {{- range first 4 $projects }}
             <a href="{{ .Permalink }}" class="card project-card is-hoverable">
                 <span class="card-go" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7" /><polyline points="8 7 17 7 17 16" /></svg></span>
                 <h3 class="project-card__title">{{ .Title }}</h3>

@@ -1287,8 +1287,9 @@ a.card:hover, .card.is-hoverable:hover {
 .giscus-label { margin-bottom: 1.5rem; display: inline-flex; }
 
 /* ==========================================================================
-   Dark mode (OS-driven — html[data-theme="dark"] is set by extend_head.html
-   from (prefers-color-scheme: dark); there is no toggle UI).
+   Dark mode (html[data-theme="dark"] is set by extend_head.html from the
+   stored pref-theme choice, falling back to prefers-color-scheme; the
+   #theme-toggle button in the header switches it).
    Deep green-tinted near-black surfaces, light text, brand greens re-tuned
    for dark contrast. Yellow stays as the single warm accent.
    Placed last so it overrides both the light :root block above and
@@ -1302,13 +1303,13 @@ a.card:hover, .card.is-hoverable:hover {
   color-scheme: dark;
 
   /* --- Surfaces: green-tinted near-black, raised steps lighter --- */
-  --tb-bg:            #101512;
-  --tb-bg-raised:     #18201b;
-  --tb-surface:       rgba(24, 33, 27, .72);
+  --tb-bg:            #0b1510;
+  --tb-bg-raised:     #13221a;
+  --tb-surface:       rgba(24, 48, 36, .55);
   --tb-surface-solid: #1b241e;
   --tb-fg:            #e8efe9;
-  --tb-muted:         #a3b5a8;
-  --tb-muted-2:       #8a9c8f;
+  --tb-muted:         #b4c6b9;
+  --tb-muted-2:       #9db2a4;
   --tb-border:        #2a362d;
   --tb-border-strong: #3c4c3f;
 
@@ -1334,19 +1335,19 @@ a.card:hover, .card.is-hoverable:hover {
   --tb-shadow-hover: 0 4px 12px -2px rgba(0, 0, 0, .4), 0 16px 40px -12px rgba(0, 0, 0, .5);
 
   /* --- Translucent dark nav --- */
-  --tb-nav-bg: rgba(16, 21, 18, .82);
+  --tb-nav-bg: rgba(11, 21, 16, .82);
 
   /* --- Bridge into PaperMod's tokens (overrides PaperMod's own
          :root[data-theme=dark] neutrals with design-system values) --- */
   --header-height: 68px;
-  --theme: #101512;
+  --theme: #0b1510;
   --entry: #1b241e;
   --primary: #e8efe9;
-  --secondary: #a3b5a8;
+  --secondary: #b4c6b9;
   --tertiary: #3c4c3f;
   --content: #e8efe9;
   --border: #2a362d;
-  --code-bg: #18201b;
+  --code-bg: #13221a;
   /* Code blocks: Catppuccin-style token colors are light-on-dark already;
      keep a green-tinted dark backdrop for their wrapper. */
   --code-block-bg: #14201a;
@@ -1361,7 +1362,7 @@ html[data-theme="dark"] .hero-panel {
   color: #eef6f0;
 }
 html[data-theme="dark"] .hero-panel h2 { color: #eef6f0; }
-html[data-theme="dark"] .hero-panel p { color: rgba(255, 255, 255, .8); }
+html[data-theme="dark"] .hero-panel p { color: #dbe8df; }
 
 /* Inline code in prose: --tb-green-dark becomes a light tint in dark mode
    and would vanish against the dark chip background — use dark text on the

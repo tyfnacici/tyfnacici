@@ -6,8 +6,8 @@
 
     var LIGHT = {{ "giscus-theme.css" | absURL }};
     var DARK  = {{ "giscus-theme-dark.css" | absURL }};
-    var mq = window.matchMedia('(prefers-color-scheme: dark)');
-    var requested = mq.matches ? DARK : LIGHT;
+    var pick = function () { return document.documentElement.dataset.theme === 'dark' ? DARK : LIGHT; };
+    var requested = pick();
 
     var s = document.createElement('script');
     s.setAttribute('src', 'https://giscus.app/client.js');
@@ -36,12 +36,10 @@
         return true;
     }
 
-    function onSchemeChange() {
-        requested = mq.matches ? DARK : LIGHT;
+    document.addEventListener('themechange', function () {
+        requested = pick();
         push();
-    }
-
-    mq.addEventListener('change', onSchemeChange);
+    });
 
     var attempts = 0;
     var startupSucceeded = false;
