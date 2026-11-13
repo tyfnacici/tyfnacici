@@ -54,7 +54,7 @@ params:
       https://tyfnacici.com/assets/favicon.png,
     ]
   DateFormat: "2 Jan 2006"
-  defaultTheme: light # base stays light; OS-driven dark variant exists (extend_head.html + custom.css flip html[data-theme] from prefers-color-scheme, no toggle UI)
+  defaultTheme: light # base stays light; dark variant via html[data-theme] (extend_head.html: localStorage pref-theme, else OS; own #theme-toggle button in header.html; PaperMod's toggle stays off)
   disableThemeToggle: true
 
   ShowReadingTime: true

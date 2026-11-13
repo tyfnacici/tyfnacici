@@ -2,8 +2,8 @@
    Liquid-glass accents + motion, layered on top of custom.css.
    Loaded after custom.css (alphabetical), so it only refines — the green
    editorial design, markup and tokens stay as they are.
-   Performance rules: backdrop-filter only on the desktop nav and the
-   scroll-to-top button; everything else is gradients + inner highlights.
+   Performance rules: backdrop-filter only on the desktop nav, the
+   scroll-to-top button and the landing cards (html:has(#scene3d)); everything else is gradients + inner highlights.
    All motion is transform/opacity and respects prefers-reduced-motion.
    ========================================================================== */
 
@@ -25,7 +25,7 @@
   --tb-bg-raised: #e4f2df;
   --tb-fg: #0f2819;
   --tb-muted: #4b6855;
-  --tb-muted-2: #6c8574;
+  --tb-muted-2: #4d6555;
   --tb-border: #d3e8d0;
   --tb-border-strong: #b4d6b6;
   --tb-mint: #c6efd3;
@@ -44,10 +44,12 @@
   --m-c3: #d9ebc4;
   --m-c4: #fae8a4;
   --m-on: #0c2a18;
+  --m-on-muted: #2c4636;
 
   --lg-glass: rgba(255, 255, 255, .55);
   --lg-glass-hi: rgba(255, 255, 255, .78);
   --lg-edge: rgba(255, 255, 255, .85);
+  --lg-rim: rgba(255, 255, 255, .9);
   --lg-line: rgba(19, 106, 61, .14);
   --lg-glow: rgba(52, 190, 112, .3);
   --lg-glow-2: rgba(244, 201, 93, .2);
@@ -61,17 +63,20 @@
   --tb-accent: #86dba6;
   --tb-mint: #1d4a33;
   --tb-mint-border: #2f6648;
-  --m-c1: #174a31;
-  --m-c2: #17414c;
-  --m-c3: #2f4420;
-  --m-c4: #4a3d12;
-  --m-on: #e4f6ea;
-  --lg-glass: rgba(30, 44, 35, .5);
-  --lg-glass-hi: rgba(40, 58, 46, .62);
-  --lg-edge: rgba(255, 255, 255, .09);
-  --lg-line: rgba(255, 255, 255, .08);
+  /* Translucent tonal containers: brand green / yellow tints over the dark bg */
+  --m-c1: rgba(48, 140, 92, .30);
+  --m-c2: rgba(56, 150, 170, .26);
+  --m-c3: rgba(120, 170, 70, .24);
+  --m-c4: rgba(244, 201, 93, .20);
+  --m-on: #e8f6ee;
+  --m-on-muted: #c3d7c9;
+  --lg-glass: rgba(24, 48, 36, .55);
+  --lg-glass-hi: rgba(32, 62, 47, .62);
+  --lg-edge: rgba(250, 252, 248, .10);
+  --lg-rim: rgba(255, 255, 255, .22);
+  --lg-line: rgba(250, 252, 248, .08);
   --lg-glow: rgba(78, 192, 126, .2);
-  --lg-glow-2: rgba(244, 201, 93, .07);
+  --lg-glow-2: rgba(244, 201, 93, .09);
   --lg-spot: rgba(143, 199, 164, .13);
 }
 
@@ -102,13 +107,31 @@ body::before {
    the mobile fullscreen menu keeps its solid bar, see custom.css)
    -------------------------------------------------------------------------- */
 
-.site-nav { transition: box-shadow .3s var(--lg-ease); }
+/* Glass lives on a pseudo-element at every width: backdrop-filter on .site-nav
+   itself would trap the fixed mobile drawer (see custom.css). */
+.site-nav {
+  transition: box-shadow .3s var(--lg-ease);
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+.site-nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: color-mix(in srgb, var(--tb-bg) 60%, transparent);
+  backdrop-filter: blur(20px) saturate(1.6);
+  -webkit-backdrop-filter: blur(20px) saturate(1.6);
+  box-shadow: inset 0 -1px 0 var(--lg-rim);
+}
+@media (max-width: 900px) {
+  .site-nav { background: transparent; }
+}
 
 @media (min-width: 901px) {
   .site-nav {
-    background: color-mix(in srgb, var(--tb-bg) 60%, transparent);
-    backdrop-filter: blur(20px) saturate(1.6);
-    -webkit-backdrop-filter: blur(20px) saturate(1.6);
     border-bottom-color: var(--lg-line);
     box-shadow: inset 0 -1px 0 var(--lg-edge);
   }
@@ -348,6 +371,11 @@ em, .serif { font-family: inherit; font-style: italic; font-weight: inherit; let
 /* Tonal project / service cards on the home page */
 .featured-strip--projects > :nth-child(1) { --c: var(--m-c1); }
 .featured-strip--projects > :nth-child(2) { --c: var(--m-c2); }
+.featured-strip--projects > :nth-child(3) { --c: var(--m-c3); }
+.featured-strip--projects > :nth-child(4) { --c: var(--m-c4); }
+@media (max-width: 900px) {
+  .featured-strip--projects { grid-template-columns: 1fr; }
+}
 .featured-strip--services > :nth-child(1) { --c: var(--m-c3); }
 .featured-strip--services > :nth-child(2) { --c: var(--m-c4); }
 
@@ -370,7 +398,7 @@ em, .serif { font-family: inherit; font-style: italic; font-weight: inherit; let
   background: radial-gradient(340px circle at var(--mx, 50%) var(--my, 0%), rgba(255, 255, 255, .09), transparent 70%);
 }
 .featured-strip .project-card__title { color: inherit; padding-right: 3.2rem; font-weight: 600; }
-.featured-strip .project-card__desc { color: inherit; opacity: .8; }
+.featured-strip .project-card__desc { color: var(--m-on-muted); opacity: 1; }
 .featured-strip .project-card__meta { border-top-color: color-mix(in srgb, currentColor 16%, transparent); }
 .featured-strip .badge {
   background: rgba(255, 255, 255, .55);
@@ -378,6 +406,7 @@ em, .serif { font-family: inherit; font-style: italic; font-weight: inherit; let
   color: inherit;
 }
 :root[data-theme="dark"] .featured-strip .badge { background: rgba(255, 255, 255, .1); }
+.blog-item__desc { color: var(--tb-muted); }
 
 .card-go {
   position: absolute;
@@ -506,8 +535,33 @@ em, .serif { font-family: inherit; font-style: italic; font-weight: inherit; let
 }
 
 /* --------------------------------------------------------------------------
-   Scroll-driven 3D drift field (home only; see static/js/scene3d.js)
+   Living background (home only): CSS aurora + WebGL particles
+   (static/js/scene3d.js). Aurora is transform-only and works without WebGL.
    -------------------------------------------------------------------------- */
+
+.aurora { position: fixed; inset: 0; z-index: -2; pointer-events: none; overflow: hidden; }
+.aurora i {
+  position: absolute;
+  display: block;
+  width: 56vmax; height: 56vmax;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: .5;
+  will-change: transform;
+  animation: aurora-drift 34s ease-in-out infinite alternate;
+}
+.aurora i:nth-child(1) { top: -22vmax; left: -14vmax; background: radial-gradient(circle, #183024, transparent 68%); animation-duration: 36s; }
+.aurora i:nth-child(2) { top: 18vh; right: -22vmax; background: radial-gradient(circle, #F4C95D, transparent 68%); opacity: .22; animation-duration: 40s; animation-delay: -12s; }
+.aurora i:nth-child(3) { bottom: -26vmax; left: 12vw; background: radial-gradient(circle, var(--tb-accent), transparent 68%); opacity: .28; animation-duration: 28s; animation-delay: -6s; }
+:root[data-theme="dark"] .aurora i:nth-child(1) { background: radial-gradient(circle, #1f5a3d, transparent 68%); opacity: .55; }
+:root[data-theme="dark"] .aurora i:nth-child(2) { opacity: .12; }
+:root[data-theme="dark"] .aurora i:nth-child(3) { opacity: .2; }
+@keyframes aurora-drift {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(7vmax, 5vmax, 0) scale(1.12); }
+  100% { transform: translate3d(-5vmax, 8vmax, 0) scale(.94); }
+}
+@media (prefers-reduced-motion: reduce) { .aurora i { animation: none; } }
 
 .scene3d {
   position: fixed;
@@ -522,3 +576,87 @@ em, .serif { font-family: inherit; font-style: italic; font-weight: inherit; let
 .scene3d canvas { display: block; width: 100%; height: 100%; }
 
 @media (prefers-reduced-motion: reduce) { .scene3d { display: none; } }
+
+/* --------------------------------------------------------------------------
+   Frosted glass cards on the landing (scoped: other pages keep solid cards)
+   -------------------------------------------------------------------------- */
+
+html:has(#scene3d) .featured-strip .card,
+html:has(#scene3d) .blog-item,
+html:has(#scene3d) .hero-panel {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--lg-edge);
+}
+html:has(#scene3d) .blog-item {
+  background: var(--lg-glass);
+  border-radius: var(--tb-radius-lg);
+  padding-inline: 1.5rem;
+  margin-bottom: .75rem;
+}
+html:has(#scene3d) .blog-item:first-child { border-top: 1px solid var(--lg-edge); }
+html:has(#scene3d) .blog-item:hover { margin-inline: 0; }
+html:has(#scene3d) .featured-strip .card {
+  box-shadow: inset 0 1px 0 var(--lg-rim), inset 0 0 0 1px var(--lg-edge);
+}
+html:has(#scene3d):not([data-theme="dark"]) .featured-strip .card { background: color-mix(in srgb, var(--c) 82%, transparent); }
+html:has(#scene3d)[data-theme="dark"] .hero-panel {
+  background: linear-gradient(145deg, rgba(13, 35, 23, .72), rgba(29, 68, 48, .66));
+}
+@supports not (backdrop-filter: blur(1px)) {
+  html:has(#scene3d)[data-theme="dark"] .featured-strip .card,
+  html:has(#scene3d)[data-theme="dark"] .blog-item { background-color: var(--tb-bg-raised); }
+  html:has(#scene3d) .featured-strip .card { background-color: var(--tb-bg-raised); }
+}
+
+/* --------------------------------------------------------------------------
+   Theme toggle
+   -------------------------------------------------------------------------- */
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px; height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: var(--tb-mint);
+  color: var(--tb-green);
+  cursor: pointer;
+  transition: transform .25s var(--lg-ease), background-color .2s;
+}
+.theme-toggle:active { transform: scale(.9); }
+.theme-toggle:focus-visible { outline: 2px solid var(--tb-accent); outline-offset: 2px; }
+.theme-toggle .icon-sun { display: none; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
+/* --------------------------------------------------------------------------
+   Lively cards (home): tilt + light reflection (assets/js/motion.js sets
+   --rx/--ry/--mx/--my and html.cards-alive--full|lite) and a slow idle float.
+   Float uses the separate `translate` property so it never fights the tilt
+   transform. Off for reduced motion / saveData: JS never adds the class.
+   -------------------------------------------------------------------------- */
+
+@keyframes card-float { 50% { translate: 0 -5px; } }
+
+html.cards-alive--full:has(#scene3d) .featured-strip .card,
+html.cards-alive--lite:has(#scene3d) .featured-strip .card {
+  transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transition: transform .35s var(--lg-ease), box-shadow .3s var(--lg-ease), border-color .3s;
+  animation: card-float 9s ease-in-out infinite;
+  will-change: transform;
+}
+html.cards-alive--full:has(#scene3d) .featured-strip .card:nth-child(2n),
+html.cards-alive--lite:has(#scene3d) .featured-strip .card:nth-child(2n) { animation-delay: -3s; }
+html.cards-alive--full:has(#scene3d) .featured-strip .card:nth-child(3n),
+html.cards-alive--lite:has(#scene3d) .featured-strip .card:nth-child(3n) { animation-delay: -6s; }
+html.cards-alive--full:has(#scene3d) .featured-strip a.card:hover,
+html.cards-alive--lite:has(#scene3d) .featured-strip a.card:hover { transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)); }
+html.cards-alive--full .featured-strip .card.is-tilting { transition: transform .08s linear, box-shadow .3s var(--lg-ease); }
+.featured-strip .card.is-lit::before { opacity: 1; display: block; }
+
+@media (prefers-reduced-motion: reduce) {
+  .cards-alive--full .featured-strip .card,
+  .cards-alive--lite .featured-strip .card { animation: none; transform: none; translate: none; }
+}

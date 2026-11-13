@@ -9,29 +9,33 @@
 <meta name="msapplication-TileColor" id="ms-tilecolor-meta" content="#f4f7f1">
 
 <script>
-    // Live listener for system color scheme changes
-    (function() {
-        const darkModeMedia = window.matchMedia('(prefers-color-scheme: dark)');
-
-        function updateTheme(e) {
-            const isDark = e.matches;
-            document.querySelector('html').dataset.theme = isDark ? 'dark' : 'light';
-
-            // Also update theme-color meta tags dynamically
-            document.querySelectorAll('meta[name="theme-color"]').forEach((themeColorMeta) => {
-                themeColorMeta.content = isDark ? '#101512' : '#f4f7f1';
-            });
-            const msTileColorMeta = document.getElementById('ms-tilecolor-meta');
-            if (msTileColorMeta) {
-                msTileColorMeta.content = isDark ? '#101512' : '#f4f7f1';
-            }
+    // Theme: stored pref-theme ('dark'|'light') wins, otherwise follow the OS.
+    // Runs in <head> so the right theme is set before first paint.
+    (function () {
+        var mq = window.matchMedia('(prefers-color-scheme: dark)');
+        var KEY = 'pref-theme';
+        function stored() {
+            try { var v = localStorage.getItem(KEY); return v === 'dark' || v === 'light' ? v : null; } catch (e) { return null; }
         }
-
-        // Run on load (syncs theme-color meta on first paint)
-        updateTheme(darkModeMedia);
-
-        // Listen for changes — this is the key addition
-        darkModeMedia.addEventListener('change', updateTheme);
+        function apply(theme) {
+            var dark = theme === 'dark';
+            document.documentElement.dataset.theme = theme;
+            document.querySelectorAll('meta[name="theme-color"]').forEach(function (m) { m.content = dark ? '#0b1510' : '#f4f7f1'; });
+            var ms = document.getElementById('ms-tilecolor-meta');
+            if (ms) ms.content = dark ? '#0b1510' : '#f4f7f1';
+        }
+        apply(stored() || (mq.matches ? 'dark' : 'light'));
+        mq.addEventListener('change', function (e) {
+            if (!stored()) {
+                apply(e.matches ? 'dark' : 'light');
+                document.dispatchEvent(new CustomEvent('themechange', { detail: { theme: e.matches ? 'dark' : 'light' } }));
+            }
+        });
+        window.__setTheme = function (t) {
+            t = t === 'dark' ? 'dark' : 'light';
+            try { localStorage.setItem(KEY, t); } catch (e) { /* storage blocked */ }
+            apply(t);
+            document.dispatchEvent(new CustomEvent('themechange', { detail: { theme: t } }));
+        };
     })();
 </script>
-
