@@ -31,6 +31,12 @@ jobs:
           hugo-version: "0.164.0"
           extended: true
 
+      - name: Design guards (contrast, scene, alive)
+        run: |
+          node .github/scripts/check-contrast.mjs
+          node .github/scripts/check-scene.mjs
+          node .github/scripts/check-alive.mjs
+
       - name: Build
         run: hugo --minify
 

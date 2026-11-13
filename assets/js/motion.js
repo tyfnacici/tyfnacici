@@ -14,6 +14,7 @@
 
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
       root.classList.remove('js');
+      window.__cardsAlive = { tier: 'off', tilts: 0 }; // prefers-reduced-motion
       return;
     }
 
@@ -48,6 +49,58 @@
           c.style.setProperty('--my', (last.clientY - b.top) + 'px');
         });
       }, { passive: true });
+    }
+
+    // Lively cards (home): tilt + light reflection + idle float (CSS).
+    // off: saveData. lite: coarse pointer / low-power, tilt only while pressed. full: pointer tilt.
+    var FEAT = '.featured-strip .card';
+    const TILT = 6;
+    var alive = window.__cardsAlive = { tier: 'off', tilts: 0 };
+    var conn = navigator.connection;
+    if (d.querySelector(FEAT) && !(conn && conn.saveData)) {
+      var lowPower = window.matchMedia('(pointer: coarse)').matches ||
+        (navigator.hardwareConcurrency || 8) <= 4 || (navigator.deviceMemory || 8) <= 4;
+      var full = !lowPower && window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+      alive.tier = full ? 'full' : 'lite';
+      root.classList.add(full ? 'cards-alive--full' : 'cards-alive--lite');
+      var tiltCard = function (c, x, y) {
+        var b = c.getBoundingClientRect();
+        var px = (x - b.left) / b.width, py = (y - b.top) / b.height;
+        c.style.setProperty('--ry', ((px - 0.5) * 2 * TILT).toFixed(2) + 'deg');
+        c.style.setProperty('--rx', ((0.5 - py) * 2 * TILT).toFixed(2) + 'deg');
+        c.style.setProperty('--mx', (x - b.left) + 'px');
+        c.style.setProperty('--my', (y - b.top) + 'px');
+        c.classList.add('is-lit', 'is-tilting');
+        alive.tilts++;
+      };
+      var flatten = function (c) {
+        c.style.removeProperty('--rx');
+        c.style.removeProperty('--ry');
+        c.classList.remove('is-lit', 'is-tilting');
+      };
+      var araf = 0, alast, active = null;
+      var onMove = function (e) {
+        var c = e.target.closest && e.target.closest(FEAT);
+        if (active && active !== c) flatten(active);
+        active = c;
+        if (!c) return;
+        alast = e;
+        if (araf) return;
+        araf = requestAnimationFrame(function () { araf = 0; if (active) tiltCard(active, alast.clientX, alast.clientY); });
+      };
+      var release = function () { if (active) { flatten(active); active = null; } };
+      if (full) {
+        d.addEventListener('pointermove', onMove, { passive: true });
+        d.addEventListener('pointerleave', release);
+        d.documentElement.addEventListener('mouseleave', release);
+      } else {
+        d.addEventListener('pointerdown', function (e) {
+          var c = e.target.closest && e.target.closest(FEAT);
+          if (c) { active = c; tiltCard(c, e.clientX, e.clientY); }
+        }, { passive: true });
+      }
+      d.addEventListener('pointerup', release, { passive: true });
+      d.addEventListener('pointercancel', release, { passive: true });
     }
 
     // Material-style ripple on buttons.
