@@ -1,0 +1,10 @@
+{{- /* Obfuscated contact link: reuses the mailto: entry of params.socialIcons.
+   The address is split into data-* parts; the click handler in
+   _partials/social_icons.html reassembles it, so it never appears in the HTML. */ -}}
+{{- range site.Params.socialIcons }}
+{{- if and (hasPrefix (trim .url " ") "mailto:") (not (page.Scratch.Get "contact-email-done")) }}
+{{- $parts := split (strings.TrimPrefix "mailto:" (trim .url " ")) "@" -}}
+<a tabindex="0" data-email-user="{{ index $parts 0 }}" data-email-domain="{{ index $parts 1 }}" style="cursor: pointer">e-mail</a>
+{{- page.Scratch.Set "contact-email-done" true }}
+{{- end }}
+{{- end -}}

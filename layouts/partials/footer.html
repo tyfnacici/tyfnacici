@@ -22,7 +22,7 @@
                 <a href="{{ .URL | absLangURL }}">{{ .Name }}</a>
                 {{- end }}
             </nav>
-            <span class="footer-meta">&copy; {{ now.Year }} {{ site.Title }}</span>
+            <span class="footer-meta">&copy; {{ now.Year }} {{ site.Title }} &middot; <a href="{{ "privacy/" | absLangURL }}">Privacy</a> &middot; <a href="{{ "terms/" | absLangURL }}">Terms</a></span>
         </div>
     </div>
 </footer>

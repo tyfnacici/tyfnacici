@@ -16,6 +16,7 @@
 !.github/
 !hugo.yaml
 !themes/
+!docs/
 
 # Hugo output directory - generated build outputs should never be committed
 public/
