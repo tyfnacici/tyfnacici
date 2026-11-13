@@ -12,6 +12,7 @@
 !*.toml
 !static/
 !layouts/
+!assets/
 !.github/
 !hugo.yaml
 !themes/

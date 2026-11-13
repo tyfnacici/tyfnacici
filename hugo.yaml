@@ -24,6 +24,9 @@ outputs:
 minify:
   disableXML: true
   minifyOutput: true
+  tdewolff:
+    html:
+      keepQuotes: true # keep id="scene3d" greppable in built HTML
 
 
 params:
