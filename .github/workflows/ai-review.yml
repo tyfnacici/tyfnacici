@@ -20,4 +20,4 @@ jobs:
   review:
     uses: tyfnacici/ai-review/.github/workflows/review.yml@main
     with:
-      runs_on: '["self-hosted", "ai-review"]'
+      runs_on: '["self-hosted", "desktop"]'
