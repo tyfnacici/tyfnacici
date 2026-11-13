@@ -2,7 +2,11 @@
        Inlined: tiny, and avoids a render-blocking request. */ -}}
 {{- with resources.Get "js/motion.js" }}
 {{- $js := . | resources.Minify }}
-<script>{{ $js.Content | safeJS }}</script>
+{{- /* This partial runs inside the cached footer, so output must not depend on the page.
+       Write the "c" of the ".giscus-wrap" literal as a CSS escape (\\63) in the JS string: the selector is unchanged at runtime, but
+       the word "giscus" only appears in the HTML of pages that really embed comments. */ -}}
+{{- $code := replaceRE `,\.giscus-wrap(["'])` `,.gis\\63 us-wrap${1}` $js.Content }}
+<script>{{ $code | safeJS }}</script>
 {{- end }}
 {{- /* Home-only living background (three.js particles); self-guards for reduced motion, saveData and WebGL. */ -}}
 {{- if .IsHome }}
